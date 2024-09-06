@@ -1,8 +1,9 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
-const Equipo = require('./equipo');
-const Categoria = require('./categoria');
-const Estadio = require('./estadio');
+
+import { DataTypes } from "sequelize";
+import sequelize from "../config/dbConfig.js";
+import Equipo from "./equipo.js";
+import Categoria from "./categoria.js";
+import Estadio from "./estadio.js";
 
 const Partido = sequelize.define('Partido', {
     id_partido: {
@@ -55,4 +56,4 @@ const Partido = sequelize.define('Partido', {
     timestamps: false,
 });
 
-module.exports = Partido;
+export default Partido;

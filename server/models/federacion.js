@@ -1,5 +1,6 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+
+import { DataTypes } from 'sequelize';
+import sequelize from '../config/dbConfig.js';
 
 const Federacion = sequelize.define('Federacion', {
     id_federacion: {
@@ -16,4 +17,4 @@ const Federacion = sequelize.define('Federacion', {
     timestamps: false,
 });
 
-module.exports = Federacion;
+export default Federacion;

@@ -1,5 +1,6 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+
+import { DataTypes } from "sequelize";
+import sequelize from "../config/dbConfig.js";
 
 const Estadio = sequelize.define('Estadio', {
     id_estadio: {
@@ -16,4 +17,4 @@ const Estadio = sequelize.define('Estadio', {
     timestamps: false,
 });
 
-module.exports = Estadio;
+export default Estadio;
