@@ -7,7 +7,7 @@ import Permiso from '../models/permiso.js';
 const router = express.Router();
 
 // Crear un nuevo usuario
-router.post('/usuarios', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { nombre_usuario, email, password } = req.body;
     const nuevoUsuario = await Usuario.create({
@@ -22,14 +22,9 @@ router.post('/usuarios', async (req, res) => {
 });
 
 // Obtener todos los usuarios
-router.get('/usuarios', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const usuarios = await Usuario.findAll({
-      include: {
-        model: Permiso,
-        through: { attributes: [] }
-      }
-    });
+    const usuarios = await Usuario.findAll();
     res.json(usuarios);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -37,7 +32,7 @@ router.get('/usuarios', async (req, res) => {
 });
 
 // Actualizar un usuario
-router.put('/usuarios/:id', async (req, res) => {
+router.put('/', async (req, res) => {
   try {
     const { permisos, ...usuarioData } = req.body;
     const usuario = await Usuario.findByPk(req.params.id);
@@ -60,7 +55,7 @@ router.put('/usuarios/:id', async (req, res) => {
 });
 
 // Eliminar un usuario
-router.delete('/usuarios/:id', async (req, res) => {
+router.delete('/', async (req, res) => {
   try {
     const usuario = await Usuario.findByPk(req.params.id);
     if (!usuario) return res.status(404).json({ error: 'Usuario no encontrado' });
