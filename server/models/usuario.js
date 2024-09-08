@@ -31,6 +31,7 @@ const Usuario = sequelize.define('Usuario', {
     es_administrador: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
+        allowNull: false,
     },
 }, {
     tableName: 'usuario',

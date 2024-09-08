@@ -4,12 +4,21 @@ import sequelize from "../config/dbConfig.js";
 import Equipo from "./equipo.js";
 import Categoria from "./categoria.js";
 import Estadio from "./estadio.js";
+import Torneo from "./torneo.js";
+
 
 const Partido = sequelize.define('Partido', {
     id_partido: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
+    },
+    id_torneo: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: Torneo,
+            key: 'id_torneo',
+        },
     },
     equipo_local: {
         type: DataTypes.INTEGER,
@@ -25,13 +34,16 @@ const Partido = sequelize.define('Partido', {
             key: 'id_equipo',
         },
     },
+    fecha_torneo: {
+        type: DataTypes.INTEGER,
+    },
     sets_local: {
         type: DataTypes.INTEGER,
     },
     sets_visitante: {
         type: DataTypes.INTEGER,
     },
-    fecha: {
+    dia: {
         type: DataTypes.DATE,
     },
     hora: {

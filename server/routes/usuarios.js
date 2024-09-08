@@ -9,19 +9,15 @@ const router = express.Router();
 // Crear un nuevo usuario
 router.post('/usuarios', async (req, res) => {
   try {
-    const { permisos, ...usuarioData } = req.body;
-    const usuario = await Usuario.create(usuarioData);
-
-    // Asignar permisos si es necesario
-    if (permisos) {
-      for (const permisoId of permisos) {
-        await UsuarioPermiso.create({ id_usuario: usuario.id_usuario, id_permiso: permisoId });
-      }
-    }
-
-    res.status(201).json(usuario);
+    const { nombre_usuario, email, password } = req.body;
+    const nuevoUsuario = await Usuario.create({
+      nombre_usuario,
+      email,
+      password
+    });
+    res.status(201).json(nuevoUsuario);
   } catch (error) {
-    res.status(400).json({ error: error.message });
+    res.status(500).json({ error: 'Error al crear usuario' });
   }
 });
 

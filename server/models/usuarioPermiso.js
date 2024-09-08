@@ -5,11 +5,6 @@ import Usuario from './usuario.js';
 import Permiso from './permiso.js';
 
 const UsuarioPermiso = sequelize.define('UsuarioPermiso', {
-    id_usuario_permiso: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        primaryKey: true,
-    },
     id_usuario: {
         type: DataTypes.INTEGER,
         references: {
