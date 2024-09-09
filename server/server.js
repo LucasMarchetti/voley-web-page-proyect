@@ -1,11 +1,12 @@
+
 import express from 'express';
 import bodyParser from 'body-parser';
-import sequelize from './config/dbConfig.js'; // Asegúrate de que esta ruta sea correcta
+import sequelize from './config/dbConfig.js'; 
 
 // Importar rutas
 import usuariosRoutes from './routes/usuarios.js';
-import permisosRoutes from './routes/permisos.js';
-// import federacionesRoutes from './routes/federaciones.js';
+import federacionesRoutes from './routes/federaciones.js';
+// import permisosRoutes from './routes/permisos.js';
 // import torneosRoutes from './routes/torneos.js';
 // import partidosRoutes from './routes/partidos.js';
 // import equiposRoutes from './routes/equipos.js';
@@ -13,14 +14,14 @@ import permisosRoutes from './routes/permisos.js';
 // import estadiosRoutes from './routes/estadios.js';
 
 const app = express();
-const port = process.env.PORT || 3000; // Puedes ajustar el puerto aquí
+const port = process.env.PORT || 3000;
 
-app.use(bodyParser.json()); // Para analizar el cuerpo de las solicitudes como JSON
+app.use(bodyParser.json()); 
 
 // Usar las rutas definidas
 app.use('/api/usuarios', usuariosRoutes);
-app.use('/api/permisos', permisosRoutes);
-// app.use('/api/federaciones', federacionesRoutes);
+app.use('/api/federaciones', federacionesRoutes);
+// app.use('/api/permisos', permisosRoutes);
 // app.use('/api/torneos', torneosRoutes);
 // app.use('/api/partidos', partidosRoutes);
 // app.use('/api/equipos', equiposRoutes);

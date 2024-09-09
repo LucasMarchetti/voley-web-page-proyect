@@ -23,6 +23,7 @@ const Usuario = sequelize.define('Usuario', {
     },
     id_federacion: {
         type: DataTypes.INTEGER,
+        // allowNull: false,
         references: {
             model: 'federacion',
             key: 'id_federacion',

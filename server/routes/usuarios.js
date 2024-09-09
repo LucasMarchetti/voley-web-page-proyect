@@ -2,21 +2,24 @@
 import express from 'express';
 import Usuario from '../models/usuario.js';
 import UsuarioPermiso from '../models/usuarioPermiso.js';
-import Permiso from '../models/permiso.js';
+// import Permiso from '../models/permiso.js';
 
 const router = express.Router();
 
 // Crear un nuevo usuario
 router.post('/', async (req, res) => {
   try {
-    const { nombre_usuario, email, password } = req.body;
+    const { nombre_usuario, email, password, es_administrador, id_federacion } = req.body;
     const nuevoUsuario = await Usuario.create({
       nombre_usuario,
       email,
-      password
+      password,
+      es_administrador,
+      id_federacion
     });
     res.status(201).json(nuevoUsuario);
   } catch (error) {
+    console.error("Error al crear usuario:", error);
     res.status(500).json({ error: 'Error al crear usuario' });
   }
 });
