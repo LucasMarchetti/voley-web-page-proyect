@@ -14,6 +14,7 @@ const Categoria = sequelize.define('Categoria', {
     },
     abreviacion: {
         type: DataTypes.STRING,
+        allowNull: false,
     }
 }, {
     tableName: 'categoria',

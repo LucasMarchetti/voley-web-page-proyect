@@ -1,6 +1,3 @@
-// const { DataTypes } = require('sequelize');
-// const sequelize = require('../config/database');
-// const Federacion = require('./federacion');
 
 import {DataTypes} from "sequelize";
 import sequelize from '../config/dbConfig.js';

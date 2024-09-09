@@ -11,6 +11,10 @@ const Equipo = sequelize.define('Equipo', {
     nombre_equipo: {
         type: DataTypes.STRING,
         allowNull: false,
+    },
+    logo_equipo: {
+        type: DataTypes.STRING,
+        allowNull: false,
     }
 }, {
     tableName: 'equipo',
