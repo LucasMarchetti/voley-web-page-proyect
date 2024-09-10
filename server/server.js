@@ -6,11 +6,11 @@ import sequelize from './config/dbConfig.js';
 // Importar rutas
 import usuariosRoutes from './routes/usuarios.js';
 import federacionesRoutes from './routes/federaciones.js';
+import equiposRoutes from './routes/equipos.js';
+import categoriasRoutes from './routes/categorias.js';
 // import permisosRoutes from './routes/permisos.js';
 // import torneosRoutes from './routes/torneos.js';
 // import partidosRoutes from './routes/partidos.js';
-// import equiposRoutes from './routes/equipos.js';
-// import categoriasRoutes from './routes/categorias.js';
 // import estadiosRoutes from './routes/estadios.js';
 
 const app = express();
@@ -21,11 +21,11 @@ app.use(bodyParser.json());
 // Usar las rutas definidas
 app.use('/api/usuarios', usuariosRoutes);
 app.use('/api/federaciones', federacionesRoutes);
+app.use('/api/equipos', equiposRoutes);
+app.use('/api/categorias', categoriasRoutes);
 // app.use('/api/permisos', permisosRoutes);
 // app.use('/api/torneos', torneosRoutes);
 // app.use('/api/partidos', partidosRoutes);
-// app.use('/api/equipos', equiposRoutes);
-// app.use('/api/categorias', categoriasRoutes);
 // app.use('/api/estadios', estadiosRoutes);
 
 // Sincronizar la base de datos y arrancar el servidor
