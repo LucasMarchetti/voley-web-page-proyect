@@ -2,7 +2,7 @@
 import express from 'express';
 import Usuario from '../models/usuario.js';
 import UsuarioPermiso from '../models/usuarioPermiso.js';
-// import Permiso from '../models/permiso.js';
+import Permiso from '../models/permiso.js';
 
 const router = express.Router();
 
