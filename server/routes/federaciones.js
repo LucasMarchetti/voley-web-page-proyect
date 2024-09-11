@@ -3,7 +3,6 @@ import Federacion from '../models/federacion.js';
 
 const router = express.Router();
 
-//Crear nueva federacion
 router.post('/', async (req, res) => {
     try {
         const { nombre_federacion } = req.body;
@@ -17,7 +16,6 @@ router.post('/', async (req, res) => {
     }
 })
 
-//Obtener todas las federaciones
 router.get('/', async (req, res) => {
     try {
         const federaciones = await Federacion.findAll()
