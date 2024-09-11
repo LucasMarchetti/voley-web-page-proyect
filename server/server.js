@@ -1,7 +1,7 @@
 
 import express from 'express';
 import bodyParser from 'body-parser';
-import sequelize from './config/dbConfig.js'; 
+import sequelize from './config/dbConfig.js';
 
 // Importar rutas
 import usuariosRoutes from './routes/usuarios.js';
@@ -13,22 +13,23 @@ import permisosRoutes from './routes/permisos.js';
 // import torneosRoutes from './routes/torneos.js';
 // import partidosRoutes from './routes/partidos.js';
 
+
+import authenticate from './middleware/authenticate.js';
+
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(bodyParser.json()); 
+app.use(bodyParser.json());
 
-// Usar las rutas definidas
-app.use('/api/usuarios', usuariosRoutes);
-app.use('/api/federaciones', federacionesRoutes);
-app.use('/api/equipos', equiposRoutes);
-app.use('/api/categorias', categoriasRoutes);
-app.use('/api/estadios', estadiosRoutes);
-app.use('/api/permisos', permisosRoutes);
-// app.use('/api/torneos', torneosRoutes);
-// app.use('/api/partidos', partidosRoutes);
+app.use('/api/usuarios', authenticate, usuariosRoutes);
+app.use('/api/federaciones', authenticate, federacionesRoutes);
+app.use('/api/equipos', authenticate, equiposRoutes);
+app.use('/api/categorias', authenticate, categoriasRoutes);
+app.use('/api/estadios', authenticate, estadiosRoutes);
+app.use('/api/permisos', authenticate, permisosRoutes);
+// app.use('/api/torneos', authenticate, torneosRoutes);
+// app.use('/api/partidos', authenticate, partidosRoutes);
 
-// Sincronizar la base de datos y arrancar el servidor
 sequelize.sync({ force: true })
     .then(() => {
         console.log('Base de datos sincronizada');

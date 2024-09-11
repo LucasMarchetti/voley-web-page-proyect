@@ -4,10 +4,10 @@ import UsuarioPermiso from '../models/usuarioPermiso.js';
 const authorize = (permisosRequeridos) => {
   return async (req, res, next) => {
     try {
-      const usuarioId = req.user.id_usuario; // Supongo que el ID del usuario está en req.user
+      const usuarioId = req.user.id_usuario;
       const permisos = await UsuarioPermiso.findAll({
-        where: { id_usuario: usuarioId },
-        attributes: ['id_permiso'],
+          where: { id_usuario: usuarioId },
+          attributes: ['id_permiso'],
       });
 
       const permisosIds = permisos.map(p => p.id_permiso);

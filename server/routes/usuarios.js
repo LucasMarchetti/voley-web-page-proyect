@@ -2,11 +2,20 @@
 import express from 'express';
 import Usuario from '../models/usuario.js';
 import UsuarioPermiso from '../models/usuarioPermiso.js';
-import Permiso from '../models/permiso.js';
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', [
+  body('nombre_usuario').notEmpty().withMessage('Nombre de usuario es obligatorio'),
+  body('email').isEmail().withMessage('Debe ser un correo electrónico válido'),
+  body('password').isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
+  body('id_federacion').isInt().withMessage('ID de federación debe ser un número entero'),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   try {
     const { nombre_usuario, email, password, es_administrador, id_federacion } = req.body;
     const nuevoUsuario = await Usuario.create({
@@ -32,12 +41,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.put('/', async (req, res) => {
+router.put('/:id', [
+  body('nombre_usuario').optional().notEmpty().withMessage('Nombre de usuario no puede estar vacío'),
+  body('email').optional().isEmail().withMessage('Debe ser un correo electrónico válido'),
+  body('password').optional().isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   try {
     const { permisos, ...usuarioData } = req.body;
     const usuario = await Usuario.findByPk(req.params.id);
     if (!usuario) return res.status(404).json({ error: 'Usuario no encontrado' });
-    
+
     await usuario.update(usuarioData);
 
     if (permisos) {

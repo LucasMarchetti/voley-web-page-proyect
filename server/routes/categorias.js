@@ -1,9 +1,10 @@
 import express from 'express'
 import Categoria from '../models/categoria.js'
+import authorize from '../middleware/authorize.js'
 
 const router = express.Router()
 
-router.post('/', async (req, res) => {
+router.post('/', authorize([1]), async (req, res) => {
     try {
         const { nombre_categoria, abreviacion } = req.body
         const nuevaCategoria = await Categoria.create({
@@ -27,7 +28,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authorize([1]), async (req, res) => {
     try {
         const idCategoria = req.params.id
         const categoria = await Categoria.findByPk(idCategoria)

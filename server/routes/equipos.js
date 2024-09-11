@@ -1,9 +1,10 @@
 import express from 'express'
 import Equipo from '../models/equipo.js'
+import authorize from '../middleware/authorize.js'
 
 const router = express.Router()
 
-router.post('/', async (req, res) => {
+router.post('/', authorize([1]), async (req, res) => {
     try {
         const { nombre_equipo, logo_equipo } = req.body
         const nuevoEquipo = await Equipo.create({
@@ -39,7 +40,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authorize([1]), async (req, res) => {
     try {
         const idEquipo = req.params.id
         const equipo = await Equipo.findByPk(idEquipo)
