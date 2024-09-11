@@ -1,4 +1,5 @@
 import sequelize from './config/dbConfig.js';
+
 import Federacion from './models/federacion.js';
 import Torneo from './models/torneo.js';
 import Partido from './models/partido.js';
@@ -10,8 +11,8 @@ import Permiso from './models/permiso.js';
 import UsuarioPermiso from './models/usuarioPermiso.js';
 import TorneoCategoria from './models/torneoCategorias.js';
 
-// Sincronizar base de datos
-sequelize.sync({ force: true }) // 'force: true' elimina las tablas si ya existen y las vuelve a crear
+
+sequelize.sync({ force: true })
     .then(() => {
         console.log('Base de datos sincronizada');
     })
@@ -19,7 +20,6 @@ sequelize.sync({ force: true }) // 'force: true' elimina las tablas si ya existe
         console.error('Error al sincronizar la base de datos:', error);
     });
 
-// Definir relaciones
 Torneo.belongsTo(Federacion, { foreignKey: 'id_federacion' });
 Federacion.hasMany(Torneo, { foreignKey: 'id_federacion' });
 Usuario.belongsTo(Federacion, { foreignKey: 'id_federacion' });
@@ -31,7 +31,6 @@ Estadio.hasMany(Partido, { foreignKey: 'id_estadio' });
 Torneo.hasMany(Partido, { foreignKey: 'id_torneo' });
 Partido.belongsTo(Torneo, { foreignKey: 'id_torneo' });
 
-// Ajustar nombres de asociaciones para evitar conflictos
 Partido.belongsTo(Equipo, { as: 'equipoLocal', foreignKey: 'equipo_local' });
 Partido.belongsTo(Equipo, { as: 'equipoVisitante', foreignKey: 'equipo_visitante' });
 Equipo.hasMany(Partido, { as: 'partidosComoLocal', foreignKey: 'equipo_local' });

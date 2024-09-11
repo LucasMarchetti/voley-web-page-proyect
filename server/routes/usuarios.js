@@ -1,5 +1,5 @@
-
 import express from 'express';
+import { body, validationResult } from 'express-validator';
 import Usuario from '../models/usuario.js';
 import UsuarioPermiso from '../models/usuarioPermiso.js';
 
@@ -38,6 +38,18 @@ router.get('/', async (req, res) => {
     res.json(usuarios);
   } catch (error) {
     res.status(500).json({ error: "Error al buscar todos los usuarios" });
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const usuario = await Usuario.findByPk(req.params.id);
+    if (!usuario) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+    }
+    res.json(usuario);
+  } catch (error) {
+    res.status(500).json({ error: 'Error al buscar el usuario' });
   }
 });
 

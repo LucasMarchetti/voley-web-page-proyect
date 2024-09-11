@@ -1,6 +1,6 @@
 import express from 'express'
 import Categoria from '../models/categoria.js'
-import authorize from '../middleware/authorize.js'
+import authorize from '../middlewares/authorize.js'
 
 const router = express.Router()
 

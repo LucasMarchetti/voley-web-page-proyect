@@ -1,6 +1,6 @@
 import express from 'express';
 import Torneo from '../models/torneo.js';
-import authorize from '../middleware/authorize.js';
+import authorize from '../middlewares/authorize.js';
 
 const router = express.Router();
 
