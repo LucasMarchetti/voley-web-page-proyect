@@ -1,3 +1,4 @@
+
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/dbConfig.js';
 
@@ -19,6 +20,12 @@ const TorneoCategoria = sequelize.define('TorneoCategoria', {
 }, {
     tableName: 'torneo_categoria',
     timestamps: false,
+    indexes: [
+        {
+            unique: true,
+            fields: ['id_torneo', 'id_categoria'],
+        },
+    ],
 });
 
 export default TorneoCategoria;

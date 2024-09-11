@@ -22,6 +22,12 @@ const UsuarioPermiso = sequelize.define('UsuarioPermiso', {
 }, {
     tableName: 'usuario_permiso',
     timestamps: false,
+    indexes: [
+        {
+            unique: true,
+            fields: ['id_usuario', 'id_permiso'],
+        },
+    ],
 });
 
 export default UsuarioPermiso;
