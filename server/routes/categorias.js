@@ -27,4 +27,19 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.delete('/:id', async (req, res) => {
+    try {
+        const idCategoria = req.params.id
+        const categoria = await Categoria.findByPk(idCategoria)
+  
+        categoria ? 
+        await categoria.destroy() && res.status(200).json({ message: 'categoria eliminado correctamente' }) : 
+        res.status(404).json({ error: 'categoria no encontrado' })
+        
+    } catch (error) {
+        console.error("Error al eliminar el categoria.", error);
+        res.status(500).json({ error : "Error el eliminar el categoria"})
+    }
+  })
+
 export default router

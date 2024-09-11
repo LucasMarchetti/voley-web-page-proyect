@@ -6,7 +6,6 @@ import UsuarioPermiso from '../models/usuarioPermiso.js';
 
 const router = express.Router();
 
-// Crear un nuevo usuario
 router.post('/', async (req, res) => {
   try {
     const { nombre_usuario, email, password, es_administrador, id_federacion } = req.body;
@@ -24,17 +23,15 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Obtener todos los usuarios
 router.get('/', async (req, res) => {
   try {
     const usuarios = await Usuario.findAll();
     res.json(usuarios);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: "Error al buscar todos los usuarios" });
   }
 });
 
-// Actualizar un usuario
 router.put('/', async (req, res) => {
   try {
     const { permisos, ...usuarioData } = req.body;
@@ -43,7 +40,6 @@ router.put('/', async (req, res) => {
     
     await usuario.update(usuarioData);
 
-    // Actualizar permisos
     if (permisos) {
       await UsuarioPermiso.destroy({ where: { id_usuario: usuario.id_usuario } });
       for (const permisoId of permisos) {
@@ -57,16 +53,19 @@ router.put('/', async (req, res) => {
   }
 });
 
-// Eliminar un usuario
-router.delete('/', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
-    const usuario = await Usuario.findByPk(req.params.id);
-    if (!usuario) return res.status(404).json({ error: 'Usuario no encontrado' });
-    await usuario.destroy();
-    res.status(204).end();
+      const idUsuario = req.params.id
+      const usuario = await Usuario.findByPk(idUsuario)
+
+      usuario ? 
+      await usuario.destroy() && res.status(200).json({ message: 'usuario eliminado correctamente' }) : 
+      res.status(404).json({ error: 'usuario no encontrado' })
+      
   } catch (error) {
-    res.status(500).json({ error: error.message });
+      console.error("Error al eliminar el usuario.", error);
+      res.status(500).json({ error : "Error el eliminar el usuario"})
   }
-});
+})
 
 export default router;
