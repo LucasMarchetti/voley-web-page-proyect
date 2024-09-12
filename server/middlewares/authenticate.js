@@ -1,17 +1,29 @@
-
 import jwt from 'jsonwebtoken';
 
 const authenticate = (req, res, next) => {
-  const token = req.headers.authorization?.split(' ')[1];
+  const token = req.headers['authorization'];
 
-  if (!token) return res.status(401).json({ error: 'No token provided' });
+  if (!token) {
+    return res.status(403).json({ message: 'Token no proporcionado' });
+  }
 
-  jwt.verify(token, 'your_jwt_secret', (err, user) => {
-    if (err) return res.status(403).json({ error: 'Invalid token' });
+  try {
+    const tokenParts = token.split(' ');
+    if (tokenParts.length !== 2 || tokenParts[0] !== 'Bearer') {
+      return res.status(403).json({ message: 'Formato de token inválido' });
+    }
 
-    req.user = user;
+    const authToken = tokenParts[1];
+    console.log('Token extraído:', authToken); 
+
+    const decoded = jwt.verify(authToken, process.env.JWT_SECRET);
+    req.user = decoded; 
+
     next();
-  });
+    
+  } catch (error) {
+    return res.status(403).json({ message: 'Token inválido' });
+  }
 };
 
 export default authenticate;
