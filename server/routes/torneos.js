@@ -4,7 +4,7 @@ import authorize from '../middlewares/authorize.js';
 
 const router = express.Router();
 
-router.post('/', authorize([1]), async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { nombre_torneo, fecha_inicio, fecha_final, id_federacion } = req.body;
     const nuevoTorneo = await Torneo.create({ nombre_torneo, fecha_inicio, fecha_final, id_federacion });

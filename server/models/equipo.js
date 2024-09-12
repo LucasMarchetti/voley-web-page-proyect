@@ -15,7 +15,15 @@ const Equipo = sequelize.define('Equipo', {
     logo_equipo: {
         type: DataTypes.STRING,
         allowNull: false,
-    }
+    },
+    id_federacion: {
+        type: DataTypes.INTEGER,
+        //allowNull: false,
+        references: {
+            model: 'federacion',
+            key: 'id_federacion',
+        },
+    },
 }, {
     tableName: 'equipo',
     timestamps: false,

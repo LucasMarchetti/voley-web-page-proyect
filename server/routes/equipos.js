@@ -4,12 +4,13 @@ import authorize from '../middlewares/authorize.js'
 
 const router = express.Router()
 
-router.post('/', authorize([1]), async (req, res) => {
+router.post('/', async (req, res) => {
     try {
-        const { nombre_equipo, logo_equipo } = req.body
+        const { nombre_equipo, logo_equipo, id_federacion } = req.body
         const nuevoEquipo = await Equipo.create({
             nombre_equipo,
-            logo_equipo
+            logo_equipo,
+            id_federacion
         })
         res.status(201).json(nuevoEquipo)
     } catch (error) {
@@ -20,8 +21,16 @@ router.post('/', authorize([1]), async (req, res) => {
 
 
 router.get('/', async (req, res) => {
+    const { id_federacion } = req.query;
+    if (!id_federacion) {
+        return res.status(400).json({ error: 'Falta el parámetro id_federacion' });
+    }
     try {
-        const equipos = await Equipo.findAll()
+        const equipos = await Equipo.findAll({
+            where: {
+                id_federacion: id_federacion  // Filtra por id_federacion
+            }
+        })
         res.status(200).json(equipos)
     } catch (error) {
         console.log("Error al buscar todos los equipos", error)
@@ -40,7 +49,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.delete('/:id', authorize([1]), async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const idEquipo = req.params.id
         const equipo = await Equipo.findByPk(idEquipo)
