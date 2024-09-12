@@ -2,6 +2,7 @@ import express from 'express';
 import { body, validationResult } from 'express-validator';
 import Usuario from '../models/usuario.js';
 import UsuarioPermiso from '../models/usuarioPermiso.js';
+import sequelize from '../config/dbConfig.js';
 
 const router = express.Router();
 
@@ -16,17 +17,32 @@ router.post('/', [
     return res.status(400).json({ errors: errors.array() });
   }
 
+  let transaction;
+  
   try {
+    transaction = await sequelize.transaction();  // Inicia la transacción
+    
     const { nombre_usuario, email, password, es_administrador, id_federacion } = req.body;
+    
     const nuevoUsuario = await Usuario.create({
       nombre_usuario,
       email,
       password,
       es_administrador,
       id_federacion
-    });
+    }, { transaction });
+
+    await transaction.commit();  // Confirma la transacción
+    
     res.status(201).json(nuevoUsuario);
   } catch (error) {
+    if (transaction) {
+      try {
+        await transaction.rollback();  // Revierte la transacción en caso de error
+      } catch (rollbackError) {
+        console.error("Error al revertir la transacción:", rollbackError);
+      }
+    }
     console.error("Error al crear usuario:", error);
     res.status(500).json({ error: 'Error al crear usuario' });
   }
