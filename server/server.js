@@ -19,14 +19,14 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-app.use('/api/usuarios',  usuariosRoutes);
-app.use('/api/federaciones',  federacionesRoutes);
-app.use('/api/equipos',  equiposRoutes);
-app.use('/api/categorias',  categoriasRoutes);
-app.use('/api/estadios',  estadiosRoutes);
-app.use('/api/permisos',  permisosRoutes);
-app.use('/api/torneos',  torneosRoutes);
-app.use('/api/partidos',  partidosRoutes);
+app.use('/api/usuarios', authenticate, usuariosRoutes);
+app.use('/api/federaciones', authenticate, federacionesRoutes);
+app.use('/api/equipos', authenticate, equiposRoutes);
+app.use('/api/categorias', authenticate, categoriasRoutes);
+app.use('/api/estadios', authenticate, estadiosRoutes);
+app.use('/api/permisos', authenticate, permisosRoutes);
+app.use('/api/torneos', authenticate, torneosRoutes);
+app.use('/api/partidos', authenticate, partidosRoutes);
 
 sequelize.sync({ alter: true })
     .then(() => {
