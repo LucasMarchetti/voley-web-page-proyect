@@ -4,7 +4,7 @@ import Permiso from '../models/permiso.js';
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', authorize([1, 2]), async (req, res) => {
   try {
     const { nombre_permiso } = req.body
     const permiso = await Permiso.create({
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', authorize([1, 2]), async (req, res) => {
   try {
     const permiso = await Permiso.findByPk(req.params.id);
     if (!permiso) return res.status(404).json({ error: 'Permiso no encontrado' });
@@ -38,7 +38,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authorize([1, 2]), async (req, res) => {
   try {
     const permiso = await Permiso.findByPk(req.params.id);
     if (!permiso) return res.status(404).json({ error: 'Permiso no encontrado' });

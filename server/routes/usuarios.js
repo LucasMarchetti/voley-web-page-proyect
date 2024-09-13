@@ -1,11 +1,14 @@
+
 import express from 'express';
 import { body, validationResult } from 'express-validator';
 import Usuario from '../models/usuario.js';
 import UsuarioPermiso from '../models/usuarioPermiso.js';
+import sequelize from '../config/dbConfig.js';
+import authorize from '../middlewares/authorize.js';
 
 const router = express.Router();
 
-router.post('/', [
+router.post('/', authorize([1, 2]), [
   body('nombre_usuario').notEmpty().withMessage('Nombre de usuario es obligatorio'),
   body('email').isEmail().withMessage('Debe ser un correo electrónico válido'),
   body('password').isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
@@ -16,17 +19,32 @@ router.post('/', [
     return res.status(400).json({ errors: errors.array() });
   }
 
+  let transaction;
+  
   try {
+    transaction = await sequelize.transaction();  // Inicia la transacción
+    
     const { nombre_usuario, email, password, es_administrador, id_federacion } = req.body;
+    
     const nuevoUsuario = await Usuario.create({
       nombre_usuario,
       email,
       password,
       es_administrador,
       id_federacion
-    });
+    }, { transaction });
+
+    await transaction.commit();  // Confirma la transacción
+    
     res.status(201).json(nuevoUsuario);
   } catch (error) {
+    if (transaction) {
+      try {
+        await transaction.rollback();  // Revierte la transacción en caso de error
+      } catch (rollbackError) {
+        console.error("Error al revertir la transacción:", rollbackError);
+      }
+    }
     console.error("Error al crear usuario:", error);
     res.status(500).json({ error: 'Error al crear usuario' });
   }
@@ -53,7 +71,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.put('/:id', [
+router.put('/:id', authorize([1, 2]), [
   body('nombre_usuario').optional().notEmpty().withMessage('Nombre de usuario no puede estar vacío'),
   body('email').optional().isEmail().withMessage('Debe ser un correo electrónico válido'),
   body('password').optional().isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
@@ -83,7 +101,7 @@ router.put('/:id', [
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authorize([1, 2]), async (req, res) => {
   try {
       const idUsuario = req.params.id
       const usuario = await Usuario.findByPk(idUsuario)

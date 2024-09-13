@@ -11,14 +11,13 @@ import Permiso from './models/permiso.js';
 import UsuarioPermiso from './models/usuarioPermiso.js';
 import TorneoCategoria from './models/torneoCategorias.js';
 
-
 sequelize.sync({ force: true })
     .then(() => {
         console.log('Base de datos sincronizada');
     })
     .catch((error) => {
         console.error('Error al sincronizar la base de datos:', error);
-    });
+});
 
 Torneo.belongsTo(Federacion, { foreignKey: 'id_federacion' });
 Federacion.hasMany(Torneo, { foreignKey: 'id_federacion' });
@@ -30,6 +29,8 @@ Partido.belongsTo(Estadio, { foreignKey: 'id_estadio' });
 Estadio.hasMany(Partido, { foreignKey: 'id_estadio' });
 Torneo.hasMany(Partido, { foreignKey: 'id_torneo' });
 Partido.belongsTo(Torneo, { foreignKey: 'id_torneo' });
+Federacion.hasMany(Equipo, {foreignKey: 'id_federacion'});
+Equipo.belongsTo(Federacion, {foreignKey: 'id_federacion'});
 
 Partido.belongsTo(Equipo, { as: 'equipoLocal', foreignKey: 'equipo_local' });
 Partido.belongsTo(Equipo, { as: 'equipoVisitante', foreignKey: 'equipo_visitante' });

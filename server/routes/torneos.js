@@ -4,7 +4,7 @@ import authorize from '../middlewares/authorize.js';
 
 const router = express.Router();
 
-router.post('/', authorize([1]), async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { nombre_torneo, fecha_inicio, fecha_final, id_federacion } = req.body;
     const nuevoTorneo = await Torneo.create({ nombre_torneo, fecha_inicio, fecha_final, id_federacion });
@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.put('/:id', authorize([1]), async (req, res) => {
+router.put('/:id', authorize([1,2]), async (req, res) => {
   try {
     const torneo = await Torneo.findByPk(req.params.id);
     if (!torneo) return res.status(404).json({ error: "Torneo no encontrado" });
@@ -46,7 +46,7 @@ router.put('/:id', authorize([1]), async (req, res) => {
   }
 });
 
-router.delete('/:id', authorize([1]), async (req, res) => {
+router.delete('/:id', authorize([1,2]), async (req, res) => {
   try {
     const torneo = await Torneo.findByPk(req.params.id);
     if (!torneo) return res.status(404).json({ error: "Torneo no encontrado" });

@@ -28,7 +28,7 @@ app.use('/api/permisos', authenticate, permisosRoutes);
 app.use('/api/torneos', authenticate, torneosRoutes);
 app.use('/api/partidos', authenticate, partidosRoutes);
 
-sequelize.sync({ force: true })
+sequelize.sync({ alter: true })
     .then(() => {
         console.log('Base de datos sincronizada');
         app.listen(port, () => {

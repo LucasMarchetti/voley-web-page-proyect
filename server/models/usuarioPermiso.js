@@ -1,4 +1,3 @@
-
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/dbConfig.js';
 import Usuario from './usuario.js';
@@ -7,6 +6,7 @@ import Permiso from './permiso.js';
 const UsuarioPermiso = sequelize.define('UsuarioPermiso', {
     id_usuario: {
         type: DataTypes.INTEGER,
+        primaryKey: true,
         references: {
             model: Usuario,
             key: 'id_usuario',
@@ -14,6 +14,7 @@ const UsuarioPermiso = sequelize.define('UsuarioPermiso', {
     },
     id_permiso: {
         type: DataTypes.INTEGER,
+        primaryKey: true,
         references: {
             model: Permiso,
             key: 'id_permiso',
