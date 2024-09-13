@@ -14,7 +14,6 @@ const authenticate = (req, res, next) => {
     }
 
     const authToken = tokenParts[1];
-    console.log('Token extraído:', authToken); 
 
     const decoded = jwt.verify(authToken, process.env.JWT_SECRET);
     req.user = decoded; 

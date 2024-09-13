@@ -4,14 +4,17 @@ import authorize from '../middlewares/authorize.js'
 
 const router = express.Router()
 
-router.post('/', async (req, res) => {
+router.post('/', authorize([1, 2]) ,async (req, res) => {
+
     try {
         const { nombre_equipo, logo_equipo, id_federacion } = req.body
+
         const nuevoEquipo = await Equipo.create({
             nombre_equipo,
             logo_equipo,
             id_federacion
         })
+
         res.status(201).json(nuevoEquipo)
     } catch (error) {
         console.log("Error al crear el nuevo equipo", error)
@@ -49,7 +52,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authorize([1, 2]), async (req, res) => {
     try {
         const idEquipo = req.params.id
         const equipo = await Equipo.findByPk(idEquipo)

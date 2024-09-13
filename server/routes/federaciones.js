@@ -3,7 +3,7 @@ import Federacion from '../models/federacion.js';
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', authorize([1, 2]), async (req, res) => {
     try {
         const { nombre_federacion } = req.body;
         const nuevaFederacion = await Federacion.create({

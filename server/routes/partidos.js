@@ -3,7 +3,7 @@ import Partido from '../models/partido.js';
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/', authorize([1, 2]), async (req, res) => {
   try {
     const partido = await Partido.create(req.body);
     res.status(201).json(partido);
@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/', authorize([1, 2]), async (req, res) => {
   try {
     const partidos = await Partido.findAll();
     res.json(partidos);

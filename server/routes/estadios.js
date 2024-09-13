@@ -4,7 +4,7 @@ import authorize from '../middlewares/authorize.js'
 
 const router = express.Router()
 
-router.post('/', authorize([1]), async (req, res) => {
+router.post('/', authorize([1, 2]), async (req, res) => {
     try {
         const { nombre_estadio } = req.body
         const nuevoEstadio = await Estadio.create({
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.delete('/:id', authorize([1]), async (req, res) => {
+router.delete('/:id', authorize([1, 2]), async (req, res) => {
     try {
         const idEstadio = req.params.id
         const estadio = await Estadio.findByPk(idEstadio)
