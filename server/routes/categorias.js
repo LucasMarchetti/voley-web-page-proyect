@@ -63,6 +63,6 @@ router.delete('/:id', authorize([1,2]), async (req, res) => {
         console.error("Error al eliminar el categoria.", error);
         res.status(500).json({ error : "Error el eliminar el categoria"})
     }
-  })
+})
 
 export default router

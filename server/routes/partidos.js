@@ -1,37 +1,36 @@
-import express from 'express';
-import Partido from '../models/partido.js';
+import express from 'express'
+import Partido from '../models/partido.js'
 
-const router = express.Router();
+const router = express.Router()
 
 router.post('/', authorize([1, 2]), async (req, res) => {
   try {
-    const partido = await Partido.create(req.body);
-    res.status(201).json(partido);
+    const partido = await Partido.create(req.body)
+    res.status(201).json(partido)
   } catch (error) {
-    console.log("Error al crear partido", error);
-    res.status(500).json({ error: "Error al crear partido" });
+    console.log("Error al crear partido", error)
+    res.status(500).json({ error: "Error al crear partido" })
   }
-});
+})
 
-router.get('/', authorize([1, 2]), async (req, res) => {
-  try {
-    const partidos = await Partido.findAll();
-    res.json(partidos);
-  } catch (error) {
-    console.log("Error al buscar todos los partidos", error);
-    res.status(500).json({ error: "Error al buscar todos los partidos" });
+router.get('/filter', authorize([1, 2]), async (req, res) => {
+  const { id_torneo, id_categoria } = req.query
+  if (!id_torneo || !id_categoria || isNaN(id_torneo) || isNaN(id_categoria)) {
+    return res.status(400).json({ error: 'Faltan parámetros o los parámetros son inválidos' })
   }
-});
-
-router.get('/:id', async (req, res) => {
   try {
-    const partido = await Partido.findByPk(req.params.id);
-    partido ? res.json(partido) : res.status(404).json({ error: "Partido no encontrado" });
+    const partidos = await Partido.findAll({
+      where: {
+        id_torneo: Number(id_torneo),
+        id_categoria: Number(id_categoria),
+      },
+    })
+    res.status(200).json(partidos)
   } catch (error) {
-    console.log("Error al buscar partido", error);
-    res.status(500).json({ error: "Error al buscar partido" });
+    console.log("Error al buscar partidos filtrados", error)
+    res.status(500).json({ error: "Error al buscar partidos filtrados" })
   }
-});
+})
 
 router.put('/:id', async (req, res) => {
   try {
