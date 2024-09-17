@@ -1,4 +1,4 @@
-# Sistema de Programación de Partidos para la Liga Regional de Voleibol del NOA
+# Sistema de Programación de Partidos para la Liga Regional de Voleibol del NOA Argentino
 
 Este proyecto es un sistema de gestión de torneos destinado a las federaciones de voleibol del NOA Argentino, que incluye las federaciones de Catamarca, La Rioja, Jujuy, Santiago del Estero, Salta y Tucumán. El sistema facilita la organización y administración de torneos, clubes, divisiones, estadios y partidos, además de gestionar usuarios y administradores para las seis federaciones participantes.
 
