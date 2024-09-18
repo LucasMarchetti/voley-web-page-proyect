@@ -25,14 +25,13 @@ const agregarDatosDePrueba = async () => {
     const permiso1 = await Permiso.create({ nombre_permiso: 'Permiso de acceso total' });
     const permiso2 = await Permiso.create({ nombre_permiso: 'Permiso de acceso limitado' });
 
-
     const usuarioExistente = await Usuario.findByPk(usuario.id_usuario);
-    const permisoExistente1 = await Permiso.findByPk(permiso1.id_permiso);
-    const permisoExistente2 = await Permiso.findByPk(permiso2.id_permiso);
+    const permisoExistente1 = await Permiso.findByPk(permiso1.dataValues.id_permiso);
+    const permisoExistente2 = await Permiso.findByPk(permiso2.dataValues.id_permiso);
 
     if (usuarioExistente && permisoExistente1 && permisoExistente2) {
-        await UsuarioPermiso.create({ id_usuario: usuario.id_usuario, id_permiso: permiso1.id_permiso });
-        await UsuarioPermiso.create({ id_usuario: usuario.id_usuario, id_permiso: permiso2.id_permiso });
+        await UsuarioPermiso.create({ id_usuario: usuario.id_usuario, id_permiso: permiso1.dataValues.id_permiso });
+        await UsuarioPermiso.create({ id_usuario: usuario.id_usuario, id_permiso: permiso2.dataValues.id_permiso });
       console.log('Datos de prueba agregados exitosamente.');
     } else {
       console.error('Error: Usuario o permisos no encontrados.');

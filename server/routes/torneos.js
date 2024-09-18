@@ -35,7 +35,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.put('/:id', authorize([1]), async (req, res) => {
+router.put('/:id', authorize([1,2]), async (req, res) => {
   try {
     const torneo = await Torneo.findByPk(req.params.id);
     if (!torneo) return res.status(404).json({ error: "Torneo no encontrado" });
@@ -46,7 +46,7 @@ router.put('/:id', authorize([1]), async (req, res) => {
   }
 });
 
-router.delete('/:id', authorize([1]), async (req, res) => {
+router.delete('/:id', authorize([1,2]), async (req, res) => {
   try {
     const torneo = await Torneo.findByPk(req.params.id);
     if (!torneo) return res.status(404).json({ error: "Torneo no encontrado" });
