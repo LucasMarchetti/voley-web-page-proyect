@@ -5,7 +5,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // Crear un nuevo token JWT
-const token = jwt.sign({ userId: 123 }, process.env.JWT_SECRET, { expiresIn: '1h' });
+const token = jwt.sign({ userId: 5 }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
 // Imprimir el token generado
 console.log('Nuevo token JWT:', token);
+

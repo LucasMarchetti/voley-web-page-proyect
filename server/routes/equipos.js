@@ -4,7 +4,7 @@ import authorize from '../middlewares/authorize.js'
 
 const router = express.Router()
 
-router.post('/', async (req, res) => {
+router.post('/', authorize([1]),async (req, res) => {
     try {
         const { nombre_equipo, logo_equipo, id_federacion } = req.body
         const nuevoEquipo = await Equipo.create({
