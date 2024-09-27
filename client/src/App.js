@@ -1,12 +1,12 @@
 
+import Inicio from "./pages/Inicio"
+
 function App() {
   return (
     <div>
-      <h1>
-        Federaciones de Voley - Pagina Web
-      </h1>
+      <Inicio />
     </div>
-  );
+  )
 }
 
 export default App;
