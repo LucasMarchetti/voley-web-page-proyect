@@ -1,5 +1,5 @@
 //Styles
-import "../components/federacionCatamarca.css"
+import "../components/styles/federacionJujuy.css"
 
 
 export default function federacionJujuy () {

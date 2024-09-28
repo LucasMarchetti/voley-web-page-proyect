@@ -1,5 +1,5 @@
 //Styles
-import "../components/federacionCatamarca.css"
+import "../components/styles/federacionLaRioja.css"
 
 
 export default function federacionLaRioja () {

@@ -1,5 +1,5 @@
 //Styles
-import "../components/federacionCatamarca.css"
+import "../components/styles/federacionTucuman.css"
 
 
 export default function federacionTucuman () {

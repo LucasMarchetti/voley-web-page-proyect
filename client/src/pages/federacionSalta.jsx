@@ -1,5 +1,5 @@
 //Styles
-import "../components/federacionCatamarca.css"
+import "../components/styles/federacionSalta.css"
 
 
 export default function federacionSalta () {

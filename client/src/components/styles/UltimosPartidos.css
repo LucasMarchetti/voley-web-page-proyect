@@ -1,0 +1,14 @@
+.conteiner-ultimos-partidos {
+    width: calc(100% - 40px); /* Restamos el margen izquierdo y derecho (20px + 20px) */
+    background-color: rgb(217, 217, 217);
+    height: 400px;
+    margin: 20px;
+    border: 1px solid rgb(214, 214, 214);
+    border-radius: 30px;
+}
+
+.title-ultimos-partidos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
