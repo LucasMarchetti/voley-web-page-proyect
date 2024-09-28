@@ -1,0 +1,71 @@
+
+.conteiner-inicio {
+    width: 100%;
+}
+
+.conteiner-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 70px;
+}
+
+.title-inicio {
+    font-size: 80px;
+    width: 800px;
+    margin: 0;
+}
+
+.images-header {
+    display: flex;
+}
+
+.logo-header {
+    width: 230px;
+    height: 140px;
+}
+
+.conteiner-sub-title {
+    width: 60%;
+    margin-left: 110px;
+}
+
+.conteiner-header-federaciones {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-title-inicio {
+    font-size: 30px;
+    color: rgb(56, 56, 56);
+}
+
+.conteiner-header-images {
+    display: flex;
+}
+
+.images-header {
+    display: flex;
+}
+
+.img-header-voley {
+    width: 430px;
+    height: 540px;
+    margin-right: 100px;
+    object-fit: contain;
+}
+
+.images-federaciones {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 40px; 
+    justify-items: center; 
+    margin: 50px 0;
+}
+
+.logo-header {
+    width: 230px;
+    height: 140px;
+    object-fit: contain;
+}
