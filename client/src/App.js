@@ -1,12 +1,18 @@
 
+//React Routes
+import { Route, Routes } from "react-router-dom"
+
+//styles
 import "./App.css"
+
+//pages
 import Inicio from "./pages/Inicio"
 
 function App() {
   return (
-    <div>
-      <Inicio />
-    </div>
+    <Routes>
+      <Route exact path="/" element={<Inicio />} />
+    </Routes>
   )
 }
 

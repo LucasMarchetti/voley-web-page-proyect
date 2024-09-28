@@ -1,4 +1,3 @@
-
 //components
 import NavBar from "../components/NavBar.jsx"
 
@@ -16,7 +15,7 @@ import logoJujuy from "../multimedia/logoJujuy2.png"
 import logoTucuman from "../multimedia/logoTucuman.webp"
 import imageVoley from "../multimedia/voley-mujer.webp"
 
-export default function Inicio () {
+export default function Inicio() {
     return (
         <div className="conteiner-inicio">
             <NavBar />
@@ -25,13 +24,13 @@ export default function Inicio () {
                     Federaciones de Voley del NOA
                 </h1>
                 <div className="images-header">
-                    <img 
-                        src={logoFeva}
-                        alt="Logo FEVA"
+                    <img
+                        src={logoLRV}
+                        alt="Logo LRV"
                         className="logo-header"
                     />
-                    <img 
-                        src={logoLRV}
+                    <img
+                        src={logoFeva}
                         alt="Logo FEVA"
                         className="logo-header"
                     />
@@ -42,46 +41,70 @@ export default function Inicio () {
 
                     <div className="conteiner-sub-title">
                         <h3 className="sub-title-inicio">
-                            Descrubre todo lo que ofrecen estas federaciones para el desarrollo del voleibol en sus respectivas provincias.
+                            Descubre todo lo que ofrecen estas federaciones para el desarrollo del voleibol en sus respectivas provincias.
                         </h3>
                     </div>
 
                     <div className="images-header">
                         <div className="images-federaciones">
-                            <img 
-                                src={logoCatamarca}
-                                alt="logoCatamarca"
-                                className="logo-header"
-                            />
-                            <img 
-                                src={logoRioja}
-                                alt="logoRioja "
-                                className="logo-header"
-                            />
-                            <img 
-                                src={logoSalta}
-                                alt="Logo logoSalta"
-                                className="logo-header"
-                            />
-                            <img 
-                                src={logoSantiago}
-                                alt="Logo logoSantiago"
-                                className="logo-header"
-                            />
-                            <img 
-                                src={logoTucuman}
-                                alt="Logo logoTucuman"
-                                className="logo-header"
-                            />
-                            <img 
-                                src={logoJujuy}
-                                alt="Logo logoJujuy"
-                                className="logo-header"
-                            />                
+                            {/* Catamarca */}
+                            <div className="logo-container">
+                                <img
+                                    src={logoCatamarca}
+                                    alt="logoCatamarca"
+                                    className="logo-header"
+                                />
+                                <div className="tooltip">Federación Catamarca</div>
+                            </div>
+                            {/* La Rioja */}
+                            <div className="logo-container">
+                                <img
+                                    src={logoRioja}
+                                    alt="logoRioja"
+                                    className="logo-header"
+                                />
+                                <div className="tooltip">Federación La Rioja</div>
+                            </div>
+                            {/* Salta */}
+                            <div className="logo-container">
+                                <img
+                                    src={logoSalta}
+                                    alt="logoSalta"
+                                    className="logo-header"
+                                />
+                                <div className="tooltip">Federación Salta</div>
+                            </div>
+                            {/* Santiago del Estero */}
+                            <div className="logo-container">
+                                <img
+                                    src={logoSantiago}
+                                    alt="logoSantiago"
+                                    className="logo-header"
+                                />
+                                <div className="tooltip">Federación Santiago del Estero</div>
+                            </div>
+                            {/* Tucumán */}
+                            <div className="logo-container">
+                                <img
+                                    src={logoTucuman}
+                                    alt="logoTucuman"
+                                    className="logo-header"
+                                />
+                                <div className="tooltip">Federación Tucumán</div>
+                            </div>
+                            {/* Jujuy */}
+                            <div className="logo-container">
+                                <img
+                                    src={logoJujuy}
+                                    alt="logoJujuy"
+                                    className="logo-header"
+                                />
+                                <div className="tooltip">Federación Jujuy</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <img 
+                <img
                     src={imageVoley}
                     alt="img-voley"
                     className="img-header-voley"
