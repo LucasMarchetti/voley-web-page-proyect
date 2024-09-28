@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 //Styles
-import "./NavBar.css"
+import "./styles/NavBar.css"
 
 export default function NavBar () {
 

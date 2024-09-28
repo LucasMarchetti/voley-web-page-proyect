@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom"
 import NavBar from "../components/NavBar.jsx"
 
 //styles
-import "../components/Inicio.css"
+import "../components/styles/Inicio.css"
 
 //images
 import logoFeva from "../multimedia/logoFEVA2.png"
