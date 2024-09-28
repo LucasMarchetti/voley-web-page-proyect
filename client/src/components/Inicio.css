@@ -93,4 +93,5 @@
     width: 230px;
     height: 140px;
     object-fit: contain;
+    cursor: pointer;
 }

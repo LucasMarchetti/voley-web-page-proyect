@@ -1,3 +1,7 @@
+
+//React-Router
+import { useNavigate } from "react-router-dom"
+
 //components
 import NavBar from "../components/NavBar.jsx"
 
@@ -16,6 +20,13 @@ import logoTucuman from "../multimedia/logoTucuman.webp"
 import imageVoley from "../multimedia/voley-mujer.webp"
 
 export default function Inicio() {
+
+    const navigate = useNavigate()
+
+    const handleNavigation = (path) => {
+        navigate(path)
+    }
+
     return (
         <div className="conteiner-inicio">
             <NavBar />
@@ -41,14 +52,17 @@ export default function Inicio() {
 
                     <div className="conteiner-sub-title">
                         <h3 className="sub-title-inicio">
-                            Descubre todo lo que ofrecen estas federaciones para el desarrollo del voleibol en sus respectivas provincias.
+                        Explora los torneos y partidos organizados por estas federaciones para impulsar el voleibol en sus provincias.
                         </h3>
                     </div>
 
                     <div className="images-header">
                         <div className="images-federaciones">
                             {/* Catamarca */}
-                            <div className="logo-container">
+                            <div 
+                             className="logo-container"
+                             onClick={() => handleNavigation("/catamarca")}
+                             >
                                 <img
                                     src={logoCatamarca}
                                     alt="logoCatamarca"
@@ -57,7 +71,10 @@ export default function Inicio() {
                                 <div className="tooltip">Federación Catamarca</div>
                             </div>
                             {/* La Rioja */}
-                            <div className="logo-container">
+                            <div 
+                             className="logo-container"
+                             onClick={() => handleNavigation("/larioja")}
+                             >
                                 <img
                                     src={logoRioja}
                                     alt="logoRioja"
@@ -66,7 +83,10 @@ export default function Inicio() {
                                 <div className="tooltip">Federación La Rioja</div>
                             </div>
                             {/* Salta */}
-                            <div className="logo-container">
+                            <div 
+                             className="logo-container"
+                             onClick={() => handleNavigation("/salta")}
+                             >
                                 <img
                                     src={logoSalta}
                                     alt="logoSalta"
@@ -75,7 +95,10 @@ export default function Inicio() {
                                 <div className="tooltip">Federación Salta</div>
                             </div>
                             {/* Santiago del Estero */}
-                            <div className="logo-container">
+                            <div 
+                             className="logo-container"
+                             onClick={() => handleNavigation("/stgdelestero")}
+                             >
                                 <img
                                     src={logoSantiago}
                                     alt="logoSantiago"
@@ -84,7 +107,10 @@ export default function Inicio() {
                                 <div className="tooltip">Federación Santiago del Estero</div>
                             </div>
                             {/* Tucumán */}
-                            <div className="logo-container">
+                            <div 
+                             className="logo-container"
+                             onClick={() => handleNavigation("/tucuman")}
+                             >
                                 <img
                                     src={logoTucuman}
                                     alt="logoTucuman"
@@ -93,7 +119,10 @@ export default function Inicio() {
                                 <div className="tooltip">Federación Tucumán</div>
                             </div>
                             {/* Jujuy */}
-                            <div className="logo-container">
+                            <div 
+                             className="logo-container"
+                             onClick={() => handleNavigation("/jujuy")}
+                             >
                                 <img
                                     src={logoJujuy}
                                     alt="logoJujuy"
