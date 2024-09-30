@@ -19,6 +19,7 @@ export default function NavBar () {
             <button className="btn-inicio" onClick={handleNavigation}>
                 Inicio
             </button>
+            
         </div>
     )
 }

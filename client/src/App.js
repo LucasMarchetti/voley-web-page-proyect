@@ -13,7 +13,7 @@ import Jujuy from "./pages/federacionJujuy.jsx"
 import Tucuman from "./pages/federacionTucuman.jsx"
 import Salta from "./pages/federacionSalta.jsx"
 import StgDelEstero from "./pages/federacionStgDelEstero.jsx"
-
+import InicioAdmin from "./pages/admin/Inicioadmin.jsx"
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
       <Route exact path="/tucuman" element={<Tucuman />} />
       <Route exact path="/jujuy" element={<Jujuy />} />
       <Route exact path="/stgdelestero" element={<StgDelEstero />} />
+      <Route exact path="/inicioadmin" element={<InicioAdmin />} />
     </Routes>
   )
 }

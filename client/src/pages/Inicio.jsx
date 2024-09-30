@@ -138,6 +138,7 @@ export default function Inicio() {
                     alt="img-voley"
                     className="img-header-voley"
                 />
+                <div onClick={() => handleNavigation("/inicioadmin")}></div>
             </div>
         </div>
     )
