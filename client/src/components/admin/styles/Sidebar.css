@@ -1,14 +1,14 @@
 /* Contenedor principal de la sidebar */
 .sidebar {
     position: fixed;
-    top: 0;
+    left: 0;
     width: 250px;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8); /* Negro con opacidad cuando está abierta */
     color: white;
     display: flex;
     flex-direction: column; /* Mantener la dirección en columna */
-    justify-content: space-between; /* Alinear los elementos en la columna */
+    justify-content: flex-start; /* Alinear los elementos en la columna */
     transition: width 0.3s ease, background-color 0.3s ease; /* Transición suave */
     padding-top: 20px;
   }
@@ -22,7 +22,13 @@
   .sidebar.open {
     width: 250px; /* Sidebar completamente desplegada */
   }
-  
+
+  .sidebar-content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
   /* Encabezado */
   .header {
     display: flex;
@@ -38,7 +44,6 @@
     margin: 0; /* Sin margen */
     padding: 10px; /* Padding agregado */
   }
-  
   /* Botón para mostrar/ocultar la sidebar */
   .toggle-btn {
     background-color: transparent; /* Sin fondo */
@@ -51,6 +56,7 @@
   
   /* Botones del menú */
   .menu-buttons {
+
     margin-bottom: 20px; /* Agregar espacio debajo de los botones del menú */
   }
   
@@ -65,7 +71,7 @@
     width: 100%;
     font-size: 16px;
     cursor: pointer;
-    border-bottom: 1px solid #555;
+    border-bottom: 1px solid #473636;
   }
   
   .sidebar-btn:hover {
@@ -93,8 +99,12 @@
   /* Sección de perfil alineada al fondo */
   .profile-section {
     text-align: center;
-    margin-bottom: 20px; /* Espacio en la parte inferior */
-  }
+    
+    bottom: 0;
+    margin-top: auto; /* Empuja la sección hacia la parte inferior */
+    padding: 20px; /* Agrega algo de relleno */
+    background-color: rgba(255, 255, 255, 0.1); /* Color de fondo opcional */
+}
   
   /* Información de perfil */
   .profile-info {
@@ -109,6 +119,7 @@
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
+    bottom: auto;
   }
   
   .profile-name {

@@ -1,0 +1,45 @@
+/* Contenedor principal */
+.container {
+    width: 300px;
+    height: 350px;
+    position: relative;
+    background: linear-gradient(to bottom, #48BFE3, #80FFDB);
+    font-family: 'Montserrat', sans-serif;
+    transition: background 1s ease-in-out; /* Transición de 1 segundo para el fondo */
+  }
+  
+  /* Cambios en hover para el contenedor */
+  .container:hover {
+    background: linear-gradient(to bottom, #5390D9, #7400B8);
+    cursor: pointer;
+    transition: background 1s ease-in-out;
+  }
+  
+  /* Subtítulo alineado a la derecha */
+  .subtitle {
+    top: 10px;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: regular;
+    margin-bottom: 0;
+    text-align: center; /* Centrar el texto horizontalmente */
+  }
+  
+  /* Título centrado, con efecto de hover */
+  .title {
+    margin: 0;
+    color: #000;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+  }
+  
+  /* Efectos en hover para el título */
+  .container:hover .title {
+    font-weight: bold;
+    color: #fff;
+    transform: scale(1.1);
+  }
+
+  

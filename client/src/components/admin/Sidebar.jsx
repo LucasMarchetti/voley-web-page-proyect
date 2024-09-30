@@ -33,7 +33,8 @@ const Sidebar = () => {
             {isOpen && <span>Permisos</span>}
           </button>
         </div>
-
+        <div class="content-group">
+        </div>
         {/* Sección de perfil y logout */}
         <div className="profile-section">
           <div className="profile-info">
