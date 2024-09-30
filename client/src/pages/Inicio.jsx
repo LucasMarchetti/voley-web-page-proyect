@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 //components
 import NavBar from "../components/NavBar.jsx"
+import SShapeComponent from "../components/SShapeComponent.jsx"
 
 //styles
 import "../components/styles/Inicio.css"
@@ -30,6 +31,8 @@ export default function Inicio() {
     return (
         <div className="conteiner-inicio">
             <NavBar />
+            <SShapeComponent/>
+            
             <div className="conteiner-header">
                 <h1 className="title-inicio">
                     Federaciones de Voley del NOA

@@ -1,0 +1,12 @@
+/* SShapeComponent.css */
+.s-shape {
+    position: fixed;
+    right: 0; /* Fija el componente al lado derecho */
+    top: 0;   /* Empieza desde la parte superior */
+    width: 50vw; /* Cubre la mitad derecha de la pantalla */
+    height: 100vh; /* Cubre toda la altura de la pantalla */
+    background-color: yellow;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 50%, 50% 0);
+    z-index: -1; /* Para que no interfiera con otros elementos */
+  }
+  
