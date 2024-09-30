@@ -8,9 +8,13 @@ export default function UltimosPartidos () {
 
     return (
         <div className="conteiner-ultimos-partidos">
-            <h1 className="title-ultimos-partidos">
-                Últimos partidos 
-            </h1>
+            <div className="">
+                <h1 className="title-ultimos-partidos">
+                    Últimos partidos
+                </h1>
+                <button>Torneos</button>
+                <button>Categoría</button>
+            </div>
         </div>
     )
 }
