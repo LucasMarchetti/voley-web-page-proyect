@@ -13,6 +13,8 @@ import store from './redux/store.js';
 //Component
 import App from './App';
 
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>

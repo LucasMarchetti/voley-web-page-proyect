@@ -10,7 +10,6 @@ import UltimosPartidos from "../components/UltimosPartidos.jsx"
 
 export default function federacionCatamarca () {
 
-
     return (
         <div>
             <NavBarFederaciones />

@@ -1,5 +1,5 @@
 .admin-page {
-    background-image: url('../../components/admin/resources/DeWatermark.ai_1726344542388.jpg'); 
+    display: flex;
     background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen */
     height: 100vh; /* Altura completa de la ventana */
