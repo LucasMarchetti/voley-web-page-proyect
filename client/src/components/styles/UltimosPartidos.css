@@ -1,14 +1,62 @@
 .conteiner-ultimos-partidos {
-    width: calc(100% - 40px); /* Restamos el margen izquierdo y derecho (20px + 20px) */
-    background-color: rgb(217, 217, 217);
-    height: 400px;
+    width: calc(100% - 50px); 
+    background-color: #63d3ffa5;
+    height: 500px;
     margin: 20px;
-    border: 1px solid rgb(214, 214, 214);
+    /* border: 1px solid rgb(214, 214, 214); */
     border-radius: 30px;
 }
 
-.title-ultimos-partidos {
+.conteiner-title-btns {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Para separar el título y los botones */
     align-items: center;
+    width: 100%;
+    padding: 10px; /* Añadir algo de espacio alrededor */
 }
+
+.title-ultimos-partidos {
+    flex: 1; 
+    font-size: 30px;
+    color: #ff1414;
+    margin-bottom: 0;
+    margin-left: 40px;
+}
+
+
+.title-ultimos-partidos2 {
+    flex: 1;
+    font-size: 40px;
+    margin-top: 0;
+    margin-left: 40px;
+}
+
+.conteiner-btns-ultimos {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; /* Espacio entre los botones */
+    margin-right: 50px;
+}
+
+.btn-ultimos{
+    background-color: white;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.btn-ultimos:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.conteiner-cartas {
+    display: flex;
+    width: 100%;
+    gap: 25px;
+    /* padding: 10px; */
+    justify-content: center;
+}
+
