@@ -6,7 +6,7 @@ import "../components/styles/federacionCatamarca.css"
 import NavBarFederaciones from "../components/NavBarFederaciones.jsx"
 import HeaderFederaciones from "../components/HeaderFederaciones.jsx"
 import UltimosPartidos from "../components/UltimosPartidos.jsx"
-
+import Torneos from "../components/torneos.jsx"
 
 export default function federacionCatamarca () {
 
@@ -15,9 +15,7 @@ export default function federacionCatamarca () {
             <NavBarFederaciones />
             <HeaderFederaciones nombre="Federación Catamarqueña de Voley"/>
             <UltimosPartidos />
+            <Torneos />
         </div>
     )
 }
-
-
-

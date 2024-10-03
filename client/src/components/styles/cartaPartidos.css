@@ -1,41 +1,57 @@
 
 .conteiner-cartaPartido {
-    width: 300px;
-    height: 330px;
-    border: 1px solid black;
+    min-width: 400px;
+    min-height: 370px;
     border-radius: 20px;
-    background-color: #0b4462;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #e6e6e6;
+    -webkit-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
 }
 
-.conteiner-fecha-lugar {
-    background-color: black;
-    color: white;
+.title-cartaPartido {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.title-cartaPartido2 {
     width: 100%;
-    border-radius: 19px 19px 0px 0px;
-    padding-top: 10px;
-    padding-bottom: 15px;
-}
-
-.conteiner-fecha-lugar h2  {
-    margin-bottom: 0;
-}
-
-.title-cartaPartido{
     display: flex;
     justify-content: center;
-    margin-top: 0;
+    background-color: black;
+    background-size: 80%;
+    color: white;
+    display: flex;
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-.conteiner-logos-equipos {
+.conteiner-equipos {
     display: flex;
     justify-content: center;
+}
+
+.conteiner-equipo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo-equipo {
     width: 140px;
     border: black;
     border-radius: 10px;
-    /* padding: 15PX; */
+}
+
+.title-nombre-equipo {
+    margin: 0;
+    justify-content: center;
 }
 
 .conteiner-logos-equipos p {
@@ -48,15 +64,19 @@
 
 .sets-partido {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     height: 50px;
     gap: 0px;
+    margin-top: 30px;
+    color: black;
 }
 
 .sets {
-    font-size: 50px;
+    font-size: 60px;
     margin: 0;
-    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .sets-partido p {
@@ -64,5 +84,4 @@
     align-items: center;
     font-size: 30px;
     margin: 0;
-    color: white;
 }

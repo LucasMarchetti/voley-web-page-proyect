@@ -1,0 +1,44 @@
+
+.conteiner-torneos {
+    width: 100%;
+    height: 500px;
+    background-color: #0b4462;
+    color: white;
+    margin: 0;
+}
+
+.conteiner-titles-torneos {
+    padding-top: 10px;
+}
+
+.sub-title-torneos {
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-left: 142px;
+}
+
+.title-torneos {
+    margin-top: 0;
+    font-size: 50px;
+    margin-left: 140px;
+}
+
+.conteiner-titles-btn {
+    display: flex;
+}
+
+.btn-torneos {
+    height: 55px;
+    width: 130px;
+    font-size: 20px;
+    margin-left: 120px;
+    border-radius: 20px;
+    background-color: white;
+    border: 0;
+}
+
+.btn-torneos:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
