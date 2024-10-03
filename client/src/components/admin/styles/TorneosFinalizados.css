@@ -1,0 +1,54 @@
+/* Contenedor principal */
+.container-TorneosFinalizados {
+    width: 300px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(to bottom, #80FFDB, #630ff5); 
+    background-size: 200% 200%; 
+    background-position: top;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-position 0.5s ease-in-out;
+}
+
+.container-TorneosFinalizados:hover {
+    background-position: bottom; 
+    cursor: pointer;
+}
+    
+  
+.subtitle-TorneosFinalizados {
+    top: 5px;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: regular;
+    margin-bottom: 0;
+    text-align: center; 
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+    
+  
+.title-TorneosFinalizados {
+    margin: 0;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-align: center;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+    
+  
+.container-TorneosFinalizados:hover .title-TorneosFinalizados {
+    font-weight: bold;
+    color: #fff;
+    transform: scale(1.2);
+}
+  
+.container-TorneosFinalizados:hover .subtitle-TorneosFinalizados {
+    font-weight: bold;
+    color: #fff;
+    transform: scale(1.2);
+}
+    

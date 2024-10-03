@@ -1,15 +1,19 @@
 import CategorySelect from "../../components/admin/CategorySelect";
 import Sidebar from "../../components/admin/Sidebar";
-import RoundRobinCard from "../../components/admin/RoundRobinCard";
+import Box from "../../components/admin/Box";
+import React, { useState } from "react";
 
 import "./styles.css"
 
-export default function federacionCatamarca () {
-
+export default function InicioAdmin () {
+    const [activeTab, setActiveTab] = useState("torneos"); // Estado inicial
     return (
-        <div className="admin-page">
-            <Sidebar/>
-            <RoundRobinCard/>
-        </div>
+        <body className="body-admin">
+            <div className="admin-page">
+                <Sidebar setActiveTab={setActiveTab} activeTab={activeTab} />
+                <Box activeTab={activeTab} />
+            </div>
+        </body>
+        
     )
 }

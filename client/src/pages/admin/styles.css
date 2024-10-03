@@ -1,3 +1,7 @@
+.body-admin {
+  background: rgb(0, 0, 0);
+}
+
 .admin-page {
     display: flex;
     background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
@@ -8,3 +12,44 @@
     align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
   }
+
+.contenedor-padre {
+  display: flex;
+  gap: 20px;
+}
+
+.contenedor-hijo{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+
+.contenedor-relleno-c {
+    width: 300px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    background-color: yellow;
+}
+
+.contenedor-relleno-m {
+  width: 300px;
+  height: 350px;
+  border: 2px solid #ffffff;
+  background-color: yellow;
+}
+
+.contenedor-relleno-gxl {
+  width: 500px;
+  height: 350px;
+  border: 2px solid #ffffff;
+  background-color: yellow;
+}
+
+.contenedor-relleno-gxs {
+  width: 500px;
+  height: 100px;
+  border: 2px solid #ffffff;
+  background-color: yellow;
+}
