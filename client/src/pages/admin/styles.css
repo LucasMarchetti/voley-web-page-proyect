@@ -1,3 +1,7 @@
+body {
+  background: rgb(0, 0, 0);
+}
+
 .admin-page {
     display: flex;
     background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
@@ -8,3 +12,18 @@
     align-items: center; /* Centrar verticalmente */
     justify-content: center; /* Centrar horizontalmente */
   }
+
+.contenedor-padre {
+  display: flex;
+  gap: 20px;
+}
+
+.contenedor-hijo{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+
+
