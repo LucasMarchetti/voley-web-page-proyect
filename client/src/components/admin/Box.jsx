@@ -7,6 +7,10 @@ import NewStadiumCard from "./NewStadiumCard";
 import AllStadiumsCard from "./AllStadiumsCard";
 import NewPermissionCard from "./NewPermissionCard";
 import AllPermissionsCard from "./AllPermissionsCard";
+import PersonalizedTournamentCard from "./PersonalizedTournamentCard";
+import NewCategoryCard from "./NewCategoryCard";
+import AllCategorysCard from "./AllCategorysCard";
+import PersonalizedPermissionCard from "./PersonalizedPermissionCard";
 
 import './styles/Box.css';
 
@@ -23,7 +27,7 @@ const Box = ({ activeTab }) => {
           <div className="contenedor-relleno-c"></div>
         </div>
         <div className="contenedor-hijo">
-          <div className="contenedor-relleno-gxl"></div>
+          <PersonalizedTournamentCard/>
           <div className="contenedor-relleno-gxs"></div>
         </div>
       </div>
@@ -36,8 +40,8 @@ const Box = ({ activeTab }) => {
           <AllTeamsCard />
         </div>
         <div className="contenedor-hijo">
-          <div className="contenedor-relleno-m"></div>
-          <div className="contenedor-relleno-c"></div>
+          <NewCategoryCard/>
+          <AllCategorysCard/>
         </div>
         <div className="contenedor-hijo">
           <NewStadiumCard />
@@ -57,7 +61,7 @@ const Box = ({ activeTab }) => {
           <AllPermissionsCard />
         </div>
         <div className="contenedor-hijo">
-          <div className="contenedor-relleno-gxl"></div>
+          <PersonalizedPermissionCard/>
         </div>
       </div>
     );
