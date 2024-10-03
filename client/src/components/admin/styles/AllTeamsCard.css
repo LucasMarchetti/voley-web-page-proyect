@@ -1,5 +1,5 @@
 /* Contenedor principal */
-.container-personalized-round-robin {
+.container-AllTeamsCard {
     width: 300px;
     height: 100px;
     border: 2px solid #ffffff;
@@ -13,13 +13,14 @@
     transition: background-position 0.5s ease-in-out;
 }
 
-.container-personalized-round-robin:hover {
+
+.container-AllTeamsCard:hover {
     background-position: bottom; 
     cursor: pointer;
 }
     
   
-.subtitle-rrp {
+.subtitle-AllTeamsCard {
     top: 5px;
     color: #000;
     font-size: 0.8rem;
@@ -30,23 +31,23 @@
 }
     
   
-.title-rrp {
+.title-AllTeamsCard {
     margin: 0;
     color: #000;
-    font-size: 2rem;
+    font-size: 1.6rem;
     font-weight: normal;
     text-align: center;
     transition: transform 0.3s ease, font-weight 0.3s ease;
 }
     
   
-.container-personalized-round-robin:hover .title-rrp {
+.container-AllTeamsCard:hover .title-AllTeamsCard {
     font-weight: bold;
     color: #fff;
-    transform: scale(1.2);
+    transform: scale(1.13);
 }
   
-.container-personalized-round-robin:hover .subtitle-rrp {
+.container-AllTeamsCard:hover .subtitle-AllTeamsCard {
     font-weight: bold;
     color: #fff;
     transform: scale(1.2);

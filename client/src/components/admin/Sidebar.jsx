@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import './styles/Sidebar.css';
 import { FaTrophy, FaCogs, FaUserShield, FaSignOutAlt, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-const Sidebar = () => {
+const Sidebar = ({ setActiveTab, activeTab }) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -20,18 +19,27 @@ const Sidebar = () => {
 
       <div className="sidebar-content">
         <div className="menu-buttons">
-          <button className="sidebar-btn">
-            <FaTrophy className="icon" />
-            {isOpen && <span>Torneos</span>}
-          </button>
-          <button className="sidebar-btn">
-            <FaCogs className="icon" />
-            {isOpen && <span>Gestión</span>}
-          </button>
-          <button className="sidebar-btn">
-            <FaUserShield className="icon" />
-            {isOpen && <span>Permisos</span>}
-          </button>
+        <button
+          className={`sidebar-btn ${activeTab === "torneos" ? "active" : ""}`}
+          onClick={() => setActiveTab("torneos")}
+        >
+        <FaTrophy className="icon" />
+        {isOpen && <span>Torneos</span>}
+      </button>
+      <button
+        className={`sidebar-btn ${activeTab === "gestion" ? "active" : ""}`}
+        onClick={() => setActiveTab("gestion")}
+      >
+        <FaCogs className="icon" />
+        {isOpen && <span>Gestión</span>}
+      </button>
+      <button
+        className={`sidebar-btn ${activeTab === "permisos" ? "active" : ""}`}
+        onClick={() => setActiveTab("permisos")}
+      >
+        <FaUserShield className="icon" />
+        {isOpen && <span>Permisos</span>}
+      </button>
         </div>
         <div class="content-group">
         </div>
