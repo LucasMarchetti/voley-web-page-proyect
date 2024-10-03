@@ -14,7 +14,7 @@ let Jujuy = {
       "email": "contacto@jujuyvoley.org",
       "telefono": "+54 388 423 2121",
       "direccion": "Calle Lavalle 324, San Salvador de Jujuy",
-      "logo": require("../multimedia/logoJujuy2.png")
+      "logo": require("../multimedia/logoJujuy3.png")
     }
 
 export default function federacionJujuy () {
