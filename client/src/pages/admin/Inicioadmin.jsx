@@ -1,35 +1,17 @@
 import CategorySelect from "../../components/admin/CategorySelect";
 import Sidebar from "../../components/admin/Sidebar";
-import RoundRobinCard from "../../components/admin/RoundRobinCard";
-import NewPermissionCard from "../../components/admin/NewPermissionCard";
-import AllPermissionsCard from "../../components/admin/AllPermissionsCard";
-import NewStadiumCard from "../../components/admin/NewStadiumCard";
-import AllStadiumsCard from "../../components/admin/AllStadiumsCard";
-import PersonalizedRoundRobinCard from "../../components/admin/PersonalizedRoundRobinCard";
+import Box from "../../components/admin/Box";
+import React, { useState } from "react";
+
 import "./styles.css"
 
-export default function federacionCatamarca () {
-
+export default function InicioAdmin () {
+    const [activeTab, setActiveTab] = useState("torneos"); // Estado inicial
     return (
-        <body>
+        <body className="body-admin">
             <div className="admin-page">
-                <Sidebar/>
-                <div className="contenedor-padre">
-                    <div className="contenedor-hijo">
-                        <RoundRobinCard/>
-                        <PersonalizedRoundRobinCard/>
-                    </div>
-                    <div className="contenedor-hijo">
-                        <NewPermissionCard/>
-                        <AllPermissionsCard/>
-                    </div>
-                    <div className="contenedor-hijo">
-                        <NewStadiumCard/>
-                        <AllStadiumsCard/>
-                    </div>
-
-                   
-                </div>
+                <Sidebar setActiveTab={setActiveTab} activeTab={activeTab} />
+                <Box activeTab={activeTab} />
             </div>
         </body>
         

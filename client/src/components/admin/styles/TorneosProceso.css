@@ -1,6 +1,6 @@
 /* Contenedor principal */
-.container-personalized-round-robin {
-    width: 300px;
+.container-TorneosProceso {
+    width: 500px;
     height: 100px;
     border: 2px solid #ffffff;
     display: flex;
@@ -13,13 +13,30 @@
     transition: background-position 0.5s ease-in-out;
 }
 
-.container-personalized-round-robin:hover {
+.container-TorneosProceso:hover {
     background-position: bottom; 
     cursor: pointer;
 }
+
+.voleyball {
+    position: relative;
+    top: 30px;
+    font-size: 80px;
+    color: black; 
+    opacity: 1;
+    transition: font-size 0.5s ease, color 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+}
+  
+.container-TorneosProceso:hover .voleyball {
+    font-size: 180px; 
+    color: white; 
+    opacity: 0.2; 
+    transform: rotate(180deg); 
+}
+  
     
   
-.subtitle-rrp {
+.subtitle-TorneosProceso {
     top: 5px;
     color: #000;
     font-size: 0.8rem;
@@ -30,25 +47,25 @@
 }
     
   
-.title-rrp {
+.title-TorneosProceso {
     margin: 0;
     color: #000;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: normal;
     text-align: center;
     transition: transform 0.3s ease, font-weight 0.3s ease;
 }
     
   
-.container-personalized-round-robin:hover .title-rrp {
+.container-TorneosProceso:hover .title-TorneosProceso {
     font-weight: bold;
     color: #fff;
     transform: scale(1.2);
 }
   
-.container-personalized-round-robin:hover .subtitle-rrp {
+.container-TorneosProceso:hover .subtitle-TorneosProceso {
     font-weight: bold;
     color: #fff;
     transform: scale(1.2);
 }
-    
+
