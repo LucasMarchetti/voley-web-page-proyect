@@ -1,7 +1,7 @@
 /* Contenedor principal */
 .container-NewCategoryCard {
-    width: 300px;
-    height: 350px;
+    width: 18.5rem;
+    height: 22rem;
     border: 2px solid #ffffff;
     display: flex;
     flex-direction: column;

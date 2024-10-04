@@ -1,7 +1,7 @@
 /* Contenedor principal */
 .container-AllUserCard {
-    width: 300px;
-    height: 100px;
+    width: 18.5rem;
+    height: 6rem;
     border: 2px solid #ffffff;
     display: flex;
     flex-direction: column;

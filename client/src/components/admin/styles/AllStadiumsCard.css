@@ -1,7 +1,7 @@
 /* Contenedor principal */
 .container-AllStadiumsCard {
-    width: 500px;
-    height: 100px;
+    width: 31rem;
+    height: 6rem;
     border: 2px solid #ffffff;
     display: flex;
     flex-direction: column;
