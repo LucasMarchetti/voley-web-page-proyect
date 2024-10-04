@@ -1,5 +1,5 @@
 .background-admin {
-  background: url(./DeWatermark.png);
+  background: url(./DeWatermark1.png);
   background-size: 110%;
   background-position: center; /* Asegúrate de que esté configurado en 'center' inicialmente */
   filter: blur(5px); /* Aplica el desenfoque */
