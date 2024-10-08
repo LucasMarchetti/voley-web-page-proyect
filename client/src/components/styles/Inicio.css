@@ -1,5 +1,12 @@
 .conteiner-inicio {
     width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.73), rgba(0, 0, 0, 0.73)), url('../../multimedia/portada-inicio-voley.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    letter-spacing: 1px;
+    height: 100%;
 }
 
 .conteiner-header {
@@ -10,7 +17,7 @@
 }
 
 .title-inicio {
-    font-size: 80px;
+    font-size: 100px;
     width: 800px;
     margin: 0;
 }
@@ -19,14 +26,32 @@
     display: flex;
 }
 
+.logo-headerLiga {
+    width: 230px;
+    height: 140px;
+    object-fit: contain;
+}
+
+.logo-headerLiga:hover {
+    background-color: #ffffff7e;
+    border-radius: 30%;
+}
+
 .logo-header {
     width: 230px;
     height: 140px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.logo-header:hover {
+    background-color: #ffffff7e;
+    border-radius: 30%;
 }
 
 .conteiner-sub-title {
     width: 60%;
-    margin-left: 110px;
+    margin-left: 215px;
 }
 
 .conteiner-header-federaciones {
@@ -35,8 +60,8 @@
 }
 
 .sub-title-inicio {
-    font-size: 30px;
-    color: rgb(56, 56, 56);
+    font-size: 40px;
+    color: white;
 }
 
 .conteiner-header-images {
@@ -73,6 +98,7 @@
     background-color: black;
     color: #fff;
     text-align: center;
+    font-size: 20px;
     border-radius: 5px;
     padding: 5px;
     position: absolute;
@@ -89,9 +115,3 @@
     opacity: 1;
 }
 
-.logo-header {
-    width: 230px;
-    height: 140px;
-    object-fit: contain;
-    cursor: pointer;
-}

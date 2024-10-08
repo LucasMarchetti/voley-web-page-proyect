@@ -2,13 +2,12 @@
 //styles
 import "./styles/HeaderFederaciones.css"
 
-
-export default function HeaderFederaciones ({ nombre }) {
+export default function HeaderFederaciones ({Provincia}) {
 
     return (
-        <div className="conteiner-title-federations">
+        <div className="navbarStyle">
             <h1 className="title-federaciones">
-                {nombre}
+                {Provincia.nombre}
             </h1>
         </div>
     )

@@ -1,0 +1,27 @@
+
+.conteiner-carta-torneo {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin-left: 40px;
+}
+
+.conteiner-titles-torneo {
+    color: black;
+}
+
+.conteiner-titles-torneo h1 {
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.conteiner-titles-torneo h3 {
+    margin-top: 0;
+    margin-left: 20px;
+}
+
+.conteiner-cartas-torneo {
+    display: flex;
+}

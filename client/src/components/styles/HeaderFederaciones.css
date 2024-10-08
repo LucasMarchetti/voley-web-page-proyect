@@ -1,0 +1,22 @@
+
+.navbarStyle {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../multimedia/portada-voley.jpg);
+    background-size: cover;
+    justify-content: center;
+    background-position: center;
+    margin: 0;
+    width: 100%;
+    height: 200px;
+    color: white;
+    display: flex;
+    align-items: center;
+    -webkit-box-shadow: 0px 20px 31px 0px rgba(153,153,153,1);
+    -moz-box-shadow: 0px 20px 31px 0px rgba(153,153,153,1);
+    box-shadow: 0px 20px 31px 0px rgba(153,153,153,1);
+    letter-spacing: 2px;
+}
+
+.title-federaciones {
+    color: white;
+    font-size: 50px;
+}

@@ -1,4 +1,3 @@
-
 //React-Router
 import { useNavigate } from "react-router-dom"
 
@@ -18,7 +17,6 @@ import logoSalta from "../multimedia/logoSalta.webp"
 import logoSantiago from "../multimedia/logoSantiago.webp"
 import logoJujuy from "../multimedia/logoJujuy2.png"
 import logoTucuman from "../multimedia/logoTucuman.webp"
-import imageVoley from "../multimedia/voley-mujer.webp"
 
 export default function Inicio() {
 
@@ -41,12 +39,12 @@ export default function Inicio() {
                     <img
                         src={logoLRV}
                         alt="Logo LRV"
-                        className="logo-header"
+                        className="logo-headerLiga"
                     />
                     <img
                         src={logoFeva}
                         alt="Logo FEVA"
-                        className="logo-header"
+                        className="logo-headerLiga"
                     />
                 </div>
             </div>
@@ -55,7 +53,7 @@ export default function Inicio() {
 
                     <div className="conteiner-sub-title">
                         <h3 className="sub-title-inicio">
-                        Explora los torneos y partidos organizados por estas federaciones para impulsar el voleibol en sus provincias.
+                            Explora los torneos y partidos organizados por estas federaciones para impulsar el voleibol en sus provincias.
                         </h3>
                     </div>
 
@@ -136,11 +134,6 @@ export default function Inicio() {
                         </div>
                     </div>
                 </div>
-                <img
-                    src={imageVoley}
-                    alt="img-voley"
-                    className="img-header-voley"
-                />
             </div>
         </div>
     )

@@ -1,0 +1,70 @@
+/* Contenedor principal */
+.container-NewStadiumCard {
+    width: 55vh;
+    height: 19vw;
+    border: 2px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(to bottom, #80FFDB, #630ff5); 
+    background-size: 200% 200%; 
+    background-position: top;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-position 0.5s ease-in-out;
+}
+
+.container-NewStadiumCard:hover {
+    background-position: bottom; 
+    cursor: pointer;
+}
+
+.voleyball {
+    position: relative;
+    top: 30px;
+    font-size: 80px;
+    color: black; 
+    opacity: 1;
+    transition: font-size 0.5s ease, color 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+}
+  
+.container-NewStadiumCard:hover .voleyball {
+    font-size: 180px; 
+    color: white; 
+    opacity: 0.2; 
+    transform: rotate(180deg); 
+}
+  
+    
+  
+.subtitle-NewStadiumCard {
+    top: 15px;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: regular;
+    margin-bottom: 0;
+    text-align: center; 
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+    
+  
+.title-NewStadiumCard {
+    margin: 0;
+    color: #000;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+    
+  
+.container-NewStadiumCard:hover .title-NewStadiumCard {
+    font-weight: bold;
+    color: #fff;
+    transform: scale(1.2);
+}
+  
+.container-NewStadiumCard:hover .subtitle-NewStadiumCard {
+    font-weight: bold;
+    color: #fff;
+    transform: scale(1.2);
+}

@@ -1,14 +1,89 @@
-.conteiner-ultimos-partidos {
-    width: calc(100% - 40px); /* Restamos el margen izquierdo y derecho (20px + 20px) */
-    background-color: rgb(217, 217, 217);
-    height: 400px;
-    margin: 20px;
-    border: 1px solid rgb(214, 214, 214);
-    border-radius: 30px;
+
+.conteiner-ultimos-partidos{
+    letter-spacing: 1px;
+    margin-bottom: 120px;
+    margin-top: 100px;
+    background-color: #fff;
 }
 
 .title-ultimos-partidos {
+    flex: 1;
+    font-size: 30px;
+    color: #ff1414;
+    margin-bottom: 0;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.title-ultimos-partidos.activo {
+    color: #000; 
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.title-ultimos-partidos:hover {
+    color: #000; 
+}
+
+.title-ultimos-partidos2 {
+    flex: 1;
+    font-size: 40px;
+    margin-top: 0;
+    margin-left: 40px;
+    margin-left: 100px;
+}
+
+.conteiner-cartas {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-x: auto; 
+    gap: 70px;
+    padding: 30px 0;
+    scroll-behavior: smooth; 
+    width: 100%;
+    scrollbar-width: none; 
+}
+
+.conteiner-cartas::-webkit-scrollbar {
+    display: none; 
+}
+
+.title-nombre-equipo {
+    font-size: 26px;
+}
+
+.carousel-btn {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.carousel-btn-left {
+    left: 10px;
+    top: 1000px;
+    font-size: 15px;
+    -webkit-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
+}
+
+.carousel-btn-right {
+    right: 10px;
+    top: 1000px;
+    font-size: 15px;
+    -webkit-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
+
+}
+
+.carousel-btn:hover {
+    background-color: white;
+    color: black;
 }

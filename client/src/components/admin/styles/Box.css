@@ -1,0 +1,41 @@
+.box {
+    display: flex;
+    gap: 35px;
+  }
+  
+  .contenedor-hijo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+  }
+  
+  
+  .contenedor-relleno-c {
+      width: 300px;
+      height: 100px;
+      border: 2px solid #ffffff;
+      background-color: yellow;
+  }
+  
+  .contenedor-relleno-m {
+    width: 300px;
+    height: 350px;
+    border: 2px solid #ffffff;
+    background-color: yellow;
+  }
+  
+  .contenedor-relleno-gxl {
+    width: 500px;
+    height: 350px;
+    border: 2px solid #ffffff;
+    background-color: yellow;
+  }
+  
+  .contenedor-relleno-gxs {
+    width: 500px;
+    height: 100px;
+    border: 2px solid #ffffff;
+    background-color: yellow;
+  }
+  

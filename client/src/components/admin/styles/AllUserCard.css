@@ -1,0 +1,55 @@
+/* Contenedor principal */
+.container-AllUserCard {
+    width: 30vh;
+    height: 5vw;
+    border: 2px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(to bottom, #80FFDB, #630ff5); 
+    background-size: 200% 200%; 
+    background-position: top;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-position 0.5s ease-in-out;
+}
+
+
+.container-AllUserCard:hover {
+    background-position: bottom; 
+    cursor: pointer;
+}
+    
+  
+.subtitle-AllUserCard {
+    top: 5px;
+    color: #000;
+    font-size: 0.8rem;
+    font-weight: regular;
+    margin-bottom: 0;
+    text-align: center; 
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+    
+  
+.title-AllUserCard {
+    margin: 0;
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-align: center;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+    
+  
+.container-AllUserCard:hover .title-AllUserCard {
+    font-weight: bold;
+    color: #fff;
+    transform: scale(1.13);
+}
+  
+.container-AllUserCard:hover .subtitle-AllUserCard {
+    font-weight: bold;
+    color: #fff;
+    transform: scale(1.2);
+}
+    
