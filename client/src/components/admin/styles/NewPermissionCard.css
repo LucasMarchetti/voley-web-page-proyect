@@ -1,7 +1,7 @@
 /* Contenedor principal */
 .container-NewPermissionCard {
-    width: 300px;
-    height: 350px;
+  width: 30vh;
+  height: 19vw;
     border: 2px solid #ffffff;
     display: flex;
     flex-direction: column;
