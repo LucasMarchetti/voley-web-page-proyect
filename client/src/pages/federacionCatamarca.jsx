@@ -1,7 +1,4 @@
 
-//Styles
-import "../components/styles/federacionCatamarca.css"
-
 //components
 import NavBarFederaciones from "../components/NavBarFederaciones.jsx"
 import HeaderFederaciones from "../components/HeaderFederaciones.jsx"
@@ -10,7 +7,7 @@ import Torneos from "../components/torneos.jsx"
 import Contact from "../components/Contact.jsx"
 
 let Catamarca = {
-    "nombre": "Federación Catamarqueña de Voley",
+    "nombre": "Federación Catamarqueña de Voleiball",
     "email": "contacto@catamarcavoley.com",
     "telefono": "+54 383 445 1234",
     "direccion": "Av. Gobernador Galíndez 123, San Fernando del Valle de Catamarca",

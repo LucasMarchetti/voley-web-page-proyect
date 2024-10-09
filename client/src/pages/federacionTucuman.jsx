@@ -1,5 +1,3 @@
-//Styles
-import "../components/styles/federacionTucuman.css"
 
 //components
 import Contact from "../components/Contact"
@@ -9,7 +7,7 @@ import UltimosPartidos from "../components/UltimosPartidos"
 import NavBarFederaciones from "../components/NavBarFederaciones.jsx"
 
 let Tucuman = {
-    "nombre": "Federación Tucumana de Voley",
+    "nombre": "Federación Tucumana de Voleiball",
     "email": "fedevoley@tucuman.gov.ar",
     "telefono": "+54 381 465 7890",
     "direccion": "Av. Aconquija 789, San Miguel de Tucumán",

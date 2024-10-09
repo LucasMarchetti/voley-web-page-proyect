@@ -1,5 +1,3 @@
-//Styles
-import "../components/styles/federacionStgDelEstero.css"
 
 //components
 import Contact from "../components/Contact"
@@ -10,7 +8,7 @@ import NavBarFederaciones from "../components/NavBarFederaciones.jsx"
 
 
 let SantiagodelEstero = {
-    "nombre": "Federación Santiagueña de Voley",
+    "nombre": "Federación Santiagueña de Voleiball",
     "email": "voley@santiago.gob.ar",
     "telefono": "+54 385 421 1414",
     "direccion": "Av. Belgrano Sur 910, Santiago del Estero",

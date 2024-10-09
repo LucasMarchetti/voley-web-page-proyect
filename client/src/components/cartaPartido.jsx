@@ -21,7 +21,7 @@ export default function CartaPartido ({ Equipo1, Equipo2, Partido}) {
                     />
                     <h3 className="title-nombre-equipo">{Equipo1.nombre}</h3>
                 </div>
-                <p>VS</p>
+                <h2>VS</h2>
                 <div className="conteiner-equipo">
                     <img
                         src={Equipo2.image}

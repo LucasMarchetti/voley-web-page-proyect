@@ -30,7 +30,7 @@ export default function Inicio() {
             <NavBar />
             <div className="conteiner-header">
                 <h1 className="title-inicio">
-                    Federaciones de Voley del NOA
+                    Federaciones de Voleiball del NOA
                 </h1>
                 <div className="images-header">
                     <img

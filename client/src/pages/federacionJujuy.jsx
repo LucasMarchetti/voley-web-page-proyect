@@ -1,5 +1,3 @@
-//Styles
-import "../components/styles/federacionJujuy.css"
 
 //components
 import Contact from "../components/Contact"
@@ -10,7 +8,7 @@ import NavBarFederaciones from "../components/NavBarFederaciones.jsx"
 
 
 let Jujuy = {
-      "nombre": "Federación Jujeña de Voley",
+      "nombre": "Federación Jujeña de Voleiball",
       "email": "contacto@jujuyvoley.org",
       "telefono": "+54 388 423 2121",
       "direccion": "Calle Lavalle 324, San Salvador de Jujuy",

@@ -1,5 +1,3 @@
-//Styles
-import "../components/styles/federacionLaRioja.css"
 
 //components
 import Contact from "../components/Contact"
@@ -9,7 +7,7 @@ import UltimosPartidos from "../components/UltimosPartidos"
 import NavBarFederaciones from "../components/NavBarFederaciones.jsx"
 
 let LaRioja = {
-    "nombre": "Federación Riojana de Voley",
+    "nombre": "Federación Riojana de Voleiball",
     "email": "contacto@voleylarioja.com",
     "telefono": "+54 380 432 1010",
     "direccion": "Calle Pelagio B. Luna 678, La Rioja Capital",
