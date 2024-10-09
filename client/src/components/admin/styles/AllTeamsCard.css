@@ -1,7 +1,7 @@
 /* Contenedor principal */
 .container-AllTeamsCard {
-    width: 300px;
-    height: 100px;
+    width: 30vh;
+    height: 5vw;
     border: 2px solid #ffffff;
     display: flex;
     flex-direction: column;

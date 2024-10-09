@@ -8,30 +8,37 @@
 }
 
 .conteiner-titles-torneos {
+    display: flex;
     padding-top: 10px;
 }
 
-.sub-title-torneos {
-    font-size: 30px;
+.title-torneos {
+    font-size: 50px;
     margin-bottom: 0;
     margin-left: 142px;
 }
 
-.title-torneos {
+.sub-title-torneos {
     margin-top: 0;
-    font-size: 50px;
-    margin-left: 140px;
+    font-size: 30px;
+    margin-left: 145px;
 }
 
 .conteiner-titles-btn {
     display: flex;
+    margin-left: 200px;
+    align-items: center;
+}
+
+.btn-torneos-p {
+    font-size: 30px;
 }
 
 .btn-torneos {
     height: 55px;
     width: 130px;
     font-size: 20px;
-    margin-left: 120px;
+    margin-left: 20px;
     border-radius: 20px;
     background-color: white;
     border: 0;
@@ -41,4 +48,38 @@
     cursor: pointer;
     background-color: black;
     color: white;
+}
+
+.dropdown-torneos {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu-torneos {
+    display: block;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.dropdown-menu-torneos li {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu-torneos li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu-torneos li:last-child {
+    border-bottom: none;
 }

@@ -1,7 +1,7 @@
 /* Contenedor principal */
-.container-PersonalizedPermissionCard {
-    width: 55vh;
-    height: 19vw;
+.container-TorneosProximos {
+    width: 30vh;
+    height: 5vw;
     border: 2px solid #ffffff;
     display: flex;
     flex-direction: column;
@@ -13,12 +13,12 @@
     transition: background-position 0.5s ease-in-out;
 }
 
-.container-PersonalizedPermissionCard:hover {
+.container-TorneosProximos:hover {
     background-position: bottom; 
     cursor: pointer;
 }
 
-.user-pen-icon {
+.voleyball {
     position: relative;
     top: 30px;
     font-size: 80px;
@@ -27,18 +27,19 @@
     transition: font-size 0.5s ease, color 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
 }
   
-.container-PersonalizedPermissionCard:hover .user-pen-icon {
+.container-TorneosProximos:hover .voleyball {
     font-size: 180px; 
     color: white; 
     opacity: 0.2; 
+    transform: rotate(180deg); 
 }
   
     
   
-.subtitle-PersonalizedPermissionCard {
-    top: 15px;
+.subtitle-TorneosProximos {
+    top: 5px;
     color: #000;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     font-weight: regular;
     margin-bottom: 0;
     text-align: center; 
@@ -46,24 +47,25 @@
 }
     
   
-.title-PersonalizedPermissionCard {
+.title-TorneosProximos {
     margin: 0;
     color: #000;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: normal;
     text-align: center;
     transition: transform 0.3s ease, font-weight 0.3s ease;
 }
     
   
-.container-PersonalizedPermissionCard:hover .title-PersonalizedPermissionCard {
+.container-TorneosProximos:hover .title-TorneosProximos {
     font-weight: bold;
     color: #fff;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
   
-.container-PersonalizedPermissionCard:hover .subtitle-PersonalizedPermissionCard {
+.container-TorneosProximos:hover .subtitle-TorneosProximos {
     font-weight: bold;
     color: #fff;
     transform: scale(1.2);
 }
+

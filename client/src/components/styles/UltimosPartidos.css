@@ -1,7 +1,9 @@
 
 .conteiner-ultimos-partidos{
     letter-spacing: 1px;
-    margin-bottom: 60px;
+    margin-bottom: 120px;
+    margin-top: 100px;
+    background-color: #fff;
 }
 
 .title-ultimos-partidos {
@@ -35,11 +37,11 @@
     display: flex;
     overflow-x: auto; 
     gap: 70px;
-    padding: 30px 0;
     scroll-behavior: smooth; 
-    width: 100%;
+    padding: 30px 70px; /* El padding aquí en lugar de afectar al ancho total */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
     scrollbar-width: none; 
-
+    width: 100%;
 }
 
 .conteiner-cartas::-webkit-scrollbar {
@@ -65,7 +67,7 @@
 
 .carousel-btn-left {
     left: 10px;
-    top: 850px;
+    top: 1000px;
     font-size: 15px;
     -webkit-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
@@ -74,7 +76,7 @@
 
 .carousel-btn-right {
     right: 10px;
-    top: 850px;
+    top: 1000px;
     font-size: 15px;
     -webkit-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 30px -7px rgba(0,0,0,0.75);

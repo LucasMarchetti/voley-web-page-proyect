@@ -1,0 +1,33 @@
+
+.conteiner-contact {
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+    justify-content: space-around;
+    letter-spacing: 1px;
+    gap: 0px;
+}
+
+.conteiner-contact-info {
+    font-size: 26px;
+}
+
+.contact-info-title {
+    margin: 0;
+}
+
+.contact-info-title2 {
+    margin-top: 0;
+}
+
+.conteiner-contact-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-federacion-contact {
+    width: 300px;
+
+}

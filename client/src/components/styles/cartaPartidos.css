@@ -34,6 +34,7 @@
 .conteiner-equipos {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .conteiner-equipo {

@@ -1,17 +1,38 @@
-.body-admin {
-  background: rgb(0, 0, 0);
+.background-admin {
+  background: url(./DeWatermark1.png);
+  background-size: 110%;
+  background-position: center; /* Asegúrate de que esté configurado en 'center' inicialmente */
+  filter: blur(5px); /* Aplica el desenfoque */
+  transition: background-position 0.1s ease-out;
+  position: absolute; /* Asegúrate de que esté posicionado correctamente */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Asegúrate de que esté detrás de otros elementos */
+}
+
+.overlay {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
 }
 
 .admin-page {
     display: flex;
-    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    height: 100vh; /* Altura completa de la ventana */
-    color: white; /* Color del texto */
-    display: flex; /* Para centrar el contenido */
-    align-items: center; /* Centrar verticalmente */
-    justify-content: center; /* Centrar horizontalmente */
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    color: white; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
   }
+
 
 .contenedor-padre {
   display: flex;

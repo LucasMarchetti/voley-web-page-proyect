@@ -7,10 +7,15 @@ import NewStadiumCard from "./NewStadiumCard";
 import AllStadiumsCard from "./AllStadiumsCard";
 import NewPermissionCard from "./NewPermissionCard";
 import AllPermissionsCard from "./AllPermissionsCard";
-import PersonalizedTournamentCard from "./PersonalizedTournamentCard";
+import PersonalizedPermissionCard from "./PersonalizedPermissionCard";
 import NewCategoryCard from "./NewCategoryCard";
 import AllCategorysCard from "./AllCategorysCard";
-import PersonalizedPermissionCard from "./PersonalizedPermissionCard";
+import PersonalizedTournamentCard from "./PersonalizedTournamentCard";
+import TorneosProceso from "./TorneosProceso";
+import GrandPrixCard from "./GrandPrixCard";
+import AllUserCard from "./AllUserCard";
+import NewUserCard from "./NewUserCard";
+import TorneosProximos from "./TorneosProximos";
 
 import './styles/Box.css';
 
@@ -23,12 +28,12 @@ const Box = ({ activeTab }) => {
           <TorneosFinalizados />
         </div>
         <div className="contenedor-hijo">
-          <div className="contenedor-relleno-m"></div>
-          <div className="contenedor-relleno-c"></div>
+          <GrandPrixCard/>
+          <TorneosProximos/>
         </div>
         <div className="contenedor-hijo">
           <PersonalizedTournamentCard/>
-          <div className="contenedor-relleno-gxs"></div>
+          <TorneosProceso/>
         </div>
       </div>
     );
@@ -53,8 +58,8 @@ const Box = ({ activeTab }) => {
     return (
       <div className="box">
         <div className="contenedor-hijo">
-          <div className="contenedor-relleno-m"></div>
-          <div className="contenedor-relleno-c"></div>
+          <NewUserCard/>
+          <AllUserCard/>
         </div>
         <div className="contenedor-hijo">
           <NewPermissionCard />
