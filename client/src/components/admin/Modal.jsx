@@ -4,6 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { closeModal } from '../../redux/reducers/modalSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import ModalNewTeam from './modalStates/ModalNewTeamState';
+import ModalNewTeamState from './modalStates/ModalNewTeamState';
+import ModalNewCategoryState from './modalStates/ModalNewCategoryState';
+import ModalNewStadiumState from './modalStates/ModalNewStadiumState';
+import ModalRoundRobinState from './modalStates/ModalRoundRobinStateSteps/ModalRoundRobinState';
 
 
 const Modal = () => {
@@ -13,7 +18,7 @@ const Modal = () => {
   const renderContent = () => {
     switch (modalState) {
       case 'ModalRoundRobinState':
-        return <h1 className='titulos-prueba'>Soy ModalRoundRobinState</h1>;
+        return <ModalRoundRobinState/>;
       case 'ModalGrandPrixState':
         return <h1 className='titulos-prueba'>Soy ModalGrandPrixState</h1>;
       case 'ModalPersonalizedTournamentState':
@@ -25,11 +30,11 @@ const Modal = () => {
       case 'ModalTorneoProximosState':
         return <h1 className='titulos-prueba'>Soy ModalTorneoProximosState</h1>;
       case 'ModalNewTeamState':
-        return <h1 className='titulos-prueba'>Soy ModalNewTeamState</h1>;
+        return <ModalNewTeamState/>;
       case 'ModalNewCategoryState':
-        return <h1 className='titulos-prueba'>Soy ModalNewCategoryState</h1>;
+        return <ModalNewCategoryState/>;
       case 'ModalNewStadiumState':
-        return <h1 className='titulos-prueba'>Soy ModalNewStadiumState</h1>;
+        return <ModalNewStadiumState/>
       case 'ModalAllTeamsState':
         return <h1 className='titulos-prueba'>Soy ModalAllTeamsState</h1>;
       case 'ModalAllStadiumsState':
@@ -54,7 +59,7 @@ const Modal = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="modal show" onClick={() => dispatch(closeModal())}>
+    <div className="modal show">
         <button className="modal-close-button" onClick={() => dispatch(closeModal())}>
           <FontAwesomeIcon icon={faTimes} />
         </button>

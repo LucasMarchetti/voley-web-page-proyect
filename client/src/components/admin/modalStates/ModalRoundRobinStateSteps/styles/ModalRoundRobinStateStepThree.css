@@ -1,0 +1,46 @@
+
+
+
+.round-robin-step-three-container {
+  text-align: center;
+  color: black;
+}
+
+/* Estilo de cada enfrentamiento */
+.round-robin-matchup {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 0;
+}
+
+.round-robin-matchup:last-child {
+  border-bottom: none;
+}
+
+.round-robin-matchup h3 {
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.round-robin-matchup label {
+  display: block;
+  margin-bottom: 15px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.round-robin-matchup input,
+.round-robin-matchup select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+/* Botones */
+.round-robin-button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}

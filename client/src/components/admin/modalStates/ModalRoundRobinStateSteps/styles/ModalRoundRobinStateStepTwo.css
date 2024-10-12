@@ -1,0 +1,36 @@
+/* Contenedor del paso dos */
+.round-robin-step-two-container {
+  text-align: center;
+  color: black;
+}
+
+/* Grupo de input */
+.round-robin-input-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+/* Etiquetas */
+.round-robin-input-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Contenedor de react-select */
+.round-robin-react-select-container {
+  margin-top: 5px;
+}
+
+/* Información de selección */
+.round-robin-selection-info {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* Botones */
+.round-robin-button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}

@@ -2,6 +2,9 @@
     position: fixed;
     top: 50%;  /* Posiciona el modal al 50% desde el top de la ventana */
     left: 50%; /* Posiciona el modal al 50% desde el left de la ventana */
+    max-height: 80%;
+    overflow-y: auto; /* Permite el scroll vertical en el step 3 */
+    overflow-x: hidden;
     transform: translate(-50%, -50%); /* Traslada el modal un 50% hacia arriba y a la izquierda para centrarlo */
     background: white;
     padding: 20px;

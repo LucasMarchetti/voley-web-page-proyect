@@ -1,0 +1,35 @@
+/* Contenedor centrado */
+.round-robin-step-one-container {
+  text-align: center;
+  color: black;
+}
+
+/* Botones de número */
+.round-robin-number-button {
+  background-color: #ffffff;
+  color: #007bff;
+  border: 2px solid #007bff;
+  padding: 12px 20px;
+  margin: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.2em;
+  width: 60px;
+  height: 60px;
+}
+
+.round-robin-number-button:hover,
+.round-robin-number-button.selected {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.round-robin-number-button:focus {
+  outline: none;
+}
+
+/* Botón siguiente */
+.round-robin-next-button {
+  margin-top: 20px;
+}
