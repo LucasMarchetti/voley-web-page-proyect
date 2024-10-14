@@ -1,0 +1,44 @@
+/* Contenedor del resumen */
+.round-robin-summary {
+  text-align: center;
+  color: black;
+}
+
+.round-robin-summary h2 {
+  margin-bottom: 25px;
+}
+
+.round-robin-summary p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.round-robin-summary-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.round-robin-summary-list li {
+  background-color: #f9f9f9;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: left;
+}
+
+/* Estilo de cada enfrentamiento en el resumen */
+.round-robin-matchup-summary {
+  background-color: #f1f1f1;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+  text-align: left;
+}
+
+/* Botones */
+.round-robin-button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}

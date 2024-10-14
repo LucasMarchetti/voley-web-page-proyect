@@ -1,0 +1,55 @@
+.modal {
+    position: fixed;
+    top: 50%;  /* Posiciona el modal al 50% desde el top de la ventana */
+    left: 50%; /* Posiciona el modal al 50% desde el left de la ventana */
+    max-height: 80%;
+    overflow-y: auto; /* Permite el scroll vertical en el step 3 */
+    overflow-x: hidden;
+    transform: translate(-50%, -50%); /* Traslada el modal un 50% hacia arriba y a la izquierda para centrarlo */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: scale(0); /* Escalar el modal a 0 al principio */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+  }
+
+
+  .titulos-prueba{
+    color: #000;
+  }
+  
+  .modal.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); /* Asegura que el modal esté centrado y a tamaño normal cuando está abierto */
+  }
+  
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .modal-close-button {
+    position: absolute;
+    top: 10px; /* Posición en la esquina superior */
+    right: 10px; /* Posición en la esquina derecha */
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición para el hover */
+  }
+  
+  .modal-close-button:hover {
+    color: #ff0000; /* Color llamativo al hacer hover */
+    transform: scale(1.2) rotate(90deg); /* Efecto de aumento y giro al hacer hover */
+  }
+  
+  .modal-close-button:focus {
+    outline: none; /* Evitar el borde al enfocarse */
+  }

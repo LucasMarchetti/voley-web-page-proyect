@@ -29,44 +29,147 @@
   transform: rotate(180deg); 
 }
 
-
-
 .container-round-robin:hover {
   background-position: bottom; 
   cursor: pointer;
 }
-  
 
-  .subtitle {
-    top: 10px;
-    color: #000;
-    font-size: 1.2rem;
-    font-weight: regular;
-    margin-bottom: 0;
-    text-align: center; 
-    transition: transform 0.3s ease, font-weight 0.3s ease;
-  }
-  
+.subtitle {
+  top: 10px;
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: regular;
+  margin-bottom: 0;
+  text-align: center; 
+  transition: transform 0.3s ease, font-weight 0.3s ease;
+}
 
-  .title {
-    margin: 0;
-    color: #000;
-    font-size: 2rem;
-    font-weight: normal;
-    text-align: center;
-    transition: transform 0.3s ease, font-weight 0.3s ease;
-  }
-  
+.title {
+  margin: 0;
+  color: #000;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  transition: transform 0.3s ease, font-weight 0.3s ease;
+}
 
-  .container-round-robin:hover .title {
-    font-weight: bold;
-    color: #fff;
-    transform: scale(1.2);
-  }
+.title-teams{
+  color: #000;
+}
 
-  .container-round-robin:hover .subtitle {
-    font-weight: bold;
-    color: #fff;
-    transform: scale(1.2);
-  }
+.container-round-robin:hover .title {
+  font-weight: bold;
+  color: #fff;
+  transform: scale(1.2);
+}
+
+.container-round-robin:hover .subtitle {
+  font-weight: bold;
+  color: #fff;
+  transform: scale(1.2);
+}
+
+/* Modal overlay y estilos del contenedor de selección */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegúrate de que el overlay esté sobre otros elementos */
+}
+.modal {
+  background: white;
+  padding: 20px; /* Espacio interno del modal */
+  border-radius: 8px;
+  width: 80%; /* Ancho del modal, puede ser ajustado */
+  max-width: 600px; /* Ancho máximo del modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Añadir transición */
+  transform: scale(0); /* Escalar el modal a 0 inicialmente */
+  opacity: 0; /* Hacer que el modal sea invisible inicialmente */
+  display: flex; /* Permite flexbox para el contenido */
+  flex-direction: column; /* Dirección de los elementos internos */
+  align-items: center; /* Centra los elementos internos horizontalmente */
+}
+
+
+.modal.show {
+  transform: scale(1); /* Escalar el modal a su tamaño normal */
+  opacity: 1; /* Hacer que el modal sea visible */
+}
+
+.modal.hide {
+  opacity: 0; /* Hacer que el modal sea invisible */
+  transform: scale(0.8); /* Tamaño reducido al cerrar */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Mantener la transición para ocultar */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.title-teams {
+  color: #000;
+  text-align: center; /* Centra el texto dentro del contenedor */
+  width: 90%; /* Establece el ancho al 90% del contenedor del modal */
+  margin: 0 auto; /* Centra el contenedor al establecer márgenes automáticos */
+  font-size: 1.5rem; /* Ajusta el tamaño de la fuente según lo necesites */
+  line-height: 1.5; /* Ajusta el alto de línea para mejorar la legibilidad */
+  letter-spacing: 0.05em; /* Ajusta el espaciado entre letras */
+}
+.close-button:hover {
+  color: red; /* Cambia el color al pasar el mouse */
+}
+
+.button-group {
+  display: flex; /* Muestra los botones en una fila */
+  gap: 10px; /* Espaciado entre los botones */
+  margin-bottom: 10px; /* Espacio entre el grupo de botones y el botón personalizado */
+}
+
+.number-buttons {
+  padding: 10px 20px; /* Ajusta el tamaño del botón según sea necesario */
+  background-color: rgb(177, 177, 177); /* Color de fondo para los botones */
+  border: none;
+  cursor: pointer;
   
+  transition: background 0.3s; /* Transición para el hover */
+  border: 1px solid #000;
+}
+
+.number-buttons:hover {
+  background-color: rgb(44, 44, 44); /* Cambia el color al pasar el mouse */
+  color: white;
+}
+
+.custom-btn {
+  background: blue; /* Color de fondo para el botón personalizado */
+  color: white; /* Color del texto */
+  padding: 10px; /* Tamaño del botón */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background 0.3s; /* Transición para el hover */
+  border: 1px solid #000;
+
+}
+
+.custom-btn:hover {
+  background: rgb(0, 0, 48); /* Cambia el color al pasar el mouse */
+  color: #fff;
+}
+
+.number-bottons-container {
+  display: flex; /* Cambia a inline-flex para que se ajuste al contenido */
+  flex-direction: column; 
+  align-items: center; /* Centra los elementos en la dirección transversal */
+  justify-content: center; /* Centra los elementos en la dirección principal */
+}

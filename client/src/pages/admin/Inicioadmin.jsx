@@ -1,13 +1,14 @@
-import CategorySelect from "../../components/admin/CategorySelect";
+import { useSelector } from 'react-redux';
 import Sidebar from "../../components/admin/Sidebar";
 import Box from "../../components/admin/Box";
+import Modal from '../../components/admin/Modal'; // Importamos el Modal que configuramos
 import React, { useState, useEffect } from "react";
-
 import "./styles.css";
 
 export default function InicioAdmin() {
-    const [activeTab, setActiveTab] = useState("torneos"); // Estado inicial
+    const [activeTab, setActiveTab] = useState("torneos"); // Estado inicial para la pestaña activa
     const [backgroundPosition, setBackgroundPosition] = useState({ x: 0, y: 0 }); // Estado para la posición del fondo
+    const isOpen = useSelector((state) => state.modal.isOpen); // Obtenemos el estado del modal desde Redux
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -16,22 +17,21 @@ export default function InicioAdmin() {
             setBackgroundPosition({ x: xOffset, y: yOffset }); // Actualiza la posición del fondo
         };
 
+        const background = document.querySelector('.background-admin');
         const animateBackground = () => {
-            const background = document.querySelector('.background-admin');
             if (background) {
                 // Aplica el movimiento en ambas direcciones
                 background.style.backgroundPosition = `${backgroundPosition.x}% ${backgroundPosition.y}%`;
             }
-            requestAnimationFrame(animateBackground); // Solicita el siguiente cuadro
         };
 
         // Agregar el event listener al montar el componente
         document.addEventListener('mousemove', handleMouseMove);
 
-        // Comienza la animación
+        // Ejecuta la animación cuando cambia la posición del fondo
         requestAnimationFrame(animateBackground);
 
-        // Limpia el event listener y la animación al desmontar el componente
+        // Limpia el event listener al desmontar el componente
         return () => {
             document.removeEventListener('mousemove', handleMouseMove);
         };
@@ -40,10 +40,13 @@ export default function InicioAdmin() {
     return (
         <div className="inicio-admin">
             <div className="background-admin"></div>
-            <div className="overlay"></div> {/* Este es el nuevo div de superposición */}
             <div className="admin-page">
                 <Sidebar setActiveTab={setActiveTab} activeTab={activeTab} />
-                <Box activeTab={activeTab} />
+                {/* Si el modal está abierto, ocultamos el Box */}
+                {!isOpen && <Box activeTab={activeTab} />}
+                
+                {/* Aquí renderizamos el Modal, siempre estará disponible pero controlado por el estado isOpen */}
+                <Modal />
             </div>
         </div>
     );
