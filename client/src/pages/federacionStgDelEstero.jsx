@@ -1,11 +1,12 @@
+import { useState } from "react";
 
-//components
-import Contact from "../components/Contact"
-import HeaderFederaciones from "../components/HeaderFederaciones"
-import Torneos from "../components/torneos"
-import UltimosPartidos from "../components/UltimosPartidos"
-import NavBarFederaciones from "../components/NavBarFederaciones.jsx"
-
+// Components
+import Contact from "../components/Contact";
+import HeaderFederaciones from "../components/HeaderFederaciones";
+import Torneos from "../components/torneos";
+import UltimosPartidos from "../components/UltimosPartidos";
+import NavBarFederaciones from "../components/NavBarFederaciones.jsx";
+import TablaTorneo from "../components/TablaTorneo.jsx";
 
 let SantiagodelEstero = {
     "nombre": "Federación Santiagueña de Voleiball",
@@ -13,18 +14,26 @@ let SantiagodelEstero = {
     "telefono": "+54 385 421 1414",
     "direccion": "Av. Belgrano Sur 910, Santiago del Estero",
     "logo": require("../multimedia/logoSantiago.webp")
-  }
+}
 
-export default function federacionStgDelEstero () {
+export default function FederacionStgDelEstero() {
+    const [selectedTorneo, setSelectedTorneo] = useState(null)
+    const handleTorneoSeleccionado = (torneo) => {
+        setSelectedTorneo(torneo);
+    };
 
+    const handleCloseTabla = () => {
+        setSelectedTorneo(null);
+    };
 
     return (
         <div>
             <NavBarFederaciones />
             <HeaderFederaciones Provincia={SantiagodelEstero} />
             <UltimosPartidos />
-            <Torneos />
-            <Contact Provincia={SantiagodelEstero}/>
+            <Torneos onTorneoSeleccionado={handleTorneoSeleccionado} />
+            {selectedTorneo && <TablaTorneo torneo={selectedTorneo} onClose={handleCloseTabla}/>}
+            <Contact Provincia={SantiagodelEstero} />
         </div>
-    )
+    );
 }

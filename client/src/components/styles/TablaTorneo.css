@@ -1,0 +1,62 @@
+
+.tabla-torneo-contenedor {
+    margin: 100px;
+}
+
+.tabla-torneo-contenedor h2 {
+    font-size: 45px;
+}
+
+.sub-titles-tabla-resultados {
+    font-size: 25px;
+}
+
+.conteiner-resultados-torneo {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tabla-resultados {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-resultados th, .tabla-resultados td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.tabla-resultados th {
+    font-size: 25px;
+    letter-spacing: 2px;
+    background-color: #0b4462;
+    color: white;
+    width: 200px;
+}
+
+.btn-cerrar-resultados {
+    display: flex;
+    margin-top: 40px;
+    padding: 15px 30px;
+    background-color: #0b4462;
+    color: white;
+    border: 1px solid#0b4462;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-cerrar-resultados:hover {
+    background-color: white;
+    color: #0b4462;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
