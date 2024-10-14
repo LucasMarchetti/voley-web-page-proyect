@@ -39,8 +39,18 @@
     width: 200px;
 }
 
-.btn-cerrar-resultados {
+.btns-resultados {
     display: flex;
+    justify-content: center;
+}
+
+.btn-cerrar-resultados,
+.btn-imprimir-resultados {
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     margin-top: 40px;
     padding: 15px 30px;
     background-color: #0b4462;
@@ -51,9 +61,11 @@
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    margin: 30px;
 }
 
-.btn-cerrar-resultados:hover {
+.btn-cerrar-resultados:hover,
+.btn-imprimir-resultados:hover {
     background-color: white;
     color: #0b4462;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
