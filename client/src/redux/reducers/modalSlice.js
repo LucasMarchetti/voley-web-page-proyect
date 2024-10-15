@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   isOpen: false,
-  modalState: null,  // null, 'ModalNewTeamState', 'ModalNewCategoryState', 'ModalNewStadiumState'
+  modalState: null,  
 };
 
 const modalSlice = createSlice({
