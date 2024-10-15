@@ -1,35 +1,30 @@
+// ModalRoundRobinStateStepOne.js
 import React, { useState } from 'react';
 import './styles/ModalRoundRobinStateStepOne.css';
 
 const ModalRoundRobinStateStepOne = ({ onNext }) => {
-  const [selectedNumber, setSelectedNumber] = useState(null);
-
-  const handleNumberSelect = (number) => {
-    setSelectedNumber(number);
-  };
+  const [selectedNumber, setSelectedNumber] = useState('');
 
   const handleNext = () => {
-    if (selectedNumber) {
-      onNext({ selectedNumber });
+    const number = parseInt(selectedNumber);
+    if (number && number > 0) {
+      onNext({ selectedNumber: number });
     } else {
-      alert('Por favor, selecciona un número de equipos.');
+      alert('Por favor, ingrese un número válido de equipos.');
     }
   };
 
   return (
     <div className="round-robin-step-one-container">
-      <h2 className="round-robin-title">Selecciona el número de equipos</h2>
-      {[4, 6, 8,10,12].map((number) => (
-        <button
-          key={number}
-          onClick={() => handleNumberSelect(number)}
-          className={`round-robin-button round-robin-number-button ${
-            selectedNumber === number ? 'selected' : ''
-          }`}
-        >
-          {number}
-        </button>
-      ))}
+      <h2 className="round-robin-title">Ingrese el número de equipos</h2>
+      <input
+        type="number"
+        min="1"
+        placeholder="Ingrese un número de equipos"
+        value={selectedNumber}
+        onChange={(e) => setSelectedNumber(e.target.value)}
+        className="round-robin-input"
+      />
       <div className="round-robin-next-button">
         <button className="round-robin-button" onClick={handleNext}>
           Siguiente
@@ -40,3 +35,4 @@ const ModalRoundRobinStateStepOne = ({ onNext }) => {
 };
 
 export default ModalRoundRobinStateStepOne;
+

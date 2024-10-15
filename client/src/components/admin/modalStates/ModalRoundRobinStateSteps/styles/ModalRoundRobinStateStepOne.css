@@ -1,35 +1,48 @@
-/* Contenedor centrado */
+/* Step 1 */
+
+/* Contenedor centrado y ancho del 70% */
 .round-robin-step-one-container {
   text-align: center;
   color: black;
+  width: 70%;
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
-/* Botones de número */
-.round-robin-number-button {
-  background-color: #ffffff;
-  color: #007bff;
+/* Título con letra más grande */
+.round-robin-step-one-container .round-robin-title {
+  font-size: 2em;
+}
+
+/* Input de número más grande y estilizado */
+.round-robin-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.5em;
+  margin-top: 20px;
   border: 2px solid #007bff;
-  padding: 12px 20px;
-  margin: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1.2em;
-  width: 60px;
-  height: 60px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
 }
 
-.round-robin-number-button:hover,
-.round-robin-number-button.selected {
-  background-color: #007bff;
-  color: #ffffff;
-}
-
-.round-robin-number-button:focus {
+.round-robin-input:focus {
+  border-color: #0056b3;
   outline: none;
 }
 
-/* Botón siguiente */
-.round-robin-next-button {
-  margin-top: 20px;
+/* Hover en el botón siguiente */
+.round-robin-button {
+  margin-top: 5%;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 15px 30px;
+}
+
+.round-robin-next-button .round-robin-button:hover {
+  background-color: #0056b3;
+}
+
+/* Mejora en el input de número al hover */
+.round-robin-input:hover {
+  border-color: #0056b3;
 }
