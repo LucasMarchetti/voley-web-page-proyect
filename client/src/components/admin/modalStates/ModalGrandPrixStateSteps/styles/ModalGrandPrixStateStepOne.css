@@ -1,0 +1,49 @@
+/* Step 1 */
+
+/* Centered container with 70% width */
+.grand-prix-step-one-container {
+    text-align: center;
+    color: black;
+    width: 70%;
+    margin: 0 auto; /* Centers the container horizontally */
+  }
+  
+  /* Larger title */
+  .grand-prix-step-one-container .grand-prix-title {
+    font-size: 2em;
+  }
+  
+  /* Larger and styled number input */
+  .grand-prix-input {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.5em;
+    margin-top: 20px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  
+  .grand-prix-input:focus {
+    border-color: #0056b3;
+    outline: none;
+  }
+  
+  /* Hover effect on the next button */
+  .grand-prix-button {
+    margin-top: 5%;
+    width: 100%;
+    font-size: 1.2em;
+    padding: 15px 30px;
+  }
+  
+  .grand-prix-next-button .grand-prix-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Improved input hover */
+  .grand-prix-input:hover {
+    border-color: #0056b3;
+  }
+  

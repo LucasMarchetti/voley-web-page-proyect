@@ -9,7 +9,7 @@ import ModalNewTeamState from './modalStates/ModalNewTeamState';
 import ModalNewCategoryState from './modalStates/ModalNewCategoryState';
 import ModalNewStadiumState from './modalStates/ModalNewStadiumState';
 import ModalRoundRobinState from './modalStates/ModalRoundRobinStateSteps/ModalRoundRobinState';
-
+import ModalGrandPrixState from './modalStates/ModalGrandPrixStateSteps/ModalGrandPrixState';
 
 const Modal = () => {
   const { isOpen, modalState } = useSelector((state) => state.modal);
@@ -20,7 +20,7 @@ const Modal = () => {
       case 'ModalRoundRobinState':
         return <ModalRoundRobinState/>;
       case 'ModalGrandPrixState':
-        return <h1 className='titulos-prueba'>Soy ModalGrandPrixState</h1>;
+        return <ModalGrandPrixState/>
       case 'ModalPersonalizedTournamentState':
         return <h1 className='titulos-prueba'>Soy ModalPersonalizedTournamentState</h1>;
       case 'ModalTorneosFinalizadosState':
