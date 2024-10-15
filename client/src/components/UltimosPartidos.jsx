@@ -81,12 +81,10 @@ export default function UltimosPartidos() {
           <h1 className="title-ultimos-partidos2">Torneo Profesional</h1>
         </div>
       </div>
-
-      {/* Botones de control del carrusel */}
+      
       <button className="carousel-btn carousel-btn-left" onClick={scrollLeft}>{"<"}</button>
       <button className="carousel-btn carousel-btn-right" onClick={scrollRight}>{">"}</button>
 
-      {/* Carrusel */}
       <div className="conteiner-cartas" ref={carruselRef}>
         {activo === "masculino" ? (
           <>
