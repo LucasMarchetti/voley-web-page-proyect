@@ -7,6 +7,7 @@ import UltimosPartidos from "../components/UltimosPartidos.jsx"
 import Torneos from "../components/torneos.jsx"
 import Contact from "../components/Contact.jsx"
 import TablaTorneo from "../components/TablaTorneo.jsx"
+import Footer from "../components/Footer.jsx"
 
 let Catamarca = {
     "nombre": "Federación Catamarqueña de Voleiball",
@@ -36,6 +37,7 @@ export default function FederacionCatamarca() {
             
             {selectedTorneo && <TablaTorneo torneo={selectedTorneo} onClose={handleCloseTabla} />}
             <Contact Provincia={Catamarca} />
+            <Footer />
         </div>
     )
 }

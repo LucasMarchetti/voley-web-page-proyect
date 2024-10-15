@@ -7,6 +7,7 @@ import Torneos from "../components/torneos";
 import UltimosPartidos from "../components/UltimosPartidos";
 import NavBarFederaciones from "../components/NavBarFederaciones.jsx";
 import TablaTorneo from "../components/TablaTorneo.jsx";
+import Footer from "../components/Footer.jsx";
 
 let SantiagodelEstero = {
     "nombre": "Federación Santiagueña de Voleiball",
@@ -34,6 +35,7 @@ export default function FederacionStgDelEstero() {
             <Torneos onTorneoSeleccionado={handleTorneoSeleccionado} />
             {selectedTorneo && <TablaTorneo torneo={selectedTorneo} onClose={handleCloseTabla}/>}
             <Contact Provincia={SantiagodelEstero} />
+            <Footer />
         </div>
     );
 }
