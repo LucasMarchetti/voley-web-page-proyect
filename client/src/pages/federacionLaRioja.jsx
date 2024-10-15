@@ -7,6 +7,7 @@ import Torneos from "../components/torneos";
 import UltimosPartidos from "../components/UltimosPartidos";
 import NavBarFederaciones from "../components/NavBarFederaciones.jsx";
 import TablaTorneo from "../components/TablaTorneo.jsx"
+import Footer from "../components/Footer.jsx";
 
 let LaRioja = {
     "nombre": "Federación Riojana de Voleiball",
@@ -35,6 +36,7 @@ export default function FederacionLaRioja() {
             <Torneos onTorneoSeleccionado={handleTorneoSeleccionado} />
             {selectedTorneo && <TablaTorneo torneo={selectedTorneo} onClose={handleCloseTabla}  />}
             <Contact Provincia={LaRioja} />
+            <Footer />
         </div>
     );
 }

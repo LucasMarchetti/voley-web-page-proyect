@@ -7,6 +7,7 @@ import UltimosPartidos from "../components/UltimosPartidos.jsx";
 import Torneos from "../components/torneos.jsx";
 import Contact from "../components/Contact.jsx";
 import TablaTorneo from "../components/TablaTorneo.jsx"
+import Footer from "../components/Footer.jsx";
 
 let Jujuy = {
     "nombre": "Federación Jujeña de Voleiball",
@@ -38,8 +39,8 @@ export default function FederacionJujuy() {
             {selectedTorneo && (
                 <TablaTorneo torneo={selectedTorneo} onClose={handleCloseTabla} /> 
             )}
-
             <Contact Provincia={Jujuy} />
+            <Footer />
         </div>
     );
 }
