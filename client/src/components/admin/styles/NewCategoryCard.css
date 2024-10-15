@@ -50,7 +50,7 @@
     .title-NewCategoryCard {
       margin: 0;
       color: #000;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: normal;
       text-align: center;
       transition: transform 0.3s ease, font-weight 0.3s ease;
@@ -60,7 +60,7 @@
     .container-NewCategoryCard:hover .title-NewCategoryCard {
       font-weight: bold;
       color: #fff;
-      transform: scale(1.08);
+      transform: scale(1.03);
     }
   
     .container-NewCategoryCard:hover .subtitle-NewCategoryCard {

@@ -1,22 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  categories: [],
-};
+const initialState = [
+  { id: '1', name: 'SUB14-MASC' },
+  { id: '2', name: 'SUB14-FEM' },
+  { id: '3', name: 'A1' },
+];
 
-export const categoryReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'SET_CATEGORIES':
-      return {
-        ...state,
-        categories: action.payload,
-      };
-    default:
-      return state;
-  }
-};
-
-const categorySlice = createSlice({
+const categoriesSlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
@@ -42,5 +32,5 @@ const categorySlice = createSlice({
   },
 });
 
-export const { addCategory, removeCategory, updateCategory } = categorySlice.actions;
-export default categorySlice.reducer;
+export const { addCategory, removeCategory, updateCategory } = categoriesSlice.actions;
+export default categoriesSlice.reducer;

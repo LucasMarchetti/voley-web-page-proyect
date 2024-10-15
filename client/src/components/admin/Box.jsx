@@ -24,7 +24,7 @@ const Box = ({ activeTab }) => {
     return (
       <div className="box">
         <div className="contenedor-hijo">
-          <RoundRobinCard />
+          <RoundRobinCard/>
           <TorneosFinalizados />
         </div>
         <div className="contenedor-hijo">

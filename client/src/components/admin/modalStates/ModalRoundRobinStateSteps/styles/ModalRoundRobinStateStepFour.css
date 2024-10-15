@@ -1,0 +1,61 @@
+.round-robin-summary {
+  text-align: center;
+  color: black;
+
+  width: 80%;
+  margin: 0 auto;
+}
+
+.round-robin-matchup-summary{
+  background-color: lightgray;
+  border: 1px solid #000;
+  margin-bottom: 5%;
+}
+
+/* Título con letra más grande */
+.round-robin-summary h2 {
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+/* Estilo para los selectores de fecha y categoría */
+.round-robin-filters {
+  display: flex;
+  justify-content: center; /* Centrar los selectores */
+  margin-bottom: 30px;
+  padding: 0 20px;
+  flex-wrap: wrap; /* Para ajuste en pantallas pequeñas */
+}
+
+.round-robin-filters .round-robin-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar el contenido */
+  font-size: 1.2em;
+  margin: 0 15px; /* Ajustar el margen entre selectores */
+}
+
+.round-robin-filters .round-robin-select {
+  width: 220px;
+  padding: 12px;
+  font-size: 1.1em;
+  margin-top: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+/* Ajuste para dispositivos móviles */
+@media screen and (max-width: 600px) {
+  .round-robin-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .round-robin-filters .round-robin-label {
+    margin-bottom: 15px;
+  }
+
+  .round-robin-filters .round-robin-select {
+    width: 100%;
+  }
+}
