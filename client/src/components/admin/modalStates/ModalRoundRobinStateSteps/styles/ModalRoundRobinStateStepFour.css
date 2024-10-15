@@ -1,44 +1,61 @@
-/* Contenedor del resumen */
 .round-robin-summary {
   text-align: center;
   color: black;
+
+  width: 80%;
+  margin: 0 auto;
 }
 
+.round-robin-matchup-summary{
+  background-color: lightgray;
+  border: 1px solid #000;
+  margin-bottom: 5%;
+}
+
+/* Título con letra más grande */
 .round-robin-summary h2 {
   margin-bottom: 25px;
+  font-size: 2em;
 }
 
-.round-robin-summary p {
-  margin-bottom: 15px;
-  font-size: 1.1em;
-}
-
-.round-robin-summary-list {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 25px;
-}
-
-.round-robin-summary-list li {
-  background-color: #f9f9f9;
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 4px;
-  text-align: left;
-}
-
-/* Estilo de cada enfrentamiento en el resumen */
-.round-robin-matchup-summary {
-  background-color: #f1f1f1;
-  padding: 15px;
-  margin: 15px 0;
-  border-radius: 4px;
-  text-align: left;
-}
-
-/* Botones */
-.round-robin-button-group {
+/* Estilo para los selectores de fecha y categoría */
+.round-robin-filters {
   display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
+  justify-content: center; /* Centrar los selectores */
+  margin-bottom: 30px;
+  padding: 0 20px;
+  flex-wrap: wrap; /* Para ajuste en pantallas pequeñas */
+}
+
+.round-robin-filters .round-robin-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar el contenido */
+  font-size: 1.2em;
+  margin: 0 15px; /* Ajustar el margen entre selectores */
+}
+
+.round-robin-filters .round-robin-select {
+  width: 220px;
+  padding: 12px;
+  font-size: 1.1em;
+  margin-top: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+/* Ajuste para dispositivos móviles */
+@media screen and (max-width: 600px) {
+  .round-robin-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .round-robin-filters .round-robin-label {
+    margin-bottom: 15px;
+  }
+
+  .round-robin-filters .round-robin-select {
+    width: 100%;
+  }
 }
