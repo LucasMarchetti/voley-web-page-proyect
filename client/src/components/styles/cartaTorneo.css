@@ -15,13 +15,44 @@
 .conteiner-titles-torneo h1 {
     margin-bottom: 0;
     margin-left: 20px;
+    font-size: 30px;
 }
 
 .conteiner-titles-torneo h3 {
     margin-top: 0;
     margin-left: 20px;
+    font-size: 25px;
 }
 
 .conteiner-cartas-torneo {
     display: flex;
 }
+
+.conteiner-carta-torneo:hover {
+    -webkit-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.8);
+    box-shadow: 0px 0px 35px 0px rgba(0,0,0,0.8);
+    cursor: pointer;
+}
+
+.cartaTorneo-logo {
+    width: 120px;
+}
+
+.conteiner-logo-fechas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.conteiner-logo-fechas-p {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    align-items: center;
+}
+
+.conteiner-logo-fechas-p p {
+    margin: 0;
+} 

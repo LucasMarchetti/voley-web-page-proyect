@@ -38,8 +38,8 @@
     overflow-x: auto; 
     gap: 70px;
     scroll-behavior: smooth; 
-    padding: 30px 70px; /* El padding aquí en lugar de afectar al ancho total */
-    box-sizing: border-box; /* Incluye padding en el ancho total */
+    padding: 30px 70px; 
+    box-sizing: border-box;
     scrollbar-width: none; 
     width: 100%;
 }
