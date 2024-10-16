@@ -1,0 +1,49 @@
+/* ModalNewTeam.css */
+.modal-new-team-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-new-team-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .title-modal-new-team-form{
+    font-size: 45px;
+    color: #000;
+  }
+  .subtitle-modal-new-team-form{
+    font-size: 18px;
+    color: #000;
+  }
+
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    align-self: center;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }

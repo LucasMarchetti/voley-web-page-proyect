@@ -1,0 +1,65 @@
+
+.conteiner-enfrentamientos {
+    max-width: 100%;
+    padding: 20px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.titles-enfrentamientos {
+    background-color: #0b4462;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    letter-spacing: 2px;
+    text-align: center;
+    gap: 40px;
+    padding: 30px;
+    border-radius: 20px 20px 0 0;
+}
+
+.titles-fechas-enfrentamientos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.enfrentamientos-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.enfrentamiento {
+    display: flex; 
+    background-color: #f5f5f5;
+    border-top: 1px solid #0b436283;
+    padding: 10px;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.logo-equipo-enfrentamiento {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.logos-nombres-equipos {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 10px 0; 
+}
+
+.logos-nombres-equipos h2 {
+    margin: 5px 0;
+}
+
+.enfrentamiento h2 {
+    margin: 5px;
+    padding: 5px;
+}

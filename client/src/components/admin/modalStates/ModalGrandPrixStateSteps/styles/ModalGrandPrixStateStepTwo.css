@@ -1,0 +1,69 @@
+/* Container for step two */
+.grand-prix-step-two-container {
+    text-align: center;
+    color: black;
+    width: 80%; /* Keep 80% to center the container */
+    max-width: 600px; /* Add a max-width for larger screens */
+    margin: 0 auto;
+    padding: 20px; /* Add padding for space inside the container */
+  }
+  
+  /* Larger title */
+  .grand-prix-step-two-container .grand-prix-title {
+    font-size: 2.5em; /* Increase font size for larger title */
+    margin-bottom: 20px; /* Space between title and content */
+  }
+  
+  /* Input group */
+  .grand-prix-input-group {
+    margin-bottom: 25px;
+    text-align: left; /* Left-align inputs */
+  }
+  
+  /* Larger labels */
+  .grand-prix-input-group label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 1.4em; /* Increase label font size */
+  }
+  
+  /* Larger inputs */
+  .grand-prix-input-group .grand-prix-input,
+  .grand-prix-react-select-container .react-select__control {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.3em; /* Increase input font size */
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Selection info with larger font */
+  .grand-prix-selection-info {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.4em;
+  }
+  
+  /* Buttons */
+  .grand-prix-button-group {
+    display: flex; /* Use flexbox to align buttons */
+    justify-content: center; /* Center the buttons */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space above buttons */
+  }
+  
+  .grand-prix-button-group {
+    font-size: 1.2em;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth hover transition */
+  }
+  
+  .grand-prix-button-group .grand-prix-button:hover {
+    background-color: #0056b3;
+  }
+  

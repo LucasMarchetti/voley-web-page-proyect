@@ -1,0 +1,85 @@
+.round-robin-step-three-container {
+  text-align: center;
+  color: black;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Título con letra más grande */
+.round-robin-step-three-container .round-robin-title {
+  font-size: 2em;
+}
+
+/* Estilo para los selectores de fecha y categoría */
+.round-robin-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 140%;
+  padding: 0 20px;
+  flex-wrap: nowrap; /* Asegura que los selectores no se envuelvan en una nueva línea */
+}
+
+.round-robin-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
+  margin: 0 15px;
+}
+
+.round-robin-select {
+  padding: 5px;
+  font-size: 1.1em;
+  margin-bottom: 5%;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+/* Ajuste para dispositivos móviles */
+@media screen and (max-width: 600px) {
+  .round-robin-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .round-robin-filters .round-robin-label {
+    margin-bottom: 15px;
+  }
+
+  .round-robin-filters .round-robin-select {
+    width: 100%;
+  }
+}
+
+/* Título de cada enfrentamiento con letra más grande */
+.round-robin-matchup h3 {
+  margin-bottom: 20px;
+  color: #333333;
+  font-size: 1.5em;
+}
+
+/* Etiquetas dentro de los enfrentamientos */
+.round-robin-matchup label {
+  display: block;
+  margin-bottom: 15px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Inputs y selects dentro de los enfrentamientos */
+.round-robin-matchup input,
+.round-robin-matchup select {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1.1em;
+}
+
+/* Botones */
+.round-robin-button-group .round-robin-button {
+  font-size: 1.2em;
+  padding: 15px 30px;
+}

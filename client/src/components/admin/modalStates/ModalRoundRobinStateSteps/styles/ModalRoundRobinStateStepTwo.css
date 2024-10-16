@@ -1,0 +1,70 @@
+/* Contenedor del paso dos */
+.round-robin-step-two-container {
+  text-align: center;
+  color: black;
+  width: 80%; /* Mantener 80% para hacer que el contenedor esté centrado */
+  max-width: 600px; /* Añadir un max-width para limitar el tamaño en pantallas más grandes */
+  margin: 0 auto;
+  padding: 20px; /* Añadir padding para dar espacio dentro del contenedor */
+}
+
+/* Título con letra más grande */
+.round-robin-step-two-container .round-robin-title {
+  font-size: 2.5em; /* Aumentar el tamaño de la fuente si lo deseas más grande */
+  margin-bottom: 20px; /* Añadir espacio entre el título y el contenido */
+}
+
+/* Grupo de input */
+.round-robin-input-group {
+  margin-bottom: 25px;
+  text-align: left; /* Mantener alineación a la izquierda para el grupo de inputs */
+}
+
+/* Etiquetas con letra más grande */
+.round-robin-input-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 1.4em; /* Aumentar el tamaño de la fuente de las etiquetas */
+}
+
+/* Inputs más grandes */
+.round-robin-input-group .round-robin-input,
+.round-robin-react-select-container .react-select__control {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.3em; /* Hacer el texto de los inputs más grande */
+  margin-top: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Información de selección con letra más grande */
+.round-robin-selection-info {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.4em; /* Aumentar el tamaño de la fuente si es necesario */
+}
+
+/* Botones */
+.round-robin-button-group {
+  display: flex; /* Usar flexbox para alinear los botones */
+  justify-content: center; /* Asegurar que los botones estén centrados */
+  gap: 20px; /* Añadir espacio entre los botones */
+  margin-top: 20px; /* Espacio superior para separar los botones del contenido anterior */
+}
+
+.round-robin-button-group .round-robin-button {
+  font-size: 1.2em;
+  padding: 15px 30px;
+  cursor: pointer;
+  border: 1px solid #000;
+  background-color: #f0f0f0; /* Añadir un color de fondo claro */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+.round-robin-button-group .round-robin-button:hover {
+  background-color: #ddd; /* Color de fondo al pasar el ratón */
+}

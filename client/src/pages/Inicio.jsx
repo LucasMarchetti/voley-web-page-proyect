@@ -17,6 +17,7 @@ import logoSalta from "../multimedia/logoSalta.webp"
 import logoSantiago from "../multimedia/logoSantiago.webp"
 import logoJujuy from "../multimedia/logoJujuy2.png"
 import logoTucuman from "../multimedia/logoTucuman.webp"
+import Footer from "../components/Footer.jsx"
 
 export default function Inicio() {
 
@@ -33,7 +34,7 @@ export default function Inicio() {
             
             <div className="conteiner-header">
                 <h1 className="title-inicio">
-                    Federaciones de Voley del NOA
+                    Federaciones de Voleiball del NOA
                 </h1>
                 <div className="images-header">
                     <img
@@ -135,6 +136,7 @@ export default function Inicio() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
