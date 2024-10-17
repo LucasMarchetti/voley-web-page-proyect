@@ -1,20 +1,33 @@
+// src/components/ModalNewCategoryState.js
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addCategory } from '../../../redux/reducers/categorias/reducer';
 import './styles/ModalNewCategoryState.css';
+import { v4 as uuidv4 } from 'uuid'; // Asegúrate de instalar uuid: npm install uuid
 
 const ModalNewCategoryState = () => {
   const [categoryName, setCategoryName] = useState('');
   const [abbreviation, setAbbreviation] = useState('');
+  const dispatch = useDispatch();
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes manejar el envío del formulario, por ejemplo, enviar los datos al servidor.
-    console.log('Nombre de la categoría:', categoryName);
-    console.log('Abreviación:', abbreviation);
+    const newCategory = {
+      id: uuidv4(),
+      name: `${categoryName}-${abbreviation}`,
+    };
+    dispatch(addCategory(newCategory));
+    setCategoryName('');
+    setAbbreviation('');
+    setSuccessMessage('Categoría creada exitosamente.');
+    setTimeout(() => setSuccessMessage(''), 3000);
   };
 
   return (
     <form className="modal-new-category-form" onSubmit={handleSubmit}>
       <h2 className='title-modal-new-category-form'>Crear Nueva Categoría</h2>
+      {successMessage && <div className="success-message">{successMessage}</div>}
       <div className="form-group">
         <label className='subtitle-modal-new-category-form' htmlFor="categoryName">Nombre de la Categoría:</label>
         <input
@@ -22,6 +35,7 @@ const ModalNewCategoryState = () => {
           id="categoryName"
           value={categoryName}
           onChange={(e) => setCategoryName(e.target.value)}
+          placeholder="Ingrese el nombre de la categoría"
           required
         />
       </div>
@@ -32,10 +46,11 @@ const ModalNewCategoryState = () => {
           id="abbreviation"
           value={abbreviation}
           onChange={(e) => setAbbreviation(e.target.value)}
+          placeholder="Ingrese la abreviación"
           required
         />
       </div>
-      <button type="submit">Crear Categoría</button>
+      <button type="submit" className="submit-button">Crear Categoría</button>
     </form>
   );
 };

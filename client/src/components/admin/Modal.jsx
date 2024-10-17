@@ -7,6 +7,9 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import ModalNewTeam from './modalStates/ModalNewTeamState';
 import ModalNewTeamState from './modalStates/ModalNewTeamState';
 import ModalNewCategoryState from './modalStates/ModalNewCategoryState';
+import ModalAllCategoriesState from './modalStates/ModalAllCategoriesState';
+import ModalAllStadiumsState from './modalStates/ModalAllStadiumsState';
+import ModalAllTeamsState from './modalStates/ModalAllTeamsState';
 import ModalNewStadiumState from './modalStates/ModalNewStadiumState';
 import ModalRoundRobinState from './modalStates/ModalRoundRobinStateSteps/ModalRoundRobinState';
 import ModalGrandPrixState from './modalStates/ModalGrandPrixStateSteps/ModalGrandPrixState';
@@ -36,11 +39,11 @@ const Modal = () => {
       case 'ModalNewStadiumState':
         return <ModalNewStadiumState/>
       case 'ModalAllTeamsState':
-        return <h1 className='titulos-prueba'>Soy ModalAllTeamsState</h1>;
+        return <ModalAllTeamsState/>;
       case 'ModalAllStadiumsState':
-        return <h1 className='titulos-prueba'>Soy ModalAllStadiumsState</h1>;
+        return <ModalAllStadiumsState/>;
       case 'ModalAllCategorysState':
-        return <h1 className='titulos-prueba'>Soy ModalAllCategorysState</h1>;
+        return <ModalAllCategoriesState/>;
       case 'ModalNewPermissionState':
         return <h1 className='titulos-prueba'>Soy ModalNewPermissionState</h1>;
       case 'ModalNewUserState':

@@ -11,21 +11,18 @@ const categoriesSlice = createSlice({
   initialState,
   reducers: {
     addCategory: (state, action) => {
-      state.categories.push(action.payload);
+      state.push(action.payload); // Agregar directamente al array
     },
     removeCategory: (state, action) => {
-      state.categories = state.categories.filter(
-        category => category.id !== action.payload 
-      );
+      return state.filter(category => category.id !== action.payload);
     },
     updateCategory: (state, action) => {
       const { id, data } = action.payload;
-      const categoryIndex = state.categories.findIndex(
-        category => category.id === id
-      );
+      const categoryIndex = state.findIndex(category => category.id === id);
       if (categoryIndex !== -1) {
-        state.categories[categoryIndex] = {
-          ...state.categories[categoryIndex], ...data,
+        state[categoryIndex] = {
+          ...state[categoryIndex],
+          ...data,
         };
       }
     },
