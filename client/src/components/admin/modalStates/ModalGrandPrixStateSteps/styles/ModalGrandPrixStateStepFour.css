@@ -1,0 +1,95 @@
+/* Container for step four */
+.grand-prix-step-four-container {
+    text-align: center;
+    color: black;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Larger title */
+  .grand-prix-step-four-container .grand-prix-title {
+    font-size: 2em;
+  }
+  
+  /* Filters */
+  .grand-prix-filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Wrap filters on small screens */
+  }
+  
+  .grand-prix-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+    margin: 0 15px;
+  }
+  
+  .grand-prix-select {
+    width: 220px;
+    padding: 12px;
+    font-size: 1.1em;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 600px) {
+    .grand-prix-filters {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .grand-prix-filters .grand-prix-label {
+      margin-bottom: 15px;
+    }
+  
+    .grand-prix-filters .grand-prix-select {
+      width: 100%;
+    }
+  }
+  
+  /* Matchup styles */
+  .grand-prix-matchup h3 {
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 1.5em;
+  }
+  
+  .grand-prix-matchup label {
+    display: block;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  
+  /* Inputs and selects inside matchups */
+  .grand-prix-matchup input,
+  .grand-prix-matchup select {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 1.1em;
+  }
+  
+  /* Buttons */
+  .grand-prix-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .grand-prix-button-group .grand-prix-button {
+    font-size: 1.2em;
+    padding: 15px 30px;
+  }
+  

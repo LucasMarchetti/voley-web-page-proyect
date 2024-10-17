@@ -1,0 +1,56 @@
+/* Styles for buttons */
+.grand-prix-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+.grand-prix-button:hover {
+    background-color: #0056b3;
+}
+
+.grand-prix-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Centered titles */
+.grand-prix-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Styles for inputs and selects */
+.grand-prix-input,
+.grand-prix-select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.grand-prix-label {
+    display: block;
+    margin-top: 15px;
+}
+
+/* Styles for matchups */
+.grand-prix-matchup {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+}
+
+.grand-prix-matchup:last-child {
+    border-bottom: none;
+}
+
+.grand-prix-matchup h3 {
+    margin-bottom: 15px;
+}

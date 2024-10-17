@@ -1,25 +1,42 @@
-
-//React-router
 import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import "./styles/NavBar.css";
 
+export default function NavBar() {
+    const [isScrolled, setIsScrolled] = useState(false);
 
-//Styles
-import "./styles/NavBar.css"
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
 
-export default function NavBar () {
+        window.addEventListener('scroll', handleScroll);
 
-    const navigate = useNavigate()
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const navigate = useNavigate();
 
     const handleNavigation = () => {
-        navigate("/")
-    }
+        navigate("/");
+    };
 
     return (
-        <div className="conteiner-navbar">
+        <div className={`conteiner-navbar ${isScrolled ? 'scrolled' : ''}`}>
+            <button className="btn-inicio" onClick={handleNavigation}>
+                Inicio
+            </button>
             <button className="btn-inicio" onClick={handleNavigation}>
                 Inicio
             </button>
             
         </div>
-    )
+    );
 }
