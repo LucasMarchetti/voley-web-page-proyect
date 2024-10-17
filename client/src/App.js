@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 //styles
 import "./App.css";
 
-// Loading component
+//loading component
 import Loading from "./pages/Loading.jsx";
 
 // Lazy load pages
