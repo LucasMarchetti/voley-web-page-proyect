@@ -6,6 +6,7 @@
     color: black;
     width: 100%;
     margin: 0 auto; /* Centers the container horizontally */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   /* Larger title */
@@ -29,21 +30,7 @@
     border-color: #0056b3;
     outline: none;
   }
-  
-  /* Hover effect on the next button */
   .grand-prix-button {
     margin-top: 5%;
-    width: 100%;
-    font-size: 1.2em;
-    padding: 15px 30px;
-  }
-  
-  .grand-prix-next-button .grand-prix-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Improved input hover */
-  .grand-prix-input:hover {
-    border-color: #0056b3;
   }
   

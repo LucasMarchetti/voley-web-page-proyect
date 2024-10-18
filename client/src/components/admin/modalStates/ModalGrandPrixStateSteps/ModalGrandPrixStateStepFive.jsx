@@ -56,7 +56,7 @@ const ModalGrandPrixStateStepFive = ({ onConfirm, onBack, tournamentData }) => {
       {Object.entries(tournamentData.zones).map(([zoneName, teams]) => (
         <div key={zoneName}>
           <h3>{zoneName}</h3>
-          <ul className="grand-prix-summary-list">
+          <ul className="grand-prix-summary-team-list">
             {teams.map((team) => (
               <li key={team.value}>{team.label}</li>
             ))}

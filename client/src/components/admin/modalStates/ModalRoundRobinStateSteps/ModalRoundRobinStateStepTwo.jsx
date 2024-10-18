@@ -55,8 +55,8 @@ const ModalRoundRobinStateStepTwo = ({ onNext, onBack, selectedNumber }) => {
     <div className="round-robin-step-two-container">
       <h2 className="round-robin-title">Información del Torneo</h2>
       <div className="round-robin-input-group">
-        <label className="round-robin-label">Nombre del Torneo</label>
         <input
+          placeholder='Escribe el Nombre del Torneo'
           type="text"
           className="round-robin-input"
           value={tournamentName}
@@ -64,11 +64,9 @@ const ModalRoundRobinStateStepTwo = ({ onNext, onBack, selectedNumber }) => {
         />
       </div>
       <div className="round-robin-input-group">
-        <label className="round-robin-label">
-          Selecciona {selectedNumber} equipos
-        </label>
         <Select
           className="round-robin-react-select-container"
+          placeholder={`Selecciona ${selectedNumber} equipos`}
           classNamePrefix="react-select"
           isMulti
           options={teamOptions}
@@ -80,9 +78,10 @@ const ModalRoundRobinStateStepTwo = ({ onNext, onBack, selectedNumber }) => {
         Has seleccionado {selectedTeams.length} de {selectedNumber} equipos.
       </p>
       <div className="round-robin-input-group">
-        <label className="round-robin-label">Selecciona Categorías</label>
+        
         <Select
           className="round-robin-react-select-container"
+          placeholder={`Selecciona categorias`}
           classNamePrefix="react-select"
           isMulti
           options={categoryOptions}

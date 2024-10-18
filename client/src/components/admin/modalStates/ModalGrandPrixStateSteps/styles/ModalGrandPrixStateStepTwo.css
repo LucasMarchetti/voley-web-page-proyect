@@ -6,6 +6,7 @@
     max-width: 600px; /* Add a max-width for larger screens */
     margin: 0 auto;
     padding: 20px; /* Add padding for space inside the container */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   /* Larger title */

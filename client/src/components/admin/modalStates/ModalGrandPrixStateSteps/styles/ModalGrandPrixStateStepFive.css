@@ -1,82 +1,177 @@
-/* Summary container */
+/* Contenedor general del resumen */
 .grand-prix-summary {
-    text-align: center;
-    color: black;
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .grand-prix-summary p{
-    font-size: 25px; 
-  }
-  
+  text-align: center;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  /* Matchup summary */
-  .grand-prix-matchup-summary {
-    background-color: lightgray;
-    border: 1px solid #000;
-    margin-bottom: 5%;
-    padding: 10px;
+/* Título */
+.grand-prix-summary h2 {
+  margin-bottom: 25px;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Lista de equipos participantes */
+.grand-prix-summary-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.grand-prix-summary-list li {
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Estilo de las tarjetas de enfrentamientos */
+.grand-prix-matchup-summary {
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.grand-prix-summary-team-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.grand-prix-summary-team-list li {
+  background-color: #ffffff;
+  padding: 12px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.1em;
+  color: #333;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.grand-prix-summary-team-list li:hover {
+  transform: translateY(-3px);
+  background-color: #f0f8ff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.grand-prix-summary-team-list li::before {
+  content: '⚽';
+  margin-right: 8px;
+  color: #007bff;
+}
+
+@media screen and (max-width: 600px) {
+  .grand-prix-summary-team-list {
+    grid-template-columns: 1fr;
   }
-  
-  /* Larger title */
-  .grand-prix-summary h2 {
-    margin-bottom: 25px;
-    font-size: 2em;
+}
+
+.grand-prix-matchup-summary:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f0f8ff;
+}
+
+.grand-prix-matchup-summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0);
+  transition: box-shadow 0.3s ease;
+}
+
+.grand-prix-matchup-summary:hover::before {
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.6);
+}
+
+.grand-prix-matchup-summary p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.grand-prix-matchup-summary:hover p {
+  color: #333;
+  opacity: 0.9;
+}
+
+/* Estilo para los selectores de fecha y categoría */
+.grand-prix-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.grand-prix-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
+  margin: 0 20px;
+  color: #444;
+}
+
+.grand-prix-select {
+  width: 250px;
+  padding: 12px;
+  font-size: 1.1em;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f7f7f7;
+  transition: border-color 0.3s ease;
+}
+
+.grand-prix-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.grand-prix-button-group {
+  margin-top: 30px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .grand-prix-summary {
+    width: 95%;
   }
-  
-  /* Filters */
+
   .grand-prix-filters {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    padding: 0 20px;
-    flex-wrap: wrap; /* Wrap filters on small screens */
-  }
-  
-  .grand-prix-filters .grand-prix-label {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.2em;
-    margin: 0 15px;
   }
-  
-  .grand-prix-filters .grand-prix-select {
-    width: 220px;
-    padding: 12px;
-    font-size: 1.1em;
-    margin-top: 5px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
+
+  .grand-prix-label {
+    margin-bottom: 15px;
   }
-  
-  /* Responsive adjustments */
-  @media screen and (max-width: 600px) {
-    .grand-prix-filters {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .grand-prix-filters .grand-prix-label {
-      margin-bottom: 15px;
-    }
-  
-    .grand-prix-filters .grand-prix-select {
-      width: 100%;
-    }
+
+  .grand-prix-select {
+    width: 100%;
   }
-  
-  /* Buttons */
-  .grand-prix-button-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+
+  .grand-prix-button {
+    width: 100%;
+    margin-bottom: 10px;
   }
-  
-  .grand-prix-button-group .grand-prix-button {
-    font-size: 1.2em;
-    padding: 15px 30px;
-  }
-  
+}

@@ -25,11 +25,9 @@ const ModalRoundRobinStateStepOne = ({ onNext }) => {
         onChange={(e) => setSelectedNumber(e.target.value)}
         className="round-robin-input"
       />
-      <div className="round-robin-next-button">
         <button className="round-robin-button" onClick={handleNext}>
           Siguiente
         </button>
-      </div>
     </div>
   );
 };

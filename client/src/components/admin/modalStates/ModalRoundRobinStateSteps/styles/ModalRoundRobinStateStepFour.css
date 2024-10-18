@@ -1,61 +1,209 @@
+  /* Estilos para botones */
+  .round-robin-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+  }
+  
+  .round-robin-button:hover {
+    background-color: #0056b3;
+  }
+
+/* Contenedor general del resumen */
 .round-robin-summary {
   text-align: center;
-  color: black;
-
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   width: 80%;
   margin: 0 auto;
+  padding: 20px;
 }
 
-.round-robin-matchup-summary{
-  background-color: lightgray;
-  border: 1px solid #000;
-  margin-bottom: 5%;
-}
-
-/* Título con letra más grande */
-.round-robin-summary h2 {
+/* Título */
+.round-robin-title {
   margin-bottom: 25px;
-  font-size: 2em;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Lista de equipos participantes */
+.round-robin-summary-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.round-robin-summary-list li {
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Estilo de las tarjetas de enfrentamientos */
+.round-robin-matchup-summary {
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.round-robin-summary-team-list {
+  list-style: none; /* Eliminamos los puntos por defecto */
+  padding: 0;
+  margin: 20px 0;
+  display: grid; /* Usamos grid para un diseño más flexible */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Rejilla automática */
+  gap: 15px; /* Espaciado entre los elementos */
+}
+
+/* Estilos para cada equipo */
+.round-robin-summary-team-list li {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 12px 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  font-size: 1.1em;
+  color: #333;
+  text-align: center; /* Centramos el texto */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto hover en los equipos */
+.round-robin-summary-team-list li:hover {
+  transform: translateY(-3px);
+  background-color: #f0f8ff; /* Fondo azul claro en hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+/* Añadir un icono antes del nombre del equipo */
+.round-robin-summary-team-list li::before {
+  content: '⚽'; /* Ejemplo de icono: puedes cambiarlo */
+  margin-right: 8px;
+  color: #007bff;
+}
+
+/* Ajuste para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+  .round-robin-summary-team-list {
+    grid-template-columns: 1fr; /* Elementos en columna en pantallas pequeñas */
+  }
+}
+
+.round-robin-matchup-summary:hover {
+  transform: translateY(-5px) scale(1.05); /* Aumentar ligeramente */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f0f8ff; /* Cambiar el color de fondo para mayor impacto */
+}
+
+/* Efecto de resplandor suave en el borde */
+.round-robin-matchup-summary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0);
+  transition: box-shadow 0.3s ease;
+}
+
+.round-robin-matchup-summary:hover::before {
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.6); /* Efecto de resplandor azul */
+}
+
+/* Texto cambia ligeramente en hover */
+.round-robin-matchup-summary p {
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.round-robin-matchup-summary:hover p {
+  color: #333; /* Cambiar a un color más oscuro al hacer hover */
+  opacity: 0.9;
+}
+
+.round-robin-matchup-summary p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 1em;
 }
 
 /* Estilo para los selectores de fecha y categoría */
 .round-robin-filters {
   display: flex;
-  justify-content: center; /* Centrar los selectores */
+  justify-content: center;
   margin-bottom: 30px;
   padding: 0 20px;
-  flex-wrap: wrap; /* Para ajuste en pantallas pequeñas */
+  flex-wrap: wrap;
 }
 
-.round-robin-filters .round-robin-label {
+.round-robin-label {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar el contenido */
+  align-items: center;
   font-size: 1.2em;
-  margin: 0 15px; /* Ajustar el margen entre selectores */
+  margin: 0 20px;
+  color: #444;
 }
 
-.round-robin-filters .round-robin-select {
-  width: 220px;
+.round-robin-select {
+  width: 250px;
   padding: 12px;
   font-size: 1.1em;
   margin-top: 5px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f7f7f7;
+  transition: border-color 0.3s ease;
 }
 
-/* Ajuste para dispositivos móviles */
-@media screen and (max-width: 600px) {
+.round-robin-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Botones de confirmación y navegación */
+.round-robin-button-group {
+  margin-top: 30px;
+}
+
+
+.round-robin-button:focus {
+  outline: none;
+}
+
+/* Ajustes para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .round-robin-summary {
+    width: 95%;
+  }
+
   .round-robin-filters {
     flex-direction: column;
     align-items: center;
   }
 
-  .round-robin-filters .round-robin-label {
+  .round-robin-label {
     margin-bottom: 15px;
   }
 
-  .round-robin-filters .round-robin-select {
+  .round-robin-select {
     width: 100%;
+  }
+
+  .round-robin-button {
+    width: 100%;
+    margin-bottom: 10px;
   }
 }

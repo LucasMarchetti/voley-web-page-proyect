@@ -1,8 +1,8 @@
 /* Estilos para el formulario de nuevo estadio */
 .modal-new-stadium-form {
   padding: 20px;
-  background-color: #fff;
   border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .title-modal-new-stadium-form {

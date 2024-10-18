@@ -1,8 +1,8 @@
 /* Estilos para el formulario de nuevo equipo */
 .modal-new-team-form {
   padding: 20px;
-  background-color: #fff;
   border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .title-modal-new-team-form {

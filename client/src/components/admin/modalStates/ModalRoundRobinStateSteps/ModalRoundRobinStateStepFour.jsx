@@ -45,7 +45,7 @@ const ModalRoundRobinStateStepFour = ({ onConfirm, onBack, tournamentData }) => 
       <p>
         <strong>Equipos Participantes:</strong>
       </p>
-      <ul className="round-robin-summary-list">
+      <ul className="round-robin-summary-team-list">
         {tournamentData.selectedTeams.map((team) => (
           <li key={team.value}>{team.label}</li>
         ))}

@@ -55,21 +55,19 @@ const ModalGrandPrixStateStepTwo = ({ onNext, onBack, selectedNumber }) => {
     <div className="grand-prix-step-two-container">
       <h2 className="grand-prix-title">Información del Torneo</h2>
       <div className="grand-prix-input-group">
-        <label className="grand-prix-label">Nombre del Torneo</label>
         <input
           type="text"
+          placeholder='Escribe el Nombre del Torneo'
           className="grand-prix-input"
           value={tournamentName}
           onChange={(e) => setTournamentName(e.target.value)}
         />
       </div>
       <div className="grand-prix-input-group">
-        <label className="grand-prix-label">
-          Selecciona {selectedNumber} equipos
-        </label>
         <Select
           className="grand-prix-react-select-container"
           classNamePrefix="react-select"
+          placeholder={`Selecciona ${selectedNumber} equipos`}
           isMulti
           options={teamOptions}
           value={selectedTeams}
@@ -80,10 +78,10 @@ const ModalGrandPrixStateStepTwo = ({ onNext, onBack, selectedNumber }) => {
         Has seleccionado {selectedTeams.length} de {selectedNumber} equipos.
       </p>
       <div className="grand-prix-input-group">
-        <label className="grand-prix-label">Selecciona Categorías</label>
         <Select
           className="grand-prix-react-select-container"
           classNamePrefix="react-select"
+          placeholder={"Selecciona Categorias"}
           isMulti
           options={categoryOptions}
           value={selectedCategories}

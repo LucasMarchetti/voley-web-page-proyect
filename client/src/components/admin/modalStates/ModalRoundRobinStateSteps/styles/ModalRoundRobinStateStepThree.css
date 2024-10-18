@@ -1,8 +1,25 @@
+  /* Estilos para botones */
+  .round-robin-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+  }
+  
+  .round-robin-button:hover {
+    background-color: #0056b3;
+  }
+
 .round-robin-step-three-container {
   text-align: center;
   color: black;
   width: 80%;
   margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Título con letra más grande */
@@ -78,8 +95,4 @@
   font-size: 1.1em;
 }
 
-/* Botones */
-.round-robin-button-group .round-robin-button {
-  font-size: 1.2em;
-  padding: 15px 30px;
-}
+

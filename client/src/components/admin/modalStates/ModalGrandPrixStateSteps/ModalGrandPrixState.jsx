@@ -29,7 +29,7 @@ const ModalGrandPrixState = ({ shouldRenderContent, currentModalState }) => {
   };
 
   return (
-    <div>
+    <div className='modal-grandprixsteps'>
       {step === 1 && <ModalGrandPrixStateStepOne onNext={handleNextStep} />}
       {step === 2 && (
         <ModalGrandPrixStateStepTwo

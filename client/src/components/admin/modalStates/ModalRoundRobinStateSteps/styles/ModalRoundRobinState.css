@@ -15,11 +15,7 @@
   .round-robin-button:hover {
     background-color: #0056b3;
   }
-  
-  .round-robin-button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
+
   
   /* Títulos centrados */
   .round-robin-title {
