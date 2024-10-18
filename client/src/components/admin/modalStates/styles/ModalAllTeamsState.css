@@ -137,3 +137,36 @@
     text-align: center;
   }
   
+  /* Animación tipo pop y color amarillo para "modificado" */
+/* Estilos para el modal de confirmación */
+.confirmation-modal {
+  background-color: #FFD700; /* Fondo amarillo */
+  color: black;
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 9999; /* Asegura que el modal esté siempre encima */
+  animation: popEffect 1.5s forwards; /* Animación tipo pop */
+}
+
+@keyframes popEffect {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

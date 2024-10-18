@@ -140,3 +140,29 @@
     text-align: center;
   }
   
+  /* Animación tipo pop y color amarillo para "modificado" */
+.confirmation-modal.yellow {
+  position: absolute;
+  background-color: #FFD700; /* Fondo amarillo */
+  color: black;
+  animation: popEffect 1.5s forwards;
+}
+
+@keyframes popEffect {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

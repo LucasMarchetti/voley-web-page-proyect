@@ -1,17 +1,17 @@
-// src/components/ModalAllCategoriesState.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeCategory, updateCategory } from '../../../redux/reducers/categorias/reducer';
+import { removeCategory, updateCategory } from '../../../redux/reducers/categoriasSlice';
 import './styles/ModalAllCategoriesState.css';
 
 const ModalAllCategoriesState = () => {
-  const categories = useSelector((state) => state.categories);
+  const categorias = useSelector((state) => state.categorias);
   const dispatch = useDispatch();
   const [editingId, setEditingId] = useState(null);
   const [editedName, setEditedName] = useState('');
   const [editedAbbreviation, setEditedAbbreviation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isConfirmationVisible, setIsConfirmationVisible] = useState(false); // Estado para el mensaje de confirmación
 
   const handleDelete = (id) => {
     if (window.confirm('¿Estás seguro de que deseas eliminar esta categoría?')) {
@@ -41,6 +41,12 @@ const ModalAllCategoriesState = () => {
     setEditedName('');
     setEditedAbbreviation('');
     setIsModalOpen(false); // Cierra el modal
+
+    // Mostrar mensaje de confirmación por 1.5 segundos
+    setIsConfirmationVisible(true);
+    setTimeout(() => {
+      setIsConfirmationVisible(false);
+    }, 1500);
   };
 
   const handleCancel = () => {
@@ -55,7 +61,7 @@ const ModalAllCategoriesState = () => {
     <div className="modal-all-categories">
       <h2 className="modal-title">Administrar Categorías</h2>
       <ul className="categories-list">
-        {categories.map((category) => (
+        {categorias.map((category) => (
           <li key={category.id} className="category-item">
             <div className="category-info">
               <span className="category-name">{category.name}</span>
@@ -94,6 +100,13 @@ const ModalAllCategoriesState = () => {
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Modal de confirmación con animación */}
+      {isConfirmationVisible && (
+        <div className="confirmation-modal yellow">
+          <h2>Categoría modificada</h2>
         </div>
       )}
     </div>

@@ -1,16 +1,16 @@
-// src/components/ModalAllStadiumsState.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeStadium, updateStadium } from '../../../redux/reducers/estadios/reducer';
+import { removeStadium, updateStadium } from '../../../redux/reducers/estadiosSlice';
 import './styles/ModalAllStadiumsState.css';
 
 const ModalAllStadiumsState = () => {
-  const stadiums = useSelector((state) => state.stadiums);
+  const estadios = useSelector((state) => state.estadios);
   const dispatch = useDispatch();
   const [editingId, setEditingId] = useState(null);
   const [editedName, setEditedName] = useState('');
   const [editedLocation, setEditedLocation] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isConfirmationVisible, setIsConfirmationVisible] = useState(false); // Estado para el mensaje de confirmación
 
   const handleDelete = (id) => {
     if (window.confirm('¿Estás seguro de que deseas eliminar este estadio?')) {
@@ -38,6 +38,12 @@ const ModalAllStadiumsState = () => {
     setEditingId(null);
     setEditedName('');
     setEditedLocation('');
+
+    // Mostrar mensaje de confirmación por 1.5 segundos
+    setIsConfirmationVisible(true);
+    setTimeout(() => {
+      setIsConfirmationVisible(false);
+    }, 1500);
   };
 
   const handleCancel = () => {
@@ -51,7 +57,7 @@ const ModalAllStadiumsState = () => {
     <div className="modal-all-stadiums">
       <h2 className="modal-title">Administrar Estadios</h2>
       <ul className="stadiums-list">
-        {stadiums.map((stadium) => (
+        {estadios.map((stadium) => (
           <li key={stadium.id} className="stadium-item">
             {editingId === stadium.id ? (
               <div className="edit-form">
@@ -90,6 +96,13 @@ const ModalAllStadiumsState = () => {
           </li>
         ))}
       </ul>
+
+      {/* Modal de confirmación con animación */}
+      {isConfirmationVisible && (
+        <div className="confirmation-modal yellow">
+          <h2>Estadio modificado</h2>
+        </div>
+      )}
     </div>
   );
 };

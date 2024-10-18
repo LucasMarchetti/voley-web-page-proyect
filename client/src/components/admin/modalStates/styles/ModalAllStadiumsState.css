@@ -128,3 +128,38 @@
     text-align: center;
   }
   
+  .confirmation-modal {
+    position: fixed; /* Usar position fixed para que siempre esté visible en la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centramos horizontal y verticalmente */
+    background-color: #FFD700; /* Fondo amarillo */
+    color: black;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    z-index: 9999; /* Asegura que el modal esté siempre encima */
+    animation: popEffect 1.5s forwards; /* Animación tipo pop */
+  }
+  
+  @keyframes popEffect {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8); /* Empieza más pequeño */
+    }
+    50% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.15); /* Hace el efecto "pop" */
+    }
+    80% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(0.95); /* Contrae un poco después del pop */
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1); /* Vuelve a su tamaño normal */
+    }
+  }

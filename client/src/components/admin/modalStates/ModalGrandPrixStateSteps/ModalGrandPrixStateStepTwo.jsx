@@ -1,24 +1,23 @@
-// ModalGrandPrixStateStepTwo.js
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Select from 'react-select';
 import './styles/ModalGrandPrixStateStepTwo.css';
 
 const ModalGrandPrixStateStepTwo = ({ onNext, onBack, selectedNumber }) => {
-  const teams = useSelector((state) => state.teams) || [];
-  const categories = useSelector((state) => state.categories) || [];
+  const equipos = useSelector((state) => state.equipos) || [];
+  const categorias = useSelector((state) => state.categorias) || [];
 
   const [tournamentName, setTournamentName] = useState('');
   const [selectedTeams, setSelectedTeams] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [numberOfRounds, setNumberOfRounds] = useState(1);
 
-  if (!teams || teams.length === 0) {
+  if (!equipos || equipos.length === 0) {
     return <div>Cargando equipos...</div>;
   }
 
-  const teamOptions = teams.map((team) => ({ value: team.id, label: team.name }));
-  const categoryOptions = categories.map((category) => ({ value: category.id, label: category.name }));
+  const teamOptions = equipos.map((team) => ({ value: team.id, label: team.name }));
+  const categoryOptions = categorias.map((category) => ({ value: category.id, label: category.name }));
 
   const handleTeamSelect = (selectedOptions) => {
     if (selectedOptions.length <= selectedNumber) {

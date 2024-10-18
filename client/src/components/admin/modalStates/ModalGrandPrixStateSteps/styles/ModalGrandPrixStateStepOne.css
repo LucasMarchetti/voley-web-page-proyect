@@ -4,7 +4,7 @@
 .grand-prix-step-one-container {
     text-align: center;
     color: black;
-    width: 70%;
+    width: 100%;
     margin: 0 auto; /* Centers the container horizontally */
   }
   
@@ -17,7 +17,7 @@
   .grand-prix-input {
     width: 100%;
     padding: 15px;
-    font-size: 1.5em;
+    font-size: 1.1em;
     margin-top: 20px;
     border: 2px solid #007bff;
     border-radius: 8px;

@@ -9,10 +9,8 @@ import ModalGrandPrixStateStepThree from './ModalGrandPrixStateStepThree';
 import ModalGrandPrixStateStepFour from './ModalGrandPrixStateStepFour';
 import ModalGrandPrixStateStepFive from './ModalGrandPrixStateStepFive';
 
-const ModalGrandPrixState = () => {
+const ModalGrandPrixState = ({ shouldRenderContent, currentModalState }) => {
   const dispatch = useDispatch();
-  const isOpen = useSelector((state) => state.modal.isOpen);
-  const modalState = useSelector((state) => state.modal.modalState);
 
   const [step, setStep] = useState(1);
   const [tournamentData, setTournamentData] = useState({});
@@ -29,10 +27,6 @@ const ModalGrandPrixState = () => {
   const handleClose = () => {
     dispatch(closeModal());
   };
-
-  if (!isOpen || modalState !== 'ModalGrandPrixState') {
-    return null;
-  }
 
   return (
     <div>

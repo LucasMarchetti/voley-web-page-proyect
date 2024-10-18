@@ -6,10 +6,9 @@ import ModalRoundRobinStateStepTwo from './ModalRoundRobinStateStepTwo';
 import ModalRoundRobinStateStepThree from './ModalRoundRobinStateStepThree';
 import ModalRoundRobinStateStepFour from './ModalRoundRobinStateStepFour';
 
-const ModalRoundRobinState = () => {
+const ModalRoundRobinState = ({ shouldRenderContent, currentModalState }) => {
   const dispatch = useDispatch();
-  const isOpen = useSelector((state) => state.modal.isOpen);
-  const modalState = useSelector((state) => state.modal.modalState);
+
 
   const [step, setStep] = useState(1);
   const [tournamentData, setTournamentData] = useState({});
@@ -29,11 +28,6 @@ const ModalRoundRobinState = () => {
     dispatch(closeModal());
     };
 
-  if (!isOpen || modalState !== 'ModalRoundRobinState') {
-    return null;
-  }
-
-  
   return (
     <div>
       {step === 1 && <ModalRoundRobinStateStepOne onNext={handleNextStep} />}

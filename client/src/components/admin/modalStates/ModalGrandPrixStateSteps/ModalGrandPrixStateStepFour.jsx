@@ -1,4 +1,3 @@
-// ModalGrandPrixStateStepFour.js
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './styles/ModalGrandPrixStateStepFour.css';
@@ -8,7 +7,7 @@ const ModalGrandPrixStateStepFour = ({
   onBack,
   tournamentData,
 }) => {
-  const stadiums = useSelector((state) => state.stadiums) || [];
+  const estadios = useSelector((state) => state.estadios) || [];
   const [matchups, setMatchups] = useState([]);
   const [filteredMatchups, setFilteredMatchups] = useState([]);
   const [selectedZone, setSelectedZone] = useState(Object.keys(tournamentData.zones)[0]);
@@ -58,7 +57,6 @@ const ModalGrandPrixStateStepFour = ({
               zone: zoneName,
             });
           }
-          // Rotate teams for next round
           teamIndexes.splice(1, 0, teamIndexes.pop());
         }
       }
@@ -105,7 +103,7 @@ const ModalGrandPrixStateStepFour = ({
     setSelectedCategory(e.target.value);
   };
 
-  if (!stadiums || stadiums.length === 0) {
+  if (!estadios || estadios.length === 0) {
     return <div>Cargando estadios...</div>;
   }
 
@@ -204,14 +202,14 @@ const ModalGrandPrixStateStepFour = ({
               className="grand-prix-select"
               value={matchup.stadium ? matchup.stadium.id : ''}
               onChange={(e) => {
-                const selectedStadium = stadiums.find(
+                const selectedStadium = estadios.find(
                   (stadium) => stadium.id === e.target.value
                 );
                 handleMatchupChange(matchup.id, 'stadium', selectedStadium);
               }}
             >
               <option value="">Selecciona un estadio</option>
-              {stadiums.map((stadium) => (
+              {estadios.map((stadium) => (
                 <option key={stadium.id} value={stadium.id}>
                   {stadium.name}
                 </option>

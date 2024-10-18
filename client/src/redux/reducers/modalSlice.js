@@ -15,10 +15,13 @@ const modalSlice = createSlice({
     },
     closeModal: (state) => {
       state.isOpen = false;
-      state.modalState = null;
+      // No restablezcas modalState aquí
+    },
+    resetModalState: (state) => {
+      state.modalState = null; // Restablece modalState después de que el modal se haya cerrado
     },
   },
 });
 
-export const { openModal, closeModal } = modalSlice.actions;
+export const { openModal, closeModal, resetModalState } = modalSlice.actions;
 export default modalSlice.reducer;

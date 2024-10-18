@@ -1,4 +1,3 @@
-// ModalRoundRobinStateStepThree.js
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import './styles/ModalRoundRobinStateStepThree.css';
@@ -12,7 +11,7 @@ const ModalRoundRobinStateStepThree = ({
   matchups,
   setMatchups,
 }) => {
-  const stadiums = useSelector((state) => state.stadiums) || [];
+  const estadios = useSelector((state) => state.estadios) || [];
   const [filteredMatchups, setFilteredMatchups] = useState([]);
   const [selectedFecha, setSelectedFecha] = useState('1');
   const [selectedCategory, setSelectedCategory] = useState(
@@ -32,10 +31,8 @@ const ModalRoundRobinStateStepThree = ({
     if (matchups.length === 0) {
       generateMatchups();
     }
-    // No llamamos a filterMatchups aquí; lo haremos en otro useEffect
   }, [selectedTeams, selectedCategories, numberOfRounds]);
 
-  // Nuevo useEffect para actualizar los enfrentamientos filtrados cuando cambian los filtros o los enfrentamientos
   useEffect(() => {
     filterMatchups();
   }, [selectedFecha, selectedCategory, matchups]);
@@ -77,7 +74,6 @@ const ModalRoundRobinStateStepThree = ({
     });
 
     setMatchups(allMatchups);
-    // No llamamos a filterMatchups aquí; se llamará automáticamente en el useEffect cuando matchups cambie
   };
 
   const filterMatchups = () => {
@@ -99,7 +95,6 @@ const ModalRoundRobinStateStepThree = ({
       }
     });
     setMatchups(updatedMatchups);
-    // No necesitamos llamar a filterMatchups aquí; el useEffect lo manejará
   };
 
   const handleNext = () => {
@@ -108,15 +103,13 @@ const ModalRoundRobinStateStepThree = ({
 
   const handleFechaChange = (e) => {
     setSelectedFecha(e.target.value);
-    // No llamamos a filterMatchups aquí
   };
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
-    // No llamamos a filterMatchups aquí
   };
 
-  if (!stadiums || stadiums.length === 0) {
+  if (!estadios || estadios.length === 0) {
     return <div>Cargando estadios...</div>;
   }
 
@@ -199,14 +192,14 @@ const ModalRoundRobinStateStepThree = ({
               className="round-robin-select"
               value={matchup.stadium ? matchup.stadium.id : ''}
               onChange={(e) => {
-                const selectedStadium = stadiums.find(
+                const selectedStadium = estadios.find(
                   (stadium) => stadium.id === e.target.value
                 );
                 handleMatchupChange(matchup.id, 'stadium', selectedStadium);
               }}
             >
               <option value="">Selecciona un estadio</option>
-              {stadiums.map((stadium) => (
+              {estadios.map((stadium) => (
                 <option key={stadium.id} value={stadium.id}>
                   {stadium.name}
                 </option>

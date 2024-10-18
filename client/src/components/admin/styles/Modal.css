@@ -1,55 +1,119 @@
-.modal {
-    position: fixed;
-    top: 50%;  /* Posiciona el modal al 50% desde el top de la ventana */
-    left: 50%; /* Posiciona el modal al 50% desde el left de la ventana */
-    max-height: 80%;
-    overflow-y: auto; /* Permite el scroll vertical en el step 3 */
-    overflow-x: hidden;
-    transform: translate(-50%, -50%); /* Traslada el modal un 50% hacia arriba y a la izquierda para centrarlo */
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+/* Overlay del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Contenido del modal */
+.ReactModal__Content.modal-content {
+  position: relative;
+  max-height: 80%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  min-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Animaciones del modal */
+.ReactModal__Content--after-open.modal-content {
+  animation: modalOpen 0.5s forwards cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.ReactModal__Content--before-close.modal-content {
+  animation: modalClose 0.4s forwards cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+@keyframes modalOpen {
+  0% {
     opacity: 0;
-    transform: scale(0); /* Escalar el modal a 0 al principio */
-    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+    transform: scale(0.7);
   }
-
-
-  .titulos-prueba{
-    color: #000;
-  }
-  
-  .modal.show {
+  60% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1); /* Asegura que el modal esté centrado y a tamaño normal cuando está abierto */
+    transform: scale(1.05);
   }
-  
-  .modal-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalClose {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+/* Botón de cierre */
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-close-button:hover {
+  color: #ff0000;
+  transform: scale(1.2) rotate(90deg);
+}
+
+.modal-close-button:focus {
+  outline: none;
+}
+
+/* Estilos adicionales */
+.titulos-prueba {
+  color: #000;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 480px) {
+  .ReactModal__Content.modal-content {
+    width: 90%;
+    max-width: none;
+    min-width: 90%;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .ReactModal__Content.modal-content {
+    width: 85%;
+    max-width: none;
     padding: 20px;
   }
-  .modal-close-button {
-    position: absolute;
-    top: 10px; /* Posición en la esquina superior */
-    right: 10px; /* Posición en la esquina derecha */
-    background: transparent;
-    border: none;
-    color: #333;
-    font-size: 24px;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transición para el hover */
+}
+
+@media (min-width: 769px) {
+  .ReactModal__Content.modal-content {
+    width: 70%;
+    max-width: 900px;
+    padding: 25px;
   }
-  
-  .modal-close-button:hover {
-    color: #ff0000; /* Color llamativo al hacer hover */
-    transform: scale(1.2) rotate(90deg); /* Efecto de aumento y giro al hacer hover */
-  }
-  
-  .modal-close-button:focus {
-    outline: none; /* Evitar el borde al enfocarse */
-  }
+}

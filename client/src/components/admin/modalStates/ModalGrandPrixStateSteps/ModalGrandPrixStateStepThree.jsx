@@ -15,7 +15,6 @@ const ModalGrandPrixStateStepThree = ({
   }, [selectedTeams]);
 
   const initializeZones = () => {
-    // Calcular el número de zonas necesarias
     const numZones = Math.ceil(selectedTeams.length / maxTeamsPerZone);
 
     const initialZones = {};
@@ -33,32 +32,25 @@ const ModalGrandPrixStateStepThree = ({
 
   const handleTeamClick = (zoneName, team, teamIndex) => {
     if (selectedTeam) {
-      // Ya hay un equipo seleccionado, así que intercambiamos
       const updatedZones = JSON.parse(JSON.stringify(zones));
-
-      // Intercambiamos los equipos seleccionados
       const sourceZone = selectedTeam.zoneName;
       const sourceIndex = selectedTeam.index;
 
       const targetZone = zoneName;
       const targetIndex = teamIndex;
 
-      // Realizar el intercambio de equipos
       const temp = updatedZones[sourceZone][sourceIndex];
       updatedZones[sourceZone][sourceIndex] = updatedZones[targetZone][targetIndex];
       updatedZones[targetZone][targetIndex] = temp;
 
-      // Restablecer el estado de selección
       setSelectedTeam(null);
       setZones(updatedZones);
     } else {
-      // No hay equipo seleccionado, seleccionamos este
       setSelectedTeam({ zoneName, team, index: teamIndex });
     }
   };
 
   const handleNext = () => {
-    // Verificar que todas las zonas tengan al menos 2 equipos
     for (const zoneName in zones) {
       if (zones[zoneName].length < 2) {
         alert(`La ${zoneName} debe tener al menos 2 equipos.`);

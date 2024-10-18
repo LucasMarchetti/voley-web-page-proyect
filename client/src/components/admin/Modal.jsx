@@ -1,10 +1,11 @@
-import React from 'react';
-import './styles/Modal.css'
+import React, { useState, useEffect } from 'react';
+import './styles/Modal.css';
+import ReactModal from 'react-modal';
+
 import { useSelector, useDispatch } from 'react-redux';
-import { closeModal } from '../../redux/reducers/modalSlice';
+import { closeModal, resetModalState } from '../../redux/reducers/modalSlice'; // Importa resetModalState
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import ModalNewTeam from './modalStates/ModalNewTeamState';
 import ModalNewTeamState from './modalStates/ModalNewTeamState';
 import ModalNewCategoryState from './modalStates/ModalNewCategoryState';
 import ModalAllCategoriesState from './modalStates/ModalAllCategoriesState';
@@ -14,16 +15,38 @@ import ModalNewStadiumState from './modalStates/ModalNewStadiumState';
 import ModalRoundRobinState from './modalStates/ModalRoundRobinStateSteps/ModalRoundRobinState';
 import ModalGrandPrixState from './modalStates/ModalGrandPrixStateSteps/ModalGrandPrixState';
 
+ReactModal.setAppElement('#root');
+
 const Modal = () => {
   const { isOpen, modalState } = useSelector((state) => state.modal);
   const dispatch = useDispatch();
 
+  // Estados locales para controlar el renderizado y el estado del modal
+  const [shouldRenderContent, setShouldRenderContent] = useState(false);
+  const [currentModalState, setCurrentModalState] = useState(modalState);
+
+  useEffect(() => {
+    if (isOpen) {
+      setShouldRenderContent(true);
+      setCurrentModalState(modalState); // Guardamos el modalState actual
+    }
+  }, [isOpen, modalState]);
+
+  const afterClose = () => {
+    // Se llama después de que la animación de cierre ha terminado
+    setShouldRenderContent(false);
+    setCurrentModalState(null); // Restablecemos el modalState local
+    dispatch(resetModalState()); // Restablecemos modalState en el store
+  };
+
   const renderContent = () => {
-    switch (modalState) {
+    if (!shouldRenderContent) return null;
+
+    switch (currentModalState) { // Usamos el modalState local
       case 'ModalRoundRobinState':
-        return <ModalRoundRobinState/>;
+        return <ModalRoundRobinState shouldRenderContent={shouldRenderContent} currentModalState={currentModalState}/>;
       case 'ModalGrandPrixState':
-        return <ModalGrandPrixState/>
+        return <ModalGrandPrixState shouldRenderContent={shouldRenderContent} currentModalState={currentModalState}/>;
       case 'ModalPersonalizedTournamentState':
         return <h1 className='titulos-prueba'>Soy ModalPersonalizedTournamentState</h1>;
       case 'ModalTorneosFinalizadosState':
@@ -33,17 +56,17 @@ const Modal = () => {
       case 'ModalTorneoProximosState':
         return <h1 className='titulos-prueba'>Soy ModalTorneoProximosState</h1>;
       case 'ModalNewTeamState':
-        return <ModalNewTeamState/>;
+        return <ModalNewTeamState />;
       case 'ModalNewCategoryState':
-        return <ModalNewCategoryState/>;
+        return <ModalNewCategoryState />;
       case 'ModalNewStadiumState':
-        return <ModalNewStadiumState/>
+        return <ModalNewStadiumState />;
       case 'ModalAllTeamsState':
-        return <ModalAllTeamsState/>;
+        return <ModalAllTeamsState />;
       case 'ModalAllStadiumsState':
-        return <ModalAllStadiumsState/>;
+        return <ModalAllStadiumsState />;
       case 'ModalAllCategorysState':
-        return <ModalAllCategoriesState/>;
+        return <ModalAllCategoriesState />;
       case 'ModalNewPermissionState':
         return <h1 className='titulos-prueba'>Soy ModalNewPermissionState</h1>;
       case 'ModalNewUserState':
@@ -59,17 +82,20 @@ const Modal = () => {
     }
   };
 
-  if (!isOpen) return null;
-
   return (
-    <div className="modal show">
-        <button className="modal-close-button" onClick={() => dispatch(closeModal())}>
-          <FontAwesomeIcon icon={faTimes} />
-        </button>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        {renderContent()}
-      </div>
-    </div>
+    <ReactModal
+      isOpen={isOpen}
+      onRequestClose={() => dispatch(closeModal())}
+      onAfterClose={afterClose}
+      className="modal-content"
+      overlayClassName="modal-overlay"
+      closeTimeoutMS={400} // Asegúrate de que coincide con la duración de la animación de cierre
+    >
+      <button className="modal-close-button" onClick={() => dispatch(closeModal())}>
+        <FontAwesomeIcon icon={faTimes} />
+      </button>
+      {renderContent()}
+    </ReactModal>
   );
 };
 

@@ -1,4 +1,3 @@
-// ModalGrandPrixStateStepFive.js
 import React, { useState } from 'react';
 import './styles/ModalGrandPrixStateStepFive.css';
 

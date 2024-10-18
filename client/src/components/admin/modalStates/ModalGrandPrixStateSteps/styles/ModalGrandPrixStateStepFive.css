@@ -6,6 +6,11 @@
     margin: 0 auto;
   }
   
+  .grand-prix-summary p{
+    font-size: 25px; 
+  }
+  
+
   /* Matchup summary */
   .grand-prix-matchup-summary {
     background-color: lightgray;
