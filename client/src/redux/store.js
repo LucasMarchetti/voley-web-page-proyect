@@ -8,9 +8,11 @@ import modalReducer from './reducers/modalSlice.js';
 import equiposReducer from './reducers/equiposSlice.js';
 import estadiosReducer from './reducers/estadiosSlice.js';
 import categoriasReducer from './reducers/categoriasSlice.js'
+import torneoReducer from './reducers/torneoSlice.js'
 
 const store = configureStore({
   reducer: {
+      tournaments: torneoReducer,
       users: usersReducer,
       modal: modalReducer,
       equipos: equiposReducer,

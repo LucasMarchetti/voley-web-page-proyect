@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useDispatch } from 'react-redux'; 
+import { fetchTournaments } from './redux/reducers/torneoSlice.js';
 
 //styles
 import "./App.css";
@@ -21,12 +23,18 @@ const InicioAdmin = lazy(() => import("./pages/admin/Inicioadmin.jsx"));
 function App() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchTournaments());
+  }, [dispatch]);
 
   useEffect(() => {
     setLoading(true);
     const timeout = setTimeout(() => {
       setLoading(false);
     }, 1000);
+
+  
 
     return () => clearTimeout(timeout);
   }, [location]);

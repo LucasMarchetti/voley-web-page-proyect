@@ -1,0 +1,110 @@
+.modal-tournaments-in-process {
+    padding: 20px;
+  }
+  
+  .tournament {
+    margin-bottom: 40px;
+  }
+  
+  .matches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .round-robin-matchup-summary {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .round-robin-matchup-summary:hover {
+    background-color: #d9d9d9;
+  }
+  
+  .standings {
+    margin-top: 20px;
+  }
+  
+  .standings table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .standings th,
+  .standings td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .match-modal {
+    background-color: #fff;
+    padding: 20px;
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .set-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .set-input label {
+    flex: 1;
+  }
+  
+  .set-input input {
+    width: 80px;
+    margin: 0 5px;
+  }
+  
+  .add-set-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .add-set-button:hover {
+    background-color: #45a049;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .save-button {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .save-button:hover {
+    background-color: #0b7dda;
+  }
+  
+  .cancel-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .cancel-button:hover {
+    background-color: #da190b;
+  }
+  

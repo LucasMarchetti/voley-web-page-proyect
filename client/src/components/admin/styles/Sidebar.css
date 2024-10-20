@@ -1,145 +1,149 @@
-/* Contenedor principal de la sidebar */
-.sidebar {
-    position: fixed;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Negro con opacidad cuando está abierta */
-    color: white;
-    display: flex;
-    flex-direction: column; /* Mantener la dirección en columna */
-    justify-content: flex-start; /* Alinear los elementos en la columna */
-    transition: width 0.3s ease, background-color 0.3s ease; /* Transición suave */
-    padding-top: 20px;
-  }
-  
-  .sidebar.closed {
-    width: 80px; /* Sidebar en estado cerrado */
-    background-color: #000; /* Negro sólido cuando está cerrada */
-  }
-  
-  /* Sidebar abierta */
-  .sidebar.open {
-    width: 250px; /* Sidebar completamente desplegada */
-  }
-
-  .sidebar-content {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  /* Encabezado */
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Alineación entre la flecha y el título */
-    padding: 0 10px; /* Espacio interno */
-  }
-  
-  /* Título de la sidebar cuando está abierta */
-  .sidebar-title {
-    text-align: left; /* Alineado a la izquierda */
-    font-size: 18px;
-    margin: 0; /* Sin margen */
-    padding: 10px; /* Padding agregado */
-  }
-  /* Botón para mostrar/ocultar la sidebar */
-  .toggle-btn {
-    background-color: transparent; /* Sin fondo */
-    border: none; /* Sin borde */
-    color: white; /* Color del ícono */
-    font-size: 18px;
-    cursor: pointer;
-    padding: 10px;
-  }
-  
-  /* Botones del menú */
-  .menu-buttons {
-
-    margin-bottom: 20px; /* Agregar espacio debajo de los botones del menú */
-  }
-  
-  .sidebar-btn {
-    background-color: #444;
-    border: none;
-    color: white;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    width: 100%;
-    font-size: 16px;
-    cursor: pointer;
-    border-bottom: 1px solid #473636;
-  }
-  
-  .sidebar-btn:hover {
-    background-color: #555;
-  }
-  
-  /* Íconos de los botones */
-  .icon {
-    margin-right: 10px;
-    font-size: 20px;
-  }
-  
-  .sidebar.closed .icon {
-    margin: 0 auto; /* Centramos los íconos cuando la sidebar está cerrada */
-  }
-  
-  .sidebar.closed .sidebar-btn {
-    justify-content: center;
-  }
-  
-  .sidebar.open .sidebar-btn {
-    justify-content: flex-start; /* Alineación a la izquierda cuando está abierta */
-  }
-  
-  /* Sección de perfil alineada al fondo */
-  .profile-section {
-    text-align: center;
-    
-    bottom: 0;
-    margin-top: auto; /* Empuja la sección hacia la parte inferior */
-    padding: 20px; /* Agrega algo de relleno */
-    background-color: rgba(255, 255, 255, 0.1); /* Color de fondo opcional */
+/* Define CSS variables for colors */
+:root {
+  --dark-color: #1b4965;
+  --medium-color: #62b6cb;
+  --light-color: #bee9e8;
+  --lighter-color: #cae9ff;
 }
-  
-  /* Información de perfil */
-  .profile-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0; /* Espacio alrededor de la imagen de perfil */
-  }
-  
-  .profile-pic {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-    bottom: auto;
-  }
-  
-  .profile-name {
-    margin-bottom: 20px;
-  }
-  
-  /* Botón de logout */
-  .logout-btn {
-    background-color: #e74c3c;
-    border: none;
-    color: white;
-    padding: 10px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  .logout-btn:hover {
-    background-color: #c0392b;
-  }
-  
+
+/* Main container of the sidebar */
+.sidebar {
+  position: fixed;
+  left: 0;
+  height: 100%;
+  background-color: var(--dark-color);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar.closed {
+  width: 80px;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.toggle-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+  transform: rotate(180deg);
+}
+
+.sidebar-title {
+  margin-left: 10px;
+  font-size: 24px;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.closed .sidebar-title {
+  opacity: 0;
+}
+
+.menu-buttons {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-btn {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar-btn:hover {
+  background-color: var(--medium-color);
+}
+
+.sidebar-btn.active {
+  background-color: var(--medium-color);
+}
+
+.icon {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-btn:hover .icon {
+  transform: scale(1.1);
+}
+
+.sidebar.closed .icon {
+  margin: 0 auto;
+}
+
+.sidebar.closed .sidebar-btn {
+  justify-content: center;
+}
+
+.sidebar.closed .sidebar-btn span {
+  display: none;
+}
+
+.profile-section {
+  padding: 20px;
+  background-color: var(--medium-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  margin-bottom: 10px;
+}
+
+.logout-btn {
+  background-color: var(--dark-color);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--light-color);
+}
+
+/* Animations for opening/closing */
+.sidebar.closed .toggle-btn {
+  transform: rotate(180deg);
+}

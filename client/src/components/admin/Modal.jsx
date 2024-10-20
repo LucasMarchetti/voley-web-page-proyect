@@ -14,6 +14,7 @@ import ModalAllTeamsState from './modalStates/ModalAllTeamsState';
 import ModalNewStadiumState from './modalStates/ModalNewStadiumState';
 import ModalRoundRobinState from './modalStates/ModalRoundRobinStateSteps/ModalRoundRobinState';
 import ModalGrandPrixState from './modalStates/ModalGrandPrixStateSteps/ModalGrandPrixState';
+import ModalTournamentsInProcessState from './modalStates/ModalTournamentsInProcessState';
 
 ReactModal.setAppElement('#root');
 
@@ -51,8 +52,8 @@ const Modal = () => {
         return <h1 className='titulos-prueba'>Soy ModalPersonalizedTournamentState</h1>;
       case 'ModalTorneosFinalizadosState':
         return <h1 className='titulos-prueba'>Soy ModalTorneosFinalizadosState</h1>;
-      case 'ModalTorneosProcesoState':
-        return <h1 className='titulos-prueba'>Soy ModalTorneosProcesoState</h1>;
+      case 'ModalTournamentsInProcessState':
+        return <ModalTournamentsInProcessState/>
       case 'ModalTorneoProximosState':
         return <h1 className='titulos-prueba'>Soy ModalTorneoProximosState</h1>;
       case 'ModalNewTeamState':

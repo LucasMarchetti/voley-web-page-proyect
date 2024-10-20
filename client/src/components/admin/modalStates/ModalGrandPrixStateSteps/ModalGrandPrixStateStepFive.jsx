@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { addTournament } from '../../../../redux/reducers/torneoSlice';
+import { useDispatch } from 'react-redux';
 import './styles/ModalGrandPrixStateStepFive.css';
 
 const ModalGrandPrixStateStepFive = ({ onConfirm, onBack, tournamentData }) => {
@@ -20,6 +22,27 @@ const ModalGrandPrixStateStepFive = ({ onConfirm, onBack, tournamentData }) => {
 
   const handleCategoryChange = (e) => {
     setSelectedCategory(e.target.value);
+  };
+
+  const dispatch = useDispatch();
+
+  const handleConfirm = () => {
+    const newTournament = {
+      id: `${Date.now()}`,  // Genera un ID único, o usa uno real si tienes
+      tournamentName: tournamentData.tournamentName,
+      numberOfRounds: tournamentData.numberOfRounds,
+      selectedCategories: tournamentData.selectedCategories,
+      zones: tournamentData.zones,
+      matchups: tournamentData.matchups,
+    };
+
+    // Despachar acción para agregar el torneo
+    dispatch(addTournament(newTournament));
+
+    // Ejecutar cualquier otra lógica de confirmación (navegar, etc.)
+    if (onConfirm) {
+      onConfirm();
+    }
   };
 
   const filteredMatchups = allMatchups.filter(
@@ -130,7 +153,7 @@ const ModalGrandPrixStateStepFive = ({ onConfirm, onBack, tournamentData }) => {
         <button className="grand-prix-button" onClick={onBack}>
           Anterior
         </button>
-        <button className="grand-prix-button" onClick={onConfirm}>
+        <button className="grand-prix-button" onClick={handleConfirm}>
           Confirmar y Crear Torneo
         </button>
       </div>
