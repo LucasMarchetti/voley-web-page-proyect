@@ -32,10 +32,10 @@
     object-fit: contain;
 }
 
-.logo-headerLiga:hover {
+/* .logo-headerLiga:hover {
     background-color: #ffffff7e;
     border-radius: 30%;
-}
+} */
 
 .logo-header {
     width: 230px;
