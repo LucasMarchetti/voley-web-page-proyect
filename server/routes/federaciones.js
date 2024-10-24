@@ -1,5 +1,6 @@
 import express from 'express';
 import Federacion from '../models/federacion.js';
+import authorize from '../middlewares/authorize.js';
 
 const router = express.Router();
 

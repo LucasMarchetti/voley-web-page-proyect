@@ -1,6 +1,8 @@
 
 import express from 'express';
 import Permiso from '../models/permiso.js';
+import authorize from '../middlewares/authorize.js';
+
 
 const router = express.Router();
 

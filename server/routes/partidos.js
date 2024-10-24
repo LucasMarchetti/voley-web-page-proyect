@@ -1,5 +1,7 @@
 import express from 'express'
 import Partido from '../models/partido.js'
+import authorize from '../middlewares/authorize.js';
+
 
 const router = express.Router()
 
