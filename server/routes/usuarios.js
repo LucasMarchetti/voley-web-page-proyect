@@ -8,7 +8,7 @@ import authorize from '../middlewares/authorize.js';
 
 const router = express.Router();
 
-router.post('/', authorize([1, 2]), [
+router.post('/', [
   body('nombre_usuario').notEmpty().withMessage('Nombre de usuario es obligatorio'),
   body('email').isEmail().withMessage('Debe ser un correo electrónico válido'),
   body('password').isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
@@ -71,7 +71,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.put('/:id', authorize([1, 2]), [
+router.put('/:id', [
   body('nombre_usuario').optional().notEmpty().withMessage('Nombre de usuario no puede estar vacío'),
   body('email').optional().isEmail().withMessage('Debe ser un correo electrónico válido'),
   body('password').optional().isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
@@ -101,7 +101,7 @@ router.put('/:id', authorize([1, 2]), [
   }
 });
 
-router.delete('/:id', authorize([1, 2]), async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
       const idUsuario = req.params.id
       const usuario = await Usuario.findByPk(idUsuario)

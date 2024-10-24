@@ -4,7 +4,7 @@ import authorize from '../middlewares/authorize.js'
 
 const router = express.Router()
 
-router.post('/', authorize([1, 2]), async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const { nombre_categoria, abreviacion } = req.body
         const nuevaCategoria = await Categoria.create({
@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.put('/:id', authorize([1, 2]), async (req, res) => {
+router.put('/:id', async (req, res) => {
     try {
         const categoria = await Categoria.findByPk(req.params.id)
         if(!categoria) return res.status(404).json({ error: "No se encontró la categoria"})
@@ -50,7 +50,7 @@ router.put('/:id', authorize([1, 2]), async (req, res) => {
     }
 })
 
-router.delete('/:id', authorize([1,2]), async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const idCategoria = req.params.id
         const categoria = await Categoria.findByPk(idCategoria)

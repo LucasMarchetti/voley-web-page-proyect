@@ -28,9 +28,9 @@ app.use('/api/permisos', authenticate, permisosRoutes);
 app.use('/api/torneos', authenticate, torneosRoutes);
 app.use('/api/partidos', authenticate, partidosRoutes);
 
-sequelize.sync({ alter: true })
+sequelize.sync({ force: false })
     .then(() => {
-        console.log('Base de datos sincronizada');
+        console.log('Base de datos sincronizada. Todas las tablas han sido eliminadas y recreadas.');
         app.listen(port, () => {
             console.log(`Servidor escuchando en http://localhost:${port}`);
         });

@@ -4,7 +4,8 @@ import authorize from '../middlewares/authorize.js';
 
 const router = express.Router();
 
-router.post('/', authorize([1, 2]), async (req, res) => {
+// router.post('/', authorize([1, 2]), async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const { nombre_federacion } = req.body;
         const nuevaFederacion = await Federacion.create({
@@ -37,7 +38,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.delete('/:id', authorize([1,2]), async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const idFederacion = req.params.id
         const federacion = await Federacion.findByPk(idFederacion)

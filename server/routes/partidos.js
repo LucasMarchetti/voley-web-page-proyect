@@ -5,7 +5,7 @@ import authorize from '../middlewares/authorize.js';
 
 const router = express.Router()
 
-router.post('/', authorize([1, 2]), async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const partido = await Partido.create(req.body)
     res.status(201).json(partido)
@@ -15,7 +15,7 @@ router.post('/', authorize([1, 2]), async (req, res) => {
   }
 })
 
-router.get('/filter', authorize([1, 2]), async (req, res) => {
+router.get('/filter',  async (req, res) => {
   const { id_torneo, id_categoria } = req.query
   if (!id_torneo || !id_categoria || isNaN(id_torneo) || isNaN(id_categoria)) {
     return res.status(400).json({ error: 'Faltan parámetros o los parámetros son inválidos' })
